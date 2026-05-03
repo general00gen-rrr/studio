@@ -31,8 +31,8 @@ export default function Footer() {
         <div>
           <h4 className="text-xs tracking-widest uppercase text-gold mb-6">Service Client</h4>
           <ul className="space-y-3">
-            {['Comment commander','Livraison & délais','Paiement à la livraison','Retours & échanges','FAQ','Nous contacter'].map(item => (
-              <li key={item}><a href="#" className="text-white/60 text-sm hover:text-gold transition-colors">{item}</a></li>
+            {[['Comment commander','/comment-commander'],['Livraison & délais','/livraison'],['Paiement à la livraison','/paiement'],['Retours & échanges','/retours'],['FAQ','/faq'],['Nous contacter','/contact']].map(([item,href]) => (
+              <li key={item}><Link href={href} className="text-white/60 text-sm hover:text-gold transition-colors">{item}</Link></li>
             ))}
           </ul>
         </div>
