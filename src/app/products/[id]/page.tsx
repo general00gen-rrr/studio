@@ -1,5 +1,6 @@
 'use client'
-import { useState, use, useCallback } from 'react'
+import { useState, use, useCallback, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -179,6 +180,20 @@ function ProductDetailPage({ id }: { id: string }) {
   const [added, setAdded] = useState(false)
   const [qty, setQty] = useState(1)
   const [activeTab, setActiveTab] = useState<'details' | 'livraison'>('details')
+  const [showStickyBar, setShowStickyBar] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const ctaRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setIsMounted(true)
+    const handleScroll = () => {
+      if (!ctaRef.current) return
+      const rect = ctaRef.current.getBoundingClientRect()
+      setShowStickyBar(rect.bottom < 0)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const images = product.images && product.images.length > 0
     ? product.images
@@ -274,7 +289,7 @@ function ProductDetailPage({ id }: { id: string }) {
 
             {/* Qty + CTA */}
             <ScrollReveal direction="up" delay={120}>
-              <div className="mt-7 space-y-3">
+              <div ref={ctaRef} className="mt-7 space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center border border-lux-border h-12 flex-shrink-0">
                     <button onClick={() => setQty(q => Math.max(1, q - 1))} className="w-10 h-full flex items-center justify-center text-lux-gray hover:text-gold transition-colors text-lg">−</button>
@@ -356,6 +371,47 @@ function ProductDetailPage({ id }: { id: string }) {
           </div>
         </div>
       </div>
+
+
+      {/* STICKY ADD TO CART BAR — via portal to escape transform parents */}
+      {isMounted && createPortal(
+      <div className={`fixed bottom-0 left-0 right-0 z-[9999] transition-all duration-500 ${showStickyBar ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'}`}>
+        <div className="bg-white border-t border-lux-border shadow-[0_-4px_24px_rgba(0,0,0,0.08)]">
+          <div className="container-lux py-3 flex items-center gap-4">
+            <div className="flex-1 min-w-0 hidden sm:block">
+              <p className="font-serif text-lux-dark text-sm truncate leading-tight">{product.name}</p>
+              <p className="text-gold font-medium text-sm mt-0.5">{formatPrice(product.price)}</p>
+            </div>
+            <div className="flex items-center border border-lux-border h-11 flex-shrink-0">
+              <button onClick={() => setQty(q => Math.max(1, q - 1))} className="w-9 h-full flex items-center justify-center text-lux-gray hover:text-gold transition-colors text-lg">−</button>
+              <span className="w-9 h-full flex items-center justify-center text-sm font-medium border-x border-lux-border">{qty}</span>
+              <button onClick={() => setQty(q => Math.min(product.stock, q + 1))} className="w-9 h-full flex items-center justify-center text-lux-gray hover:text-gold transition-colors text-lg">+</button>
+            </div>
+            <button
+              onClick={handleAdd}
+              className={`h-11 px-5 sm:px-8 text-[10px] tracking-[0.2em] uppercase font-medium transition-all duration-300 flex items-center gap-2 flex-shrink-0 ${added ? 'bg-green-600 text-white' : 'bg-lux-dark text-white hover:bg-gold'}`}
+            >
+              {added ? (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Ajouté
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                  </svg>
+                  <span className="hidden sm:inline">Ajouter au panier</span>
+                  <span className="sm:hidden">Au panier</span>
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+      , document.body)}
 
       {/* PRODUITS SIMILAIRES */}
       {related.length > 0 && (
