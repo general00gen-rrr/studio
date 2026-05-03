@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss'
-
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -17,8 +16,6 @@ const config: Config = {
       },
     },
     extend: {
-      animation: { marquee: 'marquee 35s linear infinite' },
-      keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } } },
       colors: {
         gold: { DEFAULT: '#C8A96E', light: '#D9BF8A', dark: '#A88A4E' },
         cream: '#F9F7F4',
@@ -69,6 +66,7 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
+        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -83,6 +81,7 @@ const config: Config = {
         slideRight: { from: { transform: 'translateX(-100%)' }, to: { transform: 'translateX(0)' } },
       },
       animation: {
+        marquee: 'marquee 35s linear infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         'fade-up': 'fadeUp 0.6s ease-out forwards',
