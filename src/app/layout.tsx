@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import LuxeEffects from '@/components/LuxeEffects'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
       <body>
+        <LuxeEffects />
         <Navbar />
         <main>{children}</main>
         <Footer />
