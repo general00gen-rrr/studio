@@ -16,9 +16,11 @@ export default function Navbar() {
   const { count, items, removeItem, total, isOpen, toggleCart } = useCart()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
+    setMounted(true)
     const handler = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handler)
     return () => window.removeEventListener('scroll', handler)
@@ -52,7 +54,7 @@ export default function Navbar() {
             </button>
             <button onClick={toggleCart} className="relative text-lux-gray hover:text-gold transition-colors">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-              {count() > 0 && (
+              {mounted && count() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-medium">
                   {count()}
                 </span>
@@ -85,13 +87,13 @@ export default function Navbar() {
       )}
       <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-white z-[101] shadow-2xl transform transition-transform duration-300 ease-out flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex items-center justify-between p-6 border-b border-lux-border">
-          <h2 className="font-serif text-xl">Panier <span className="text-lux-gray text-sm font-sans">({count()} articles)</span></h2>
+          <h2 className="font-serif text-xl">Panier <span className="text-lux-gray text-sm font-sans">({mounted ? count() : 0} articles)</span></h2>
           <button onClick={toggleCart} className="text-lux-gray hover:text-gold transition-colors">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
         <div className="flex-1 overflow-y-auto p-6">
-          {items.length === 0 ? (
+          {!mounted || items.length === 0 ? (
             <div className="text-center py-16">
               <div className="text-5xl mb-4">🛍️</div>
               <p className="text-lux-gray font-serif text-lg">Votre panier est vide</p>
@@ -117,7 +119,7 @@ export default function Navbar() {
             </div>
           )}
         </div>
-        {items.length > 0 && (
+        {mounted && items.length > 0 && (
           <div className="p-6 border-t border-lux-border">
             <div className="flex justify-between mb-4">
               <span className="font-medium">Total</span>

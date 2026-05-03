@@ -1,12 +1,18 @@
 'use client'
+import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { Suspense } from 'react'
 
 function ConfirmationContent() {
   const params = useSearchParams()
   const name = params.get('name') || 'cher client'
-  const orderId = 'LX' + Math.random().toString(36).substr(2,8).toUpperCase()
+  const [orderId, setOrderId] = useState('')
+
+  useEffect(() => {
+    // Generate order ID on client to avoid hydration mismatch
+    const id = 'LX' + Math.random().toString(36).substr(2,8).toUpperCase()
+    setOrderId(id)
+  }, [])
 
   return (
     <div className="pt-[88px] min-h-screen flex items-center justify-center bg-cream">
@@ -25,7 +31,7 @@ function ConfirmationContent() {
         <div className="bg-white border border-lux-border p-6 mb-6 text-left">
           <div className="flex justify-between items-center mb-4">
             <span className="text-xs tracking-widest uppercase text-lux-gray">N° de commande</span>
-            <span className="font-mono font-bold text-gold">#{orderId}</span>
+            <span className="font-mono font-bold text-gold">{orderId ? `#${orderId}` : 'Génération...'}</span>
           </div>
           <div className="space-y-3 text-sm">
             {[
