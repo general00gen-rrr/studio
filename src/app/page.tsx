@@ -29,7 +29,7 @@ export default function HomePage() {
           <div className="max-w-[520px]">
             <div className="flex items-center gap-3 mb-6 animate-fade-in delay-100">
               <div className="w-8 h-[1px] bg-gold" />
-              <span className="text-gold text-[11px] tracking-[0.35em] uppercase font-medium">Collection 2024</span>
+              <span className="text-gold text-[11px] tracking-[0.35em] uppercase font-medium">Collection 2026</span>
             </div>
             <h1 className="animate-fade-up delay-200">
               <span className="block font-sans font-light text-[clamp(44px,6.5vw,82px)] text-white leading-[0.95] tracking-[-0.02em]">

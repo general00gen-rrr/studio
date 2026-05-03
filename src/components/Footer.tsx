@@ -62,7 +62,7 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-white/10">
         <div className="container-lux py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-white/40 text-xs">© 2024 LUXÉ Boutique. Tous droits réservés.</p>
+          <p className="text-white/40 text-xs">© 2026 LUXÉ Boutique. Tous droits réservés.</p>
           <div className="flex gap-6">
             {['Confidentialité','CGV','Mentions légales'].map(item => (
               <a key={item} href="#" className="text-white/40 text-xs hover:text-white/70 transition-colors">{item}</a>
