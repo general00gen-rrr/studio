@@ -17,48 +17,21 @@ function LuxeLogo({ transparent }: { transparent: boolean }) {
   const opacity = transparent ? 0.9 : 1
   return (
     <svg width="110" height="36" viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Left laurel */}
       <g opacity={opacity}>
         <path d="M8 18 Q6 12 11 10 Q12 15 8 18Z" fill={color}/>
         <path d="M9 21 Q5 16 9 13 Q11 17 9 21Z" fill={color} opacity="0.75"/>
         <path d="M11 24 Q7 20 10 17 Q13 20 11 24Z" fill={color} opacity="0.55"/>
         <line x1="8" y1="10" x2="13" y2="26" stroke={color} strokeWidth="0.7" opacity="0.4"/>
       </g>
-      {/* Right laurel (mirror) */}
       <g opacity={opacity}>
         <path d="M102 18 Q104 12 99 10 Q98 15 102 18Z" fill={color}/>
         <path d="M101 21 Q105 16 101 13 Q99 17 101 21Z" fill={color} opacity="0.75"/>
         <path d="M99 24 Q103 20 100 17 Q97 20 99 24Z" fill={color} opacity="0.55"/>
         <line x1="102" y1="10" x2="97" y2="26" stroke={color} strokeWidth="0.7" opacity="0.4"/>
       </g>
-      {/* LUXÉ text */}
-      <text
-        x="55"
-        y="22"
-        textAnchor="middle"
-        fontFamily="var(--font-playfair), Georgia, serif"
-        fontSize="18"
-        fontWeight="600"
-        letterSpacing="5"
-        fill={color}
-      >
-        LUXÉ
-      </text>
-      {/* Bottom thin line */}
+      <text x="55" y="22" textAnchor="middle" fontFamily="var(--font-playfair), Georgia, serif" fontSize="18" fontWeight="600" letterSpacing="5" fill={color}>LUXÉ</text>
       <line x1="22" y1="28" x2="88" y2="28" stroke={color} strokeWidth="0.6" opacity="0.5"/>
-      {/* BOUTIQUE PREMIUM subtitle */}
-      <text
-        x="55"
-        y="35"
-        textAnchor="middle"
-        fontFamily="var(--font-inter), sans-serif"
-        fontSize="5.5"
-        letterSpacing="3"
-        fill={color}
-        opacity="0.7"
-      >
-        BOUTIQUE PREMIUM
-      </text>
+      <text x="55" y="35" textAnchor="middle" fontFamily="var(--font-inter), sans-serif" fontSize="5.5" letterSpacing="3" fill={color} opacity="0.7">BOUTIQUE PREMIUM</text>
     </svg>
   )
 }
@@ -152,17 +125,22 @@ export default function Navbar() {
           ) : (
             <div className="space-y-4">
               {items.map(item => (
-                <div key={item.id} className="flex gap-4 p-4 bg-cream rounded">
-                  <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded" />
-                  <div className="flex-1">
-                    <p className="font-medium text-sm">{item.name}</p>
+                <div key={item.id} className="flex gap-4 p-4 bg-cream rounded relative group">
+                  <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-sm pr-6 truncate">{item.name}</p>
                     <p className="text-gold font-medium text-sm mt-1">{item.price.toLocaleString('fr-MA')} DH</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <button onClick={() => removeItem(item.id)} className="text-xs text-lux-gray hover:text-red-500 transition-colors">Supprimer</button>
-                      <span className="text-lux-border">|</span>
-                      <span className="text-xs text-lux-gray">Qté: {item.quantity}</span>
-                    </div>
+                    <p className="text-xs text-lux-gray mt-1">Qté: {item.quantity}</p>
                   </div>
+                  <button
+                    onClick={() => removeItem(item.id)}
+                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center rounded-full text-lux-gray hover:bg-red-50 hover:text-red-500 transition-all duration-200"
+                    aria-label="Supprimer"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
                 </div>
               ))}
             </div>

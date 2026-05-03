@@ -7,6 +7,7 @@ export interface Product {
   description: string
   details: string
   image: string
+  images?: string[]
   badge?: "nouveau" | "promo" | "bestseller"
   rating: number
   reviews: number
@@ -19,6 +20,7 @@ export interface Category {
   name: string
   description: string
   image: string
+  images?: string[]
   count: number
 }
 
