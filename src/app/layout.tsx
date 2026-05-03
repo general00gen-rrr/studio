@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import LuxeEffects from '@/components/LuxeEffects'
+import PageTransition from '@/components/PageTransition'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -29,7 +30,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <LuxeEffects />
         <Navbar />
-        <main>{children}</main>
+        <main>
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
         <Footer />
       </body>
     </html>
