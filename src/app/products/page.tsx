@@ -1,82 +1,83 @@
-"use client"
+'use client'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { products, categories, formatPrice } from '@/lib/products'
+import ProductCard from '@/components/ProductCard'
+import { Suspense } from 'react'
 
-import { useState } from 'react';
-import { ProductCard } from '@/components/ProductCard';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Input } from '@/components/ui/input';
-import { Search } from 'lucide-react';
+const SORT_OPTIONS = [
+  { value: 'default', label: 'Recommandés' },
+  { value: 'price-asc', label: 'Prix croissant' },
+  { value: 'price-desc', label: 'Prix décroissant' },
+  { value: 'rating', label: 'Mieux notés' },
+]
 
-const ALL_PRODUCTS = [
-  { id: '1', name: 'Montre Signature Or', price: 450, category: 'Accessoires', image: PlaceHolderImages.find(img => img.id === 'watch-gold')?.imageUrl || '' },
-  { id: '2', name: 'Lampe Épure Blanche', price: 189, category: 'Maison', image: PlaceHolderImages.find(img => img.id === 'lamp-modern')?.imageUrl || '' },
-  { id: '3', name: 'Chaise Nordic Minimal', price: 299, category: 'Maison', image: PlaceHolderImages.find(img => img.id === 'chair-white')?.imageUrl || '' },
-  { id: '4', name: 'Casque Studio Pro', price: 320, category: 'Tech', image: PlaceHolderImages.find(img => img.id === 'tech-headphones')?.imageUrl || '' },
-  { id: '5', name: 'Parfum Essence N°5', price: 145, category: 'Beauté', image: PlaceHolderImages.find(img => img.id === 'perfume-bottle')?.imageUrl || '' },
-  { id: '6', name: 'Vase Céramique Brute', price: 75, category: 'Maison', image: 'https://picsum.photos/seed/vase1/800/800' },
-  { id: '7', name: 'Table Basse Marbre', price: 890, category: 'Maison', image: 'https://picsum.photos/seed/table1/800/800' },
-  { id: '8', name: 'Enceinte Minimal Air', price: 540, category: 'Tech', image: 'https://picsum.photos/seed/speaker1/800/800' },
-];
+function ProductsContent() {
+  const searchParams = useSearchParams()
+  const [cat, setCat] = useState(searchParams.get('cat') || '')
+  const [badge, setBadge] = useState(searchParams.get('badge') || '')
+  const [sort, setSort] = useState('default')
+  const [search, setSearch] = useState('')
 
-export default function ProductsPage() {
-  const [search, setSearch] = useState('');
-  const [activeCategory, setActiveCategory] = useState('Tous');
+  let filtered = [...products]
+  if (cat) filtered = filtered.filter(p => p.category === cat)
+  if (badge) filtered = filtered.filter(p => p.badge === badge)
+  if (search) filtered = filtered.filter(p => p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase()))
+  if (sort === 'price-asc') filtered.sort((a,b) => a.price - b.price)
+  else if (sort === 'price-desc') filtered.sort((a,b) => b.price - a.price)
+  else if (sort === 'rating') filtered.sort((a,b) => b.rating - a.rating)
 
-  const categories = ['Tous', 'Maison', 'Tech', 'Accessoires', 'Beauté'];
-
-  const filteredProducts = ALL_PRODUCTS.filter((p) => {
-    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = activeCategory === 'Tous' || p.category === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const selectedCat = categories.find(c => c.id === cat)
 
   return (
-    <div className="container mx-auto px-6 py-12 space-y-12">
-      <header className="space-y-8">
-        <h1 className="text-4xl font-bold uppercase tracking-tighter">Catalogue</h1>
-        
-        <div className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center">
-          <div className="flex flex-wrap gap-4">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`text-[10px] font-bold uppercase tracking-widest px-4 py-2 border transition-all ${
-                  activeCategory === cat 
-                  ? 'bg-foreground text-background border-foreground' 
-                  : 'bg-transparent text-muted-foreground border-border hover:border-foreground hover:text-foreground'
-                }`}
-              >
-                {cat}
+    <div className="pt-[88px] min-h-screen">
+      {/* Hero bar */}
+      <div className="bg-cream border-b border-lux-border py-10">
+        <div className="container-lux">
+          <p className="section-label">{selectedCat ? selectedCat.description : 'Toute la boutique'}</p>
+          <h1 className="section-title">{selectedCat ? selectedCat.name : 'Nos Produits'}</h1>
+          <div className="gold-divider" />
+          <p className="text-lux-gray text-sm mt-1">{filtered.length} produit{filtered.length > 1 ? 's' : ''}</p>
+        </div>
+      </div>
+
+      <div className="container-lux py-8">
+        {/* Filters bar */}
+        <div className="flex flex-wrap gap-3 items-center justify-between mb-8 pb-6 border-b border-lux-border">
+          <div className="flex flex-wrap gap-2">
+            <button onClick={() => { setCat(''); setBadge('') }} className={`px-4 py-2 text-xs tracking-widest uppercase border transition-colors ${!cat && !badge ? 'bg-lux-dark text-white border-lux-dark' : 'border-lux-border text-lux-gray hover:border-gold hover:text-gold'}`}>
+              Tout
+            </button>
+            {categories.map(c => (
+              <button key={c.id} onClick={() => { setCat(c.id); setBadge('') }} className={`px-4 py-2 text-xs tracking-widest uppercase border transition-colors ${cat === c.id ? 'bg-lux-dark text-white border-lux-dark' : 'border-lux-border text-lux-gray hover:border-gold hover:text-gold'}`}>
+                {c.name}
               </button>
             ))}
           </div>
-          
-          <div className="relative w-full md:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input
-              placeholder="Rechercher..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="pl-10 rounded-none border-border focus:border-foreground"
-            />
+          <div className="flex gap-3 items-center">
+            <input type="text" placeholder="Rechercher..." value={search} onChange={e => setSearch(e.target.value)} className="input-lux w-40 md:w-56 py-2 text-sm" />
+            <select value={sort} onChange={e => setSort(e.target.value)} className="input-lux w-auto py-2 text-sm cursor-pointer">
+              {SORT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+            </select>
           </div>
         </div>
-      </header>
 
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-32 space-y-4">
-          <p className="text-muted-foreground italic font-light">Aucun produit ne correspond à votre recherche.</p>
-          <button onClick={() => {setSearch(''); setActiveCategory('Tous');}} className="text-xs font-bold underline uppercase tracking-widest">
-            Réinitialiser les filtres
-          </button>
-        </div>
-      )}
+        {/* Grid */}
+        {filtered.length > 0 ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            {filtered.map(p => <ProductCard key={p.id} product={p} />)}
+          </div>
+        ) : (
+          <div className="text-center py-24">
+            <p className="font-serif text-2xl text-lux-gray">Aucun produit trouvé</p>
+            <button onClick={() => { setCat(''); setBadge(''); setSearch('') }} className="btn-outline mt-6"><span>Effacer les filtres</span></button>
+          </div>
+        )}
+      </div>
     </div>
-  );
+  )
+}
+
+export default function ProductsPage() {
+  return <Suspense fallback={<div className="pt-[88px] flex items-center justify-center min-h-screen"><div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin"/></div>}><ProductsContent /></Suspense>
 }

@@ -1,49 +1,75 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border mt-20 py-20">
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div className="col-span-1 md:col-span-1">
-          <h3 className="text-xl font-bold tracking-tighter uppercase mb-6">Épure</h3>
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-            L'excellence du minimalisme pour votre quotidien. Une sélection soignée de produits d'exception.
+    <footer className="bg-lux-dark text-white">
+      {/* Main footer */}
+      <div className="container-lux py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Brand */}
+        <div className="col-span-1">
+          <span className="font-serif text-2xl tracking-widest">LUXÉ</span>
+          <div className="gold-divider mt-4 mb-4" />
+          <p className="text-white/60 text-sm leading-relaxed">
+            Sélection premium de produits pour votre quotidien. Livraison dans tout le Maroc.
           </p>
+          <div className="flex gap-4 mt-6">
+            {['instagram','facebook','pinterest'].map(s => (
+              <a key={s} href="#" className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/60 hover:border-gold hover:text-gold transition-colors text-xs uppercase">{s[0]}</a>
+            ))}
+          </div>
         </div>
+        {/* Boutique */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-6">Boutique</h4>
-          <ul className="space-y-4 text-sm text-muted-foreground uppercase tracking-wider">
-            <li><Link href="/products" className="hover:text-foreground transition-colors">Tous les produits</Link></li>
-            <li><Link href="/products?category=nouveautes" className="hover:text-foreground transition-colors">Nouveautés</Link></li>
-            <li><Link href="/products?category=promotions" className="hover:text-foreground transition-colors">Promotions</Link></li>
+          <h4 className="text-xs tracking-widest uppercase text-gold mb-6">Boutique</h4>
+          <ul className="space-y-3">
+            {[['Tous les produits','/products'],['Nouveautés','/products?badge=nouveau'],['Best-sellers','/products?badge=bestseller'],['Maison','/products?cat=maison'],['Mode','/products?cat=mode'],['Beauté','/products?cat=beaute']].map(([label,href]) => (
+              <li key={href}><Link href={href} className="text-white/60 text-sm hover:text-gold transition-colors">{label}</Link></li>
+            ))}
           </ul>
         </div>
+        {/* Service */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-6">Support</h4>
-          <ul className="space-y-4 text-sm text-muted-foreground uppercase tracking-wider">
-            <li><Link href="/faq" className="hover:text-foreground transition-colors">FAQ</Link></li>
-            <li><Link href="/shipping" className="hover:text-foreground transition-colors">Livraison</Link></li>
-            <li><Link href="/returns" className="hover:text-foreground transition-colors">Retours</Link></li>
+          <h4 className="text-xs tracking-widest uppercase text-gold mb-6">Service Client</h4>
+          <ul className="space-y-3">
+            {['Comment commander','Livraison & délais','Paiement à la livraison','Retours & échanges','FAQ','Nous contacter'].map(item => (
+              <li key={item}><a href="#" className="text-white/60 text-sm hover:text-gold transition-colors">{item}</a></li>
+            ))}
           </ul>
         </div>
+        {/* Contact */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-6">Contact</h4>
-          <ul className="space-y-4 text-sm text-muted-foreground uppercase tracking-wider">
-            <li><Link href="mailto:contact@epure.com" className="hover:text-foreground transition-colors">contact@epure.com</Link></li>
-            <li><Link href="tel:+33123456789" className="hover:text-foreground transition-colors">+33 1 23 45 67 89</Link></li>
-            <li className="text-xs pt-4 opacity-50">Paris, France</li>
+          <h4 className="text-xs tracking-widest uppercase text-gold mb-6">Contact</h4>
+          <ul className="space-y-4 text-sm text-white/60">
+            <li className="flex items-start gap-3">
+              <svg className="w-4 h-4 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              +212 6 00 00 00 00
+            </li>
+            <li className="flex items-start gap-3">
+              <svg className="w-4 h-4 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              contact@luxe-boutique.ma
+            </li>
+            <li className="flex items-start gap-3">
+              <svg className="w-4 h-4 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Lun–Sam: 9h–18h
+            </li>
           </ul>
+          <div className="mt-6 p-4 border border-white/10 bg-white/5">
+            <p className="text-xs text-white/60 mb-1">🇲🇦 Livraison dans tout le Maroc</p>
+            <p className="text-xs text-gold font-medium">Paiement à la livraison</p>
+          </div>
         </div>
       </div>
-      <div className="container mx-auto px-6 mt-20 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-muted-foreground uppercase tracking-widest">
-          © {new Date().getFullYear()} Épure Boutique. Tous droits réservés.
-        </p>
-        <div className="flex gap-6 text-xs text-muted-foreground uppercase tracking-widest">
-          <Link href="/privacy" className="hover:text-foreground transition-colors">Confidentialité</Link>
-          <Link href="/terms" className="hover:text-foreground transition-colors">CGV</Link>
+      {/* Bottom */}
+      <div className="border-t border-white/10">
+        <div className="container-lux py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-white/40 text-xs">© 2024 LUXÉ Boutique. Tous droits réservés.</p>
+          <div className="flex gap-6">
+            {['Confidentialité','CGV','Mentions légales'].map(item => (
+              <a key={item} href="#" className="text-white/40 text-xs hover:text-white/70 transition-colors">{item}</a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -1,115 +1,92 @@
-"use client"
-
-import Link from 'next/link';
-import Image from 'next/image';
-import { Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useCart } from '@/hooks/use-cart';
+'use client'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useCart } from '@/lib/cartStore'
+import { formatPrice } from '@/lib/products'
 
 export default function CartPage() {
-  const { items, removeFromCart, updateQuantity, total } = useCart();
+  const { items, removeItem, updateQty, total, count } = useCart()
 
-  if (items.length === 0) {
-    return (
-      <div className="container mx-auto px-6 py-32 text-center space-y-8">
-        <h1 className="text-3xl font-bold uppercase tracking-tighter">Votre panier est vide</h1>
-        <p className="text-muted-foreground font-light max-w-md mx-auto">
-          Il semble que vous n'ayez pas encore ajouté d'articles. Découvrez notre collection pour trouver l'essentiel.
-        </p>
-        <Link href="/products">
-          <Button className="bg-foreground text-background hover:bg-primary hover:text-primary-foreground h-14 px-10 rounded-none text-xs font-bold uppercase tracking-widest">
-            Continuer vos achats
-          </Button>
-        </Link>
+  if (items.length === 0) return (
+    <div className="pt-[88px] min-h-screen flex items-center justify-center">
+      <div className="text-center py-20">
+        <div className="text-7xl mb-6">🛒</div>
+        <h1 className="font-serif text-3xl mb-3">Votre panier est vide</h1>
+        <p className="text-lux-gray mb-8">Découvrez notre sélection premium</p>
+        <Link href="/products" className="btn-gold"><span>Continuer mes achats</span></Link>
       </div>
-    );
-  }
+    </div>
+  )
 
   return (
-    <div className="container mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold uppercase tracking-tighter mb-12">Votre Panier</h1>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-        <div className="lg:col-span-2 space-y-8">
-          {items.map((item) => (
-            <div key={item.id} className="flex gap-6 pb-8 border-b border-border group">
-              <div className="relative w-24 h-32 md:w-32 md:h-40 bg-secondary flex-shrink-0">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex-grow flex flex-col justify-between py-2">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-sm font-medium tracking-tight mb-1">{item.name}</h3>
-                    <p className="text-xs text-muted-foreground uppercase tracking-widest">Ref: #EP-{item.id.padStart(4, '0')}</p>
-                  </div>
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-muted-foreground hover:text-destructive transition-colors"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
-                </div>
-
-                <div className="flex justify-between items-end mt-4">
-                  <div className="flex items-center border border-border">
-                    <button
-                      onClick={() => updateQuantity(item.id, -1)}
-                      className="px-3 py-1 hover:bg-secondary transition-colors"
-                    >
-                      <Minus className="w-3 h-3" />
-                    </button>
-                    <span className="px-4 py-1 text-xs font-medium w-10 text-center border-x border-border">
-                      {item.quantity}
-                    </span>
-                    <button
-                      onClick={() => updateQuantity(item.id, 1)}
-                      className="px-3 py-1 hover:bg-secondary transition-colors"
-                    >
-                      <Plus className="w-3 h-3" />
-                    </button>
-                  </div>
-                  <p className="font-semibold tracking-tighter">
-                    {(item.price * item.quantity).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
+    <div className="pt-[88px] min-h-screen">
+      <div className="bg-cream border-b border-lux-border py-10">
+        <div className="container-lux">
+          <h1 className="section-title">Mon Panier</h1>
+          <div className="gold-divider" />
+          <p className="text-lux-gray text-sm">{count()} article{count() > 1 ? 's' : ''}</p>
         </div>
+      </div>
 
-        <div className="lg:col-span-1">
-          <div className="bg-secondary/50 p-8 space-y-6">
-            <h2 className="text-lg font-bold uppercase tracking-widest">Récapitulatif</h2>
-            <div className="space-y-4 text-sm font-light">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Sous-total</span>
-                <span>{total.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</span>
+      <div className="container-lux py-12">
+        <div className="grid lg:grid-cols-3 gap-12">
+          {/* Items */}
+          <div className="lg:col-span-2 space-y-4">
+            {items.map(item => (
+              <div key={item.id} className="flex gap-5 p-5 bg-cream border border-lux-border hover:border-gold transition-colors">
+                <div className="relative w-24 h-24 shrink-0 overflow-hidden">
+                  <Image src={item.image} alt={item.name} fill className="object-cover" sizes="96px" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-medium">{item.name}</h3>
+                  <p className="text-gold font-serif font-medium mt-1">{formatPrice(item.price)}</p>
+                  <div className="flex items-center gap-4 mt-3">
+                    <div className="flex items-center border border-lux-border">
+                      <button onClick={() => updateQty(item.id, item.quantity - 1)} className="w-8 h-8 flex items-center justify-center text-lux-gray hover:text-gold">−</button>
+                      <span className="w-8 text-center text-sm">{item.quantity}</span>
+                      <button onClick={() => updateQty(item.id, item.quantity + 1)} className="w-8 h-8 flex items-center justify-center text-lux-gray hover:text-gold">+</button>
+                    </div>
+                    <button onClick={() => removeItem(item.id)} className="text-xs text-lux-gray hover:text-red-500 transition-colors">Supprimer</button>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-serif font-medium">{formatPrice(item.price * item.quantity)}</p>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Livraison</span>
-                <span className="text-primary font-medium">Offerte</span>
+            ))}
+          </div>
+
+          {/* Summary */}
+          <div>
+            <div className="bg-cream border border-lux-border p-6 sticky top-24">
+              <h2 className="font-serif text-xl mb-4">Récapitulatif</h2>
+              <div className="space-y-3 mb-4 pb-4 border-b border-lux-border">
+                {items.map(item => (
+                  <div key={item.id} className="flex justify-between text-sm">
+                    <span className="text-lux-gray truncate max-w-[160px]">{item.name} ×{item.quantity}</span>
+                    <span>{formatPrice(item.price * item.quantity)}</span>
+                  </div>
+                ))}
               </div>
-              <div className="pt-4 border-t border-border flex justify-between font-bold text-lg tracking-tighter">
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-lux-gray">Livraison</span>
+                <span className="text-green-600 font-medium">{total() >= 500 ? 'Gratuite' : '50 DH'}</span>
+              </div>
+              {total() < 500 && <p className="text-xs text-lux-gray mb-3">Plus que {formatPrice(500 - total())} pour la livraison gratuite</p>}
+              <div className="flex justify-between font-medium text-lg pt-3 border-t border-lux-border mt-3">
                 <span>Total</span>
-                <span>{total.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</span>
+                <span className="font-serif">{formatPrice(total() >= 500 ? total() : total() + 50)}</span>
               </div>
+              <div className="mt-5 p-3 bg-green-50 border border-green-200 text-xs text-green-700 flex items-center gap-2">
+                <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                Paiement à la livraison disponible
+              </div>
+              <Link href="/checkout" className="btn-gold w-full text-center justify-center mt-4"><span>Commander — Payer à la livraison</span></Link>
+              <Link href="/products" className="block text-center mt-3 text-xs text-lux-gray hover:text-gold transition-colors">← Continuer mes achats</Link>
             </div>
-            <Link href="/checkout" className="block w-full">
-              <Button className="w-full bg-foreground text-background hover:bg-primary hover:text-primary-foreground h-14 rounded-none text-xs font-bold uppercase tracking-widest group">
-                Passer la commande <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <p className="text-[10px] text-muted-foreground text-center uppercase tracking-[0.2em]">
-              Paiement à la livraison uniquement
-            </p>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

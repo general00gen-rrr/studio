@@ -1,34 +1,35 @@
-import type {Metadata} from 'next';
-import './globals.css';
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
-import { Toaster } from '@/components/ui/toaster';
+import type { Metadata } from 'next'
+import { Playfair_Display, Inter } from 'next/font/google'
+import './globals.css'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['400','500','600','700'],
+  style: ['normal','italic'],
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  weight: ['300','400','500','600'],
+})
 
 export const metadata: Metadata = {
-  title: 'Épure Boutique | L\'élégance du quotidien',
-  description: 'Découvrez notre collection exclusive de produits minimalistes et luxueux.',
-};
+  title: 'LUXÉ — Boutique Premium',
+  description: 'Sélection premium de produits pour votre quotidien. Livraison au Maroc, paiement à la livraison.',
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased selection:bg-primary/30 min-h-screen flex flex-col">
+    <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
+      <body>
         <Navbar />
-        <main className="flex-grow pt-20">
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer />
-        <Toaster />
       </body>
     </html>
-  );
+  )
 }

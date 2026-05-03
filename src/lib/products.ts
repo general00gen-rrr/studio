@@ -1,0 +1,218 @@
+export interface Product {
+  id: string
+  name: string
+  price: number
+  originalPrice?: number
+  category: string
+  description: string
+  details: string
+  image: string
+  badge?: "nouveau" | "promo" | "bestseller"
+  rating: number
+  reviews: number
+  stock: number
+  features: string[]
+}
+
+export interface Category {
+  id: string
+  name: string
+  description: string
+  image: string
+  count: number
+}
+
+export const categories: Category[] = [
+  { id: "maison", name: "Maison", description: "Décorez avec élégance", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80", count: 6 },
+  { id: "mode", name: "Mode", description: "Exprimez votre style", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", count: 5 },
+  { id: "beaute", name: "Beauté", description: "Révélez votre beauté", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80", count: 3 },
+  { id: "tech", name: "Tech", description: "Innovation au quotidien", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", count: 3 },
+  { id: "cuisine", name: "Cuisine", description: "Art culinaire premium", image: "https://images.unsplash.com/photo-1556910103-1c02745adc4b?w=600&q=80", count: 3 },
+  { id: "sport", name: "Sport", description: "Performance & style", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80", count: 2 },
+]
+
+export const products: Product[] = [
+  {
+    id: "1", name: "Lampe Arc Dorée", price: 890, category: "maison",
+    description: "Lampe sur pied en métal doré, design contemporain",
+    details: "Cette élégante lampe arc en métal doré apporte une lumière douce et une touche de sophistication. Son abat-jour en lin crème crée une ambiance chaleureuse et raffinée.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    badge: "nouveau", rating: 4.8, reviews: 24, stock: 15,
+    features: ["Hauteur 180cm", "Ampoule E27 incluse", "Câble tissu", "Interrupteur au pied"],
+  },
+  {
+    id: "2", name: "Miroir Ovale Arche", price: 1200, category: "maison",
+    description: "Miroir mural arche, cadre doré mat 60x120cm",
+    details: "Ce miroir ovale en forme d'arche avec son cadre doré mat agrandit visuellement l'espace et apporte une touche luxueuse. Fixation murale incluse.",
+    image: "https://images.unsplash.com/photo-1576020799627-aeac74d58064?w=600&q=80",
+    rating: 4.9, reviews: 31, stock: 8,
+    features: ["60 x 120 cm", "Cadre métal doré", "Miroir anti-déformation", "Fixation incluse"],
+  },
+  {
+    id: "3", name: "Bougie Oud & Rose", price: 280, category: "maison",
+    description: "Bougie artisanale cire soja, 60h de brûlage",
+    details: "Bougie artisanale en cire de soja 100% naturelle. Son mélange d'oud oriental et de rose marocaine crée une atmosphère envoûtante. Contenant en verre recyclé.",
+    image: "https://images.unsplash.com/photo-1602607165068-3afc1b67e521?w=600&q=80",
+    badge: "bestseller", rating: 4.7, reviews: 89, stock: 45,
+    features: ["Cire de soja naturelle", "60h de brûlage", "Parfum Oud & Rose", "Pot verre recyclé"],
+  },
+  {
+    id: "4", name: "Vase Marbre Blanc", price: 450, category: "maison",
+    description: "Vase sculpture en marbre naturel veiné",
+    details: "Vase sculptural en marbre blanc veiné. Chaque pièce est unique grâce aux nuances naturelles du marbre. Idéal pour fleurs fraîches ou comme objet déco.",
+    image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=600&q=80",
+    rating: 4.6, reviews: 18, stock: 12,
+    features: ["Marbre naturel", "H. 25cm / D. 12cm", "Pièce unique", "Fond anti-rayures"],
+  },
+  {
+    id: "5", name: "Coussin Velours Camel", price: 180, category: "maison",
+    description: "Coussin décoratif velours premium 50×50cm",
+    details: "Coussin en velours camel haute qualité. Garnissage en duvet synthétique ultra-doux, fermeture invisible par zip. Déhoussable et lavable.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+    rating: 4.5, reviews: 42, stock: 30,
+    features: ["50 x 50 cm", "Velours 100% polyester", "Garnissage duvet synt.", "Lavable 30°"],
+  },
+  {
+    id: "6", name: "Plateau Laiton Ciselé", price: 320, category: "maison",
+    description: "Plateau décoratif en laiton, motifs arabesques",
+    details: "Plateau artisanal en laiton doré avec motifs arabesques ciselés à la main par des artisans marocains. Parfait pour servir le thé ou comme pièce décorative.",
+    image: "https://images.unsplash.com/photo-1617104551722-3b2d51366400?w=600&q=80",
+    badge: "nouveau", rating: 4.8, reviews: 27, stock: 20,
+    features: ["Diam. 40cm", "Laiton massif", "Ciselage main", "Artisanat marocain"],
+  },
+  {
+    id: "7", name: "Blazer Structuré Ivoire", price: 1100, category: "mode",
+    description: "Blazer ajusté crêpe de laine, coupe française",
+    details: "Blazer ivoire à la coupe française impeccable, taillé dans un crêpe de laine premium. Silhouette structurée et finitions soignées pour toutes les occasions.",
+    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80",
+    badge: "nouveau", rating: 4.8, reviews: 15, stock: 10,
+    features: ["Crêpe de laine 70%", "Doublure soie", "Boutonnage doré", "Tailles XS-XL"],
+  },
+  {
+    id: "8", name: "Sac Cuir Camel", price: 1800, category: "mode",
+    description: "Sac à main cuir véritable, fermoir doré",
+    details: "Sac artisanal en cuir pleine fleur camel. Structure souple, finitions en métal doré, poche zippée intérieure. Élégance intemporelle pour chaque tenue.",
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
+    badge: "bestseller", rating: 4.9, reviews: 47, stock: 6,
+    features: ["Cuir pleine fleur", "Fermoir doré", "Doublure suède", "Bandoulière amovible"],
+  },
+  {
+    id: "9", name: "Montre Classic Or", price: 2500, category: "mode",
+    description: "Montre élégante acier doré, cadran blanc nacre",
+    details: "Montre classique à mouvement suisse. Boîtier acier doré, cadran blanc nacré, bracelet cuir chocolat. Étanche 3ATM. Livrée avec boîte cadeau.",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
+    rating: 4.8, reviews: 33, stock: 9,
+    features: ["Mouvement suisse", "Verre saphir", "Étanche 3ATM", "Boîte cadeau incluse"],
+  },
+  {
+    id: "10", name: "Sneakers Blanc Cuir", price: 890, category: "mode",
+    description: "Baskets cuir blanc premium, semelle plateforme",
+    details: "Sneakers en cuir blanc véritable avec semelle plateforme légèrement surélevée. Confort exceptionnel, style minimaliste et intemporel.",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+    rating: 4.7, reviews: 56, stock: 20,
+    features: ["Cuir véritable", "Semelle +3cm", "Pointures 36-45", "Sac à chaussures inclus"],
+  },
+  {
+    id: "11", name: "Robe Lin Naturel", price: 680, category: "mode",
+    description: "Robe mi-longue lin 100% naturel, coupe fluide",
+    details: "Robe en lin naturel 100% biologique, coupe droite légèrement évasée. Confort absolu pour toutes les saisons. Disponible en ivoire et sable.",
+    image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80",
+    rating: 4.6, reviews: 28, stock: 18,
+    features: ["Lin 100% bio", "Mi-longue", "Coupe fluide", "2 coloris"],
+  },
+  {
+    id: "12", name: "Parfum Oud Intense", price: 650, category: "beaute",
+    description: "Eau de parfum 100ml, oud, ambre & rose",
+    details: "Fragrance orientale envoûtante. Tête: bergamote & safran. Cœur: rose marocaine & oud. Fond: ambre & musc blanc. Sillage intense, 12h+.",
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80",
+    badge: "bestseller", rating: 4.9, reviews: 102, stock: 25,
+    features: ["100ml EDP", "Vaporisateur", "Notes orientales", "Coffret luxe"],
+  },
+  {
+    id: "13", name: "Sérum Vitamine C Gold", price: 380, category: "beaute",
+    description: "Sérum illuminateur vit.C & particules d'or 24K",
+    details: "Sérum anti-âge luxueux combinant vitamine C stabilisée et micro-particules d'or 24K. Illumine, rafferme et unifie le teint. Résultats visibles en 14 jours.",
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80",
+    badge: "nouveau", rating: 4.7, reviews: 64, stock: 35,
+    features: ["30ml", "Vitamine C 15%", "Or 24K", "Sans paraben"],
+  },
+  {
+    id: "14", name: "Set Soin Argan Bio", price: 920, category: "beaute",
+    description: "Coffret 5 soins huile d'argan pure du Maroc",
+    details: "Coffret premium 5 produits à l'huile d'argan bio certifiée du Maroc: huile visage, crème jour, crème nuit, sérum et masque hebdomadaire.",
+    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80",
+    rating: 4.8, reviews: 37, stock: 12,
+    features: ["5 produits", "Argan bio certifié", "Made in Morocco", "Coffret cadeau"],
+  },
+  {
+    id: "15", name: "Casque Audio Premium", price: 1200, category: "tech",
+    description: "Casque sans fil ANC, 30h d'autonomie",
+    details: "Casque haute-fidélité avec réduction de bruit active hybride. Drivers 40mm, son Hi-Res. 30h d'autonomie, charge rapide 15min = 3h. Coussinets mémoire de forme.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
+    rating: 4.8, reviews: 78, stock: 14,
+    features: ["ANC hybride", "30h autonomie", "Hi-Res Audio", "Bluetooth 5.2"],
+  },
+  {
+    id: "16", name: "Montre Connectée Sport", price: 1800, category: "tech",
+    description: "Smartwatch GPS, suivi santé avancé, AMOLED",
+    details: "Montre connectée avec écran AMOLED 1.4\". GPS intégré, FC, SpO2, sommeil, stress. 50+ modes sport. Étanche 5ATM. Autonomie 14 jours.",
+    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=80",
+    badge: "nouveau", rating: 4.7, reviews: 45, stock: 11,
+    features: ["AMOLED 1.4\"", "GPS intégré", "Étanche 5ATM", "14 jours autonomie"],
+  },
+  {
+    id: "17", name: "Enceinte Portable Luxe", price: 650, category: "tech",
+    description: "Enceinte Bluetooth 360°, finition aluminium",
+    details: "Enceinte portable en aluminium brossé premium. Son omnidirectionnel 360°, basses profondes. Étanche IPX7, 20h d'autonomie, charge USB-C.",
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80",
+    rating: 4.6, reviews: 52, stock: 20,
+    features: ["Aluminium brossé", "IPX7", "20h autonomie", "Son 360°"],
+  },
+  {
+    id: "18", name: "Robot Pâtissier Pro", price: 2800, category: "cuisine",
+    description: "Robot 6.5L, 1200W, 10 vitesses + minuteur",
+    details: "Robot pâtissier professionnel 1200W, bol 6.5L inox. 10 vitesses + turbo. Livré avec fouet ballon, crochet pétrisseur et feuille. Tête basculante.",
+    image: "https://images.unsplash.com/photo-1556910103-1c02745adc4b?w=600&q=80",
+    rating: 4.8, reviews: 29, stock: 7,
+    features: ["1200W", "Bol 6.5L inox", "10 vitesses", "3 accessoires inclus"],
+  },
+  {
+    id: "19", name: "Set Couteaux Japonais", price: 780, category: "cuisine",
+    description: "5 couteaux acier Damas 67 couches + bloc",
+    details: "Set de 5 couteaux en acier Damas japonais 67 couches (chef, à pain, désosseur, santoku, économe). Manches pakkawood ergonomiques. Bloc bois inclus.",
+    image: "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&q=80",
+    badge: "bestseller", rating: 4.9, reviews: 41, stock: 15,
+    features: ["Acier Damas 67C", "Dureté 62 HRC", "Manche pakkawood", "Bloc bois inclus"],
+  },
+  {
+    id: "20", name: "Service Thé Marocain", price: 450, category: "cuisine",
+    description: "Service 8 pièces métal argenté ciselé main",
+    details: "Service à thé marocain artisanal en métal argenté ciselé à la main par des artisans de Fès. Inclut: 1 théière, 6 verres, 1 plateau. Coffret cadeau.",
+    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80",
+    rating: 4.7, reviews: 36, stock: 22,
+    features: ["8 pièces", "Ciselé main", "Artisanat de Fès", "Coffret cadeau"],
+  },
+  {
+    id: "21", name: "Tapis de Yoga Premium", price: 480, category: "sport",
+    description: "Tapis yoga TPE 6mm, antidérapant, 183×61cm",
+    details: "Tapis de yoga professionnel en TPE écologique, épaisseur 6mm. Surface antidérapante bilatérale, alignement imprimé. Léger 1.2kg, sangle incluse.",
+    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80",
+    rating: 4.7, reviews: 33, stock: 25,
+    features: ["TPE écologique", "183 × 61 cm", "6mm épaisseur", "Sangle incluse"],
+  },
+  {
+    id: "22", name: "Bouteille Inox Luxe", price: 250, category: "sport",
+    description: "Gourde isotherme 750ml, acier inox, 24h froid",
+    details: "Bouteille isotherme en acier inoxydable 18/8 alimentaire. Double paroi sous vide: 24h froid / 12h chaud. Finition matte premium, sans BPA.",
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80",
+    rating: 4.6, reviews: 58, stock: 40,
+    features: ["750ml", "Inox 18/8", "24h froid / 12h chaud", "Sans BPA"],
+  },
+]
+
+export const getFeatured = () => products.slice(0, 8)
+export const getNew = () => products.filter(p => p.badge === "nouveau")
+export const getBest = () => products.filter(p => p.badge === "bestseller")
+export const getByCat = (cat: string) => products.filter(p => p.category === cat)
+export const getById = (id: string) => products.find(p => p.id === id)
+export const formatPrice = (p: number) => `${p.toLocaleString("fr-MA")} DH`

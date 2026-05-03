@@ -2,61 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 200 14% 98%;
-    --foreground: 222 12% 15%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 12% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 12% 15%;
-    --primary: 191 89% 55%;
-    --primary-foreground: 222 12% 15%;
-    --secondary: 222 12% 95%;
-    --secondary-foreground: 222 12% 15%;
-    --muted: 222 12% 95%;
-    --muted-foreground: 222 12% 40%;
-    --accent: 191 89% 55%;
-    --accent-foreground: 222 12% 15%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 12% 90%;
-    --input: 222 12% 90%;
-    --ring: 191 89% 55%;
-    --radius: 0rem;
-  }
+:root {
+  --gold: #C8A96E;
+  --gold-light: #D9BF8A;
+  --gold-dark: #A88A4E;
+  --cream: #F9F7F4;
+  --dark: #1A1A1A;
+  --gray: #6B6B6B;
+  --border: #E8E4DF;
 
-  .dark {
-    --background: 222 12% 10%;
-    --foreground: 210 40% 98%;
-    --card: 222 12% 12%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 12% 12%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 191 89% 55%;
-    --primary-foreground: 222 12% 15%;
-    --secondary: 222 12% 20%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 12% 20%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 191 89% 55%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 12% 20%;
-    --input: 222 12% 20%;
-    --ring: 191 89% 55%;
-  }
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --primary: 38 48% 61%;
+  --primary-foreground: 60 9.1% 97.8%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --ring: 38 48% 61%;
+  --radius: 0.5rem;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground font-body;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-headline tracking-tight;
-  }
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+  font-family: var(--font-inter), sans-serif; 
+  background: #fff; 
+  color: var(--dark); 
+  -webkit-font-smoothing: antialiased; 
+}
+
+.font-serif { font-family: var(--font-playfair), serif; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+.btn-gold {
+  @apply inline-flex items-center gap-2 bg-lux-dark text-white px-8 py-3.5 text-[13px] tracking-[0.15em] uppercase font-medium transition-all relative overflow-hidden;
+}
+.btn-gold::after {
+  content: ''; @apply absolute inset-0 bg-gold -translate-x-full transition-transform duration-300;
+}
+.btn-gold:hover::after { @apply translate-x-0; }
+.btn-gold span { @apply relative z-10; }
+
+.btn-outline {
+  @apply inline-flex items-center gap-2 border border-lux-dark text-lux-dark px-7 py-3 text-[13px] tracking-[0.12em] uppercase font-medium transition-all hover:bg-lux-dark hover:text-white;
+}
+
+.container-lux { @apply max-w-[1320px] mx-auto px-6; }
+
+.section-label { @apply text-[11px] tracking-[0.3em] uppercase text-gold font-medium mb-3; }
+.section-title { @apply font-serif text-[clamp(28px,4vw,48px)] font-normal text-lux-dark leading-[1.2]; }
+
+.gold-divider { @apply w-12 h-[2px] bg-gold my-4; }
+
+.input-lux {
+  @apply w-full border border-lux-border px-4 py-3.5 text-sm font-sans bg-white outline-none transition-colors focus:border-gold;
+}
+
+.delay-100 { animation-delay: 0.1s; opacity: 0; }
+.delay-200 { animation-delay: 0.2s; opacity: 0; }
+.delay-300 { animation-delay: 0.3s; opacity: 0; }
+.delay-400 { animation-delay: 0.4s; opacity: 0; }
+.delay-500 { animation-delay: 0.5s; opacity: 0; }
