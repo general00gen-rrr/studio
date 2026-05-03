@@ -12,6 +12,57 @@ const links = [
   { href: '/products?cat=tech', label: 'Tech' },
 ]
 
+function LuxeLogo({ transparent }: { transparent: boolean }) {
+  const color = transparent ? '#ffffff' : '#C8A96E'
+  const opacity = transparent ? 0.9 : 1
+  return (
+    <svg width="110" height="36" viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Left laurel */}
+      <g opacity={opacity}>
+        <path d="M8 18 Q6 12 11 10 Q12 15 8 18Z" fill={color}/>
+        <path d="M9 21 Q5 16 9 13 Q11 17 9 21Z" fill={color} opacity="0.75"/>
+        <path d="M11 24 Q7 20 10 17 Q13 20 11 24Z" fill={color} opacity="0.55"/>
+        <line x1="8" y1="10" x2="13" y2="26" stroke={color} strokeWidth="0.7" opacity="0.4"/>
+      </g>
+      {/* Right laurel (mirror) */}
+      <g opacity={opacity}>
+        <path d="M102 18 Q104 12 99 10 Q98 15 102 18Z" fill={color}/>
+        <path d="M101 21 Q105 16 101 13 Q99 17 101 21Z" fill={color} opacity="0.75"/>
+        <path d="M99 24 Q103 20 100 17 Q97 20 99 24Z" fill={color} opacity="0.55"/>
+        <line x1="102" y1="10" x2="97" y2="26" stroke={color} strokeWidth="0.7" opacity="0.4"/>
+      </g>
+      {/* LUXÉ text */}
+      <text
+        x="55"
+        y="22"
+        textAnchor="middle"
+        fontFamily="var(--font-playfair), Georgia, serif"
+        fontSize="18"
+        fontWeight="600"
+        letterSpacing="5"
+        fill={color}
+      >
+        LUXÉ
+      </text>
+      {/* Bottom thin line */}
+      <line x1="22" y1="28" x2="88" y2="28" stroke={color} strokeWidth="0.6" opacity="0.5"/>
+      {/* BOUTIQUE PREMIUM subtitle */}
+      <text
+        x="55"
+        y="35"
+        textAnchor="middle"
+        fontFamily="var(--font-inter), sans-serif"
+        fontSize="5.5"
+        letterSpacing="3"
+        fill={color}
+        opacity="0.7"
+      >
+        BOUTIQUE PREMIUM
+      </text>
+    </svg>
+  )
+}
+
 export default function Navbar() {
   const { count, items, removeItem, total, isOpen, toggleCart } = useCart()
   const [scrolled, setScrolled] = useState(false)
@@ -38,8 +89,8 @@ export default function Navbar() {
           🚚 Livraison gratuite au Maroc dès 500 DH — Paiement à la livraison
         </div>
         <nav className="container-lux flex items-center justify-between h-16">
-          <Link href="/" className={`font-serif text-2xl font-semibold tracking-widest transition-colors duration-300 ${transparent ? 'text-white' : 'text-lux-dark'}`}>
-            LUXÉ
+          <Link href="/" className="transition-opacity duration-300 hover:opacity-80">
+            <LuxeLogo transparent={transparent} />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {links.map(l => (

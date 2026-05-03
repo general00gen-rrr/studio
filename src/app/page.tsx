@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getFeatured, categories, getBest, formatPrice } from '@/lib/products'
 import ProductCard from '@/components/ProductCard'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export default function HomePage() {
   const featured = getFeatured()
@@ -89,28 +90,32 @@ export default function HomePage() {
 
       {/* CATEGORIES */}
       <section className="py-24 container-lux">
-        <div className="flex items-end justify-between mb-14">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-6 h-[1px] bg-gold" />
-              <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Explorer</span>
-            </div>
-            <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-lux-dark tracking-[-0.02em]">Nos Univers</h2>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {categories.map((cat) => (
-            <Link key={cat.id} href={`/products?cat=${cat.id}`} className="group relative overflow-hidden bg-cream" style={{aspectRatio:'4/3'}}>
-              <Image src={cat.image} alt={cat.name} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" sizes="33vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="font-sans font-medium text-white text-base tracking-wide">{cat.name}</h3>
-                <div className="flex items-center gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-gold text-[10px] tracking-[0.25em] uppercase">Voir la collection</span>
-                  <svg className="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </div>
+        <ScrollReveal direction="up">
+          <div className="flex items-end justify-between mb-14">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-[1px] bg-gold" />
+                <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Explorer</span>
               </div>
-            </Link>
+              <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-lux-dark tracking-[-0.02em]">Nos Univers</h2>
+            </div>
+          </div>
+        </ScrollReveal>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {categories.map((cat, i) => (
+            <ScrollReveal key={cat.id} direction="up" delay={i * 100}>
+              <Link href={`/products?cat=${cat.id}`} className="group relative overflow-hidden bg-cream block" style={{aspectRatio:'4/3'}}>
+                <Image src={cat.image} alt={cat.name} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" sizes="33vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-sans font-medium text-white text-base tracking-wide">{cat.name}</h3>
+                  <div className="flex items-center gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-gold text-[10px] tracking-[0.25em] uppercase">Voir la collection</span>
+                    <svg className="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </div>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -118,21 +123,27 @@ export default function HomePage() {
       {/* FEATURED */}
       <section className="py-24 bg-[#F9F7F4]">
         <div className="container-lux">
-          <div className="flex items-end justify-between mb-14">
-            <div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-6 h-[1px] bg-gold" />
-                <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Notre sélection</span>
+          <ScrollReveal direction="up">
+            <div className="flex items-end justify-between mb-14">
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-6 h-[1px] bg-gold" />
+                  <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Notre sélection</span>
+                </div>
+                <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-lux-dark tracking-[-0.02em]">Produits Vedettes</h2>
               </div>
-              <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-lux-dark tracking-[-0.02em]">Produits Vedettes</h2>
+              <Link href="/products" className="hidden md:flex items-center gap-2 text-lux-gray text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group">
+                <span>Voir tout</span>
+                <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </Link>
             </div>
-            <Link href="/products" className="hidden md:flex items-center gap-2 text-lux-gray text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group">
-              <span>Voir tout</span>
-              <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </Link>
-          </div>
+          </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {featured.map(p => <ProductCard key={p.id} product={p} />)}
+            {featured.map((p, i) => (
+              <ScrollReveal key={p.id} direction="up" delay={i * 80}>
+                <ProductCard product={p} />
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
@@ -140,30 +151,34 @@ export default function HomePage() {
       {/* PROMO */}
       <section className="py-24 container-lux">
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="relative overflow-hidden bg-lux-dark flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
-            <Image src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Maison" fill className="object-cover opacity-45 group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="relative z-10">
-              <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Nouvelle collection</span>
-              <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Art de vivre<br/><em className="font-serif">à la maison</em></h3>
-              <Link href="/products?cat=maison" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
-                <span>Découvrir</span>
-                <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </Link>
+          <ScrollReveal direction="left">
+            <div className="relative overflow-hidden bg-lux-dark flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
+              <Image src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Maison" fill className="object-cover opacity-45 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="relative z-10">
+                <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Nouvelle collection</span>
+                <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Art de vivre<br/><em className="font-serif">à la maison</em></h3>
+                <Link href="/products?cat=maison" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
+                  <span>Découvrir</span>
+                  <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="relative overflow-hidden bg-cream flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
-            <Image src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Mode" fill className="object-cover opacity-65 group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-            <div className="relative z-10">
-              <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Style intemporel</span>
-              <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Mode &<br/><em className="font-serif">Accessoires</em></h3>
-              <Link href="/products?cat=mode" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
-                <span>Explorer</span>
-                <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </Link>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <div className="relative overflow-hidden bg-cream flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
+              <Image src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Mode" fill className="object-cover opacity-65 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+              <div className="relative z-10">
+                <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Style intemporel</span>
+                <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Mode &<br/><em className="font-serif">Accessoires</em></h3>
+                <Link href="/products?cat=mode" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
+                  <span>Explorer</span>
+                  <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </Link>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -171,26 +186,30 @@ export default function HomePage() {
       {best.length > 0 && (
         <section className="py-24 bg-lux-dark">
           <div className="container-lux">
-            <div className="mb-14">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-6 h-[1px] bg-gold" />
-                <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Les plus populaires</span>
+            <ScrollReveal direction="up">
+              <div className="mb-14">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-6 h-[1px] bg-gold" />
+                  <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Les plus populaires</span>
+                </div>
+                <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-white tracking-[-0.02em]">Best-Sellers</h2>
               </div>
-              <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-white tracking-[-0.02em]">Best-Sellers</h2>
-            </div>
+            </ScrollReveal>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-              {best.slice(0,3).map(p => (
-                <Link key={p.id} href={`/products/${p.id}`} className="group block">
-                  <div className="relative overflow-hidden bg-white/5" style={{aspectRatio:'1/1'}}>
-                    <Image src={p.image} alt={p.name} fill className="object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" sizes="33vw" />
-                    <span className="absolute top-3 left-3 bg-gold text-white text-[9px] tracking-[0.25em] uppercase px-2.5 py-1">Best-seller</span>
-                  </div>
-                  <div className="pt-4">
-                    <p className="text-white/30 text-[10px] tracking-[0.3em] uppercase">{p.category}</p>
-                    <h3 className="text-white text-sm font-medium mt-1.5 group-hover:text-gold transition-colors">{p.name}</h3>
-                    <p className="font-serif text-gold mt-1 text-base">{formatPrice(p.price)}</p>
-                  </div>
-                </Link>
+              {best.slice(0,3).map((p, i) => (
+                <ScrollReveal key={p.id} direction="up" delay={i * 120}>
+                  <Link href={`/products/${p.id}`} className="group block">
+                    <div className="relative overflow-hidden bg-white/5" style={{aspectRatio:'1/1'}}>
+                      <Image src={p.image} alt={p.name} fill className="object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" sizes="33vw" />
+                      <span className="absolute top-3 left-3 bg-gold text-white text-[9px] tracking-[0.25em] uppercase px-2.5 py-1">Best-seller</span>
+                    </div>
+                    <div className="pt-4">
+                      <p className="text-white/30 text-[10px] tracking-[0.3em] uppercase">{p.category}</p>
+                      <h3 className="text-white text-sm font-medium mt-1.5 group-hover:text-gold transition-colors">{p.name}</h3>
+                      <p className="font-serif text-gold mt-1 text-base">{formatPrice(p.price)}</p>
+                    </div>
+                  </Link>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -200,20 +219,22 @@ export default function HomePage() {
       {/* NEWSLETTER */}
       <section className="py-24 bg-[#F9F7F4]">
         <div className="container-lux">
-          <div className="max-w-md mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-6 h-[1px] bg-gold" />
-              <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Restez informé</span>
-              <div className="w-6 h-[1px] bg-gold" />
+          <ScrollReveal direction="up">
+            <div className="max-w-md mx-auto text-center">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-6 h-[1px] bg-gold" />
+                <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Restez informé</span>
+                <div className="w-6 h-[1px] bg-gold" />
+              </div>
+              <h2 className="font-sans font-light text-[clamp(26px,3vw,38px)] text-lux-dark tracking-[-0.02em]">Abonnez-vous</h2>
+              <p className="text-lux-gray text-sm font-light mt-4 mb-8 leading-relaxed">Recevez nos nouveautés, offres exclusives et inspirations dans votre boîte mail.</p>
+              <div className="flex gap-0">
+                <input type="email" placeholder="Votre adresse email" className="input-lux flex-1 text-sm" />
+                <button className="btn-gold shrink-0 px-6 text-[11px]"><span>S'inscrire</span></button>
+              </div>
+              <p className="text-lux-gray/60 text-[11px] mt-3 tracking-wide">Pas de spam. Désabonnement à tout moment.</p>
             </div>
-            <h2 className="font-sans font-light text-[clamp(26px,3vw,38px)] text-lux-dark tracking-[-0.02em]">Abonnez-vous</h2>
-            <p className="text-lux-gray text-sm font-light mt-4 mb-8 leading-relaxed">Recevez nos nouveautés, offres exclusives et inspirations dans votre boîte mail.</p>
-            <div className="flex gap-0">
-              <input type="email" placeholder="Votre adresse email" className="input-lux flex-1 text-sm" />
-              <button className="btn-gold shrink-0 px-6 text-[11px]"><span>S'inscrire</span></button>
-            </div>
-            <p className="text-lux-gray/60 text-[11px] mt-3 tracking-wide">Pas de spam. Désabonnement à tout moment.</p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
