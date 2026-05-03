@@ -12,8 +12,6 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="relative h-screen min-h-[700px] max-h-[960px] flex items-end overflow-hidden bg-lux-dark">
-
-        {/* صورة الخلفية */}
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1800&q=85"
@@ -23,53 +21,37 @@ export default function HomePage() {
             priority
           />
         </div>
-
-        {/* Overlay متدرج من اليسار للشفافية */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#0d0d0d]/70 to-transparent" />
-        {/* Overlay من الأسفل */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/60 via-transparent to-transparent" />
 
-        {/* المحتوى — أسفل اليسار */}
         <div className="relative z-10 w-full container-lux pb-20 md:pb-28">
           <div className="max-w-[520px]">
-
-            {/* Label */}
             <div className="flex items-center gap-3 mb-6 animate-fade-in delay-100">
               <div className="w-8 h-[1px] bg-gold" />
               <span className="text-gold text-[11px] tracking-[0.35em] uppercase font-medium">Collection 2024</span>
             </div>
-
-            {/* العنوان */}
             <h1 className="animate-fade-up delay-200">
-              <span className="block font-sans font-light text-[clamp(48px,7vw,88px)] text-white leading-[0.95] tracking-[-0.02em]">
+              <span className="block font-sans font-light text-[clamp(44px,6.5vw,82px)] text-white leading-[0.95] tracking-[-0.02em]">
                 L'Art
               </span>
-              <span className="block font-serif italic text-[clamp(52px,7.5vw,96px)] text-gold leading-[0.95] tracking-[-0.01em] mt-1">
+              <span className="block font-serif italic text-[clamp(48px,7vw,90px)] text-gold leading-[0.95] tracking-[-0.01em] mt-1">
                 du Quotidien
               </span>
             </h1>
-
-            {/* خط فاصل */}
             <div className="w-10 h-[1px] bg-gold/50 my-7 animate-fade-in delay-300" />
-
-            {/* الوصف */}
-            <p className="text-white/60 text-[15px] leading-[1.7] font-light animate-fade-up delay-300 max-w-[380px]">
+            <p className="text-white/60 text-[15px] leading-[1.7] font-light animate-fade-up delay-300 max-w-[360px]">
               Une sélection raffinée de produits premium pour sublimer votre quotidien.
               Livraison partout au Maroc.
             </p>
-
-            {/* الأزرار */}
-            <div className="flex flex-wrap items-center gap-4 mt-10 animate-fade-up delay-400">
-              <Link href="/products" className="group relative inline-flex items-center gap-3 bg-gold text-white px-8 py-4 text-[12px] tracking-[0.2em] uppercase font-medium overflow-hidden transition-all duration-300 hover:bg-white hover:text-lux-dark">
+            <div className="flex flex-wrap items-center gap-5 mt-10 animate-fade-up delay-400">
+              <Link href="/products" className="group inline-flex items-center gap-3 bg-gold text-white px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium transition-all duration-300 hover:bg-white hover:text-lux-dark">
                 <span>Découvrir</span>
                 <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </Link>
-              <Link href="/products?badge=nouveau" className="inline-flex items-center gap-2 text-white/70 text-[12px] tracking-[0.2em] uppercase font-medium hover:text-gold transition-colors duration-300 border-b border-white/20 hover:border-gold pb-0.5">
+              <Link href="/products?badge=nouveau" className="inline-flex items-center gap-2 text-white/60 text-[11px] tracking-[0.2em] uppercase font-medium hover:text-gold transition-colors duration-300 border-b border-white/20 hover:border-gold pb-0.5">
                 Nouveautés
               </Link>
             </div>
-
-            {/* الضمانات */}
             <div className="flex items-center gap-6 mt-12 animate-fade-in delay-500">
               {['Paiement livraison', 'Livraison 24–48h', 'Retour gratuit'].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
@@ -78,20 +60,17 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-
           </div>
         </div>
 
-        {/* رقم الصفحة / scroll */}
-        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-3 hidden md:flex">
+        <div className="absolute bottom-8 right-8 md:flex flex-col items-center gap-3 hidden">
           <span className="text-white/20 text-[10px] tracking-[0.4em] uppercase" style={{writingMode:'vertical-rl'}}>Défiler</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-white/20 to-transparent" />
         </div>
-
       </section>
 
       {/* MARQUEE */}
-      <section className="bg-lux-dark border-y border-gold/15 py-[14px] overflow-hidden">
+      <section className="bg-lux-dark border-y border-gold/15 py-[13px] overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex shrink-0 gap-10 px-5 text-gold/50 text-[10px] tracking-[0.35em] uppercase font-medium">
@@ -124,7 +103,6 @@ export default function HomePage() {
             <Link key={cat.id} href={`/products?cat=${cat.id}`} className="group relative overflow-hidden bg-cream" style={{aspectRatio:'4/3'}}>
               <Image src={cat.image} alt={cat.name} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" sizes="33vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 bg-gold/8" />
               <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
                 <h3 className="font-sans font-medium text-white text-base tracking-wide">{cat.name}</h3>
                 <div className="flex items-center gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -159,7 +137,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROMO 2 COLONNES */}
+      {/* PROMO */}
       <section className="py-24 container-lux">
         <div className="grid md:grid-cols-2 gap-4">
           <div className="relative overflow-hidden bg-lux-dark flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
@@ -193,14 +171,12 @@ export default function HomePage() {
       {best.length > 0 && (
         <section className="py-24 bg-lux-dark">
           <div className="container-lux">
-            <div className="flex items-end justify-between mb-14">
-              <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-6 h-[1px] bg-gold" />
-                  <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Les plus populaires</span>
-                </div>
-                <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-white tracking-[-0.02em]">Best-Sellers</h2>
+            <div className="mb-14">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-[1px] bg-gold" />
+                <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Les plus populaires</span>
               </div>
+              <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-white tracking-[-0.02em]">Best-Sellers</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
               {best.slice(0,3).map(p => (
