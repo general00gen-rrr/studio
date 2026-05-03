@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import LuxeEffects from '@/components/LuxeEffects'
 import PageTransition from '@/components/PageTransition'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </PageTransition>
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   )
