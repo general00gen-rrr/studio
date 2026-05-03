@@ -158,7 +158,7 @@ export default function HomePage() {
               <div className="relative z-10">
                 <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Nouvelle collection</span>
                 <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Art de vivre<br/><em className="font-serif">à la maison</em></h3>
-                <Link href="/products?cat=maison" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
+                <Link href="/products/maison" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
                   <span>Découvrir</span>
                   <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </Link>
@@ -172,7 +172,7 @@ export default function HomePage() {
               <div className="relative z-10">
                 <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Style intemporel</span>
                 <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Mode &<br/><em className="font-serif">Accessoires</em></h3>
-                <Link href="/products?cat=mode" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
+                <Link href="/products/mode" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
                   <span>Explorer</span>
                   <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </Link>

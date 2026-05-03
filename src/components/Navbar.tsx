@@ -6,10 +6,10 @@ import { useRouter, usePathname } from 'next/navigation'
 
 const links = [
   { href: '/products', label: 'Tous les produits' },
-  { href: '/products?cat=maison', label: 'Maison' },
-  { href: '/products?cat=mode', label: 'Mode' },
-  { href: '/products?cat=beaute', label: 'Beauté' },
-  { href: '/products?cat=tech', label: 'Tech' },
+  { href: '/products/maison', label: 'Maison' },
+  { href: '/products/mode', label: 'Mode' },
+  { href: '/products/beaute', label: 'Beauté' },
+  { href: '/products/tech', label: 'Tech' },
 ]
 
 function LuxeLogo({ transparent }: { transparent: boolean }) {

@@ -19,6 +19,11 @@ function ProductsContent() {
   const [sort, setSort] = useState('default')
   const [search, setSearch] = useState('')
 
+  useEffect(() => {
+    setCat(searchParams.get('cat') || '')
+    setBadge(searchParams.get('badge') || '')
+  }, [searchParams])
+
   let filtered = [...products]
   if (cat) filtered = filtered.filter(p => p.category === cat)
   if (badge) filtered = filtered.filter(p => p.badge === badge)
