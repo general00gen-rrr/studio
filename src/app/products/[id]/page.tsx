@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, use } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -7,8 +7,10 @@ import { getById, products, formatPrice } from '@/lib/products'
 import { useCart } from '@/lib/cartStore'
 import ProductCard from '@/components/ProductCard'
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = getById(params.id)
+export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
+  const product = getById(id)
+  
   if (!product) notFound()
 
   const { addItem } = useCart()
