@@ -55,10 +55,10 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
 .btn-gold {
-  @apply inline-flex items-center gap-2 bg-lux-dark text-white px-8 py-3.5 text-[13px] tracking-[0.15em] uppercase font-medium transition-all relative overflow-hidden;
+  @apply inline-flex items-center gap-2 bg-gold text-white px-8 py-3.5 text-[13px] tracking-[0.15em] uppercase font-medium transition-all relative overflow-hidden;
 }
 .btn-gold::after {
-  content: ''; @apply absolute inset-0 bg-gold -translate-x-full transition-transform duration-300;
+  content: ''; @apply absolute inset-0 bg-lux-dark -translate-x-full transition-transform duration-300;
 }
 .btn-gold:hover::after { @apply translate-x-0; }
 .btn-gold span { @apply relative z-10; }
@@ -78,8 +78,8 @@ body {
   @apply w-full border border-lux-border px-4 py-3.5 text-sm font-sans bg-white outline-none transition-colors focus:border-gold;
 }
 
-.delay-100 { animation-delay: 0.1s; opacity: 0; }
-.delay-200 { animation-delay: 0.2s; opacity: 0; }
-.delay-300 { animation-delay: 0.3s; opacity: 0; }
-.delay-400 { animation-delay: 0.4s; opacity: 0; }
-.delay-500 { animation-delay: 0.5s; opacity: 0; }
+.delay-100 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+.delay-200 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+.delay-300 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+.delay-400 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+.delay-500 { animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards; }

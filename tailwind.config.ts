@@ -17,6 +17,8 @@ const config: Config = {
       },
     },
     extend: {
+      animation: { marquee: 'marquee 35s linear infinite' },
+      keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } } },
       colors: {
         gold: { DEFAULT: '#C8A96E', light: '#D9BF8A', dark: '#A88A4E' },
         cream: '#F9F7F4',

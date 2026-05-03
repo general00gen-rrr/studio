@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useCart } from '@/lib/cartStore'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 const links = [
   { href: '/products', label: 'Tous les produits' },
@@ -18,41 +18,41 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const router = useRouter()
+  const pathname = usePathname()
+
+  const isHome = pathname === '/'
+  const transparent = isHome && !scrolled
 
   useEffect(() => {
     setMounted(true)
     const handler = () => setScrolled(window.scrollY > 20)
+    handler()
     window.addEventListener('scroll', handler)
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm' : 'bg-white/95 backdrop-blur-sm'}`}>
-        {/* Top bar */}
-        <div className="bg-lux-dark text-white text-center py-2 text-xs tracking-widest uppercase">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${transparent ? 'bg-transparent' : 'bg-white shadow-sm'}`}>
+        <div className={`text-white text-center py-2 text-xs tracking-widest uppercase transition-all duration-300 ${transparent ? 'bg-black/30 backdrop-blur-sm' : 'bg-lux-dark'}`}>
           🚚 Livraison gratuite au Maroc dès 500 DH — Paiement à la livraison
         </div>
-        {/* Main nav */}
         <nav className="container-lux flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="font-serif text-2xl font-semibold tracking-widest text-lux-dark">
+          <Link href="/" className={`font-serif text-2xl font-semibold tracking-widest transition-colors duration-300 ${transparent ? 'text-white' : 'text-lux-dark'}`}>
             LUXÉ
           </Link>
-          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {links.map(l => (
-              <Link key={l.href} href={l.href} className="text-xs tracking-widest uppercase text-lux-gray hover:text-gold transition-colors font-medium">
+              <Link key={l.href} href={l.href} className={`text-xs tracking-widest uppercase transition-colors duration-300 font-medium hover:text-gold ${transparent ? 'text-white/80' : 'text-lux-gray'}`}>
                 {l.label}
               </Link>
             ))}
           </div>
-          {/* Actions */}
           <div className="flex items-center gap-4">
-            <button onClick={() => router.push('/products')} className="text-lux-gray hover:text-gold transition-colors hidden md:block">
+            <button onClick={() => router.push('/products')} className={`hover:text-gold transition-colors hidden md:block ${transparent ? 'text-white/80' : 'text-lux-gray'}`}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </button>
-            <button onClick={toggleCart} className="relative text-lux-gray hover:text-gold transition-colors">
+            <button onClick={toggleCart} className={`relative hover:text-gold transition-colors ${transparent ? 'text-white/80' : 'text-lux-gray'}`}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
               {mounted && count() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-medium">
@@ -60,14 +60,13 @@ export default function Navbar() {
                 </span>
               )}
             </button>
-            <button className="md:hidden text-lux-gray" onClick={() => setMenuOpen(!menuOpen)}>
+            <button className={`md:hidden transition-colors ${transparent ? 'text-white/80' : 'text-lux-gray'}`} onClick={() => setMenuOpen(!menuOpen)}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {menuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12"/> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16"/>}
               </svg>
             </button>
           </div>
         </nav>
-        {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden bg-white border-t border-lux-border animate-fade-in">
             {links.map(l => (
@@ -79,7 +78,6 @@ export default function Navbar() {
         )}
       </header>
 
-      {/* Cart Drawer */}
       {isOpen && (
         <div className="fixed inset-0 z-[100]" onClick={toggleCart}>
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
