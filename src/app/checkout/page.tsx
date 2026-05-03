@@ -1,11 +1,9 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { useCart } from '@/lib/cartStore'
 import { formatPrice } from '@/lib/products'
-
-const CITIES = ['Casablanca','Rabat','Marrakech','Fès','Tanger','Agadir','Meknès','Oujda','Kenitra','Tétouan','Safi','El Jadida','Beni Mellal','Mohammedia','Khouribga','Laâyoune','Settat','Berrechid','Nador','Khemisset']
 
 export default function CheckoutPage() {
   const { items, total, clearCart, removeItem } = useCart()
@@ -17,11 +15,17 @@ export default function CheckoutPage() {
   const shipping = total() >= 500 ? 0 : 50
   const orderTotal = total() + shipping
 
+  useEffect(() => {
+    if (items.length === 0) {
+      router.push('/products')
+    }
+  }, [items.length, router])
+
   const validate = () => {
     const e: Record<string,string> = {}
     if (!form.fullName.trim()) e.fullName = 'Nom complet requis'
     if (!form.phone.match(/^(\+212|0)[5-7][0-9]{8}$/)) e.phone = 'Numero marocain invalide (ex: 06 12 34 56 78)'
-    if (!form.city) e.city = 'Ville requise'
+    if (!form.city.trim()) e.city = 'Ville requise'
     setErrors(e)
     return Object.keys(e).length === 0
   }
@@ -35,10 +39,7 @@ export default function CheckoutPage() {
     router.push('/confirmation?name=' + encodeURIComponent(form.fullName.split(' ')[0]))
   }
 
-  if (items.length === 0) {
-    if (typeof window !== 'undefined') router.push('/products')
-    return null
-  }
+  if (items.length === 0) return null
 
   return (
     <div className="pt-[88px] min-h-screen">
@@ -101,14 +102,13 @@ export default function CheckoutPage() {
                     <label className="block text-xs tracking-widest uppercase text-lux-gray mb-1.5">
                       Ville<span className="text-gold ml-1">*</span>
                     </label>
-                    <select
+                    <input
+                      type="text"
                       value={form.city}
                       onChange={e => setForm({...form, city: e.target.value})}
+                      placeholder="Ex: Agadir, Tiznit, Taroudant..."
                       className={`input-lux ${errors.city ? 'border-red-400' : ''}`}
-                    >
-                      <option value="">Selectionner une ville</option>
-                      {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
-                    </select>
+                    />
                     {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city}</p>}
                   </div>
                 </div>
