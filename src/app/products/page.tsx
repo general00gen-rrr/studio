@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { products, categories, formatPrice } from '@/lib/products-dynamic'
+import { categories, formatPrice } from '@/lib/products-dynamic'
 import ProductCard from '@/components/ProductCard'
 import { Suspense } from 'react'
 
@@ -13,6 +13,8 @@ const SORT_OPTIONS = [
 ]
 
 function ProductsContent() {
+  const [products, setProducts] = useState<any[]>([])
+  useEffect(() => { fetch('/api/products').then(r=>r.json()).then(setProducts) }, [])
   const searchParams = useSearchParams()
   const [cat, setCat] = useState(searchParams.get('cat') || '')
   const [badge, setBadge] = useState(searchParams.get('badge') || '')
