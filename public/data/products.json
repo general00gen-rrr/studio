@@ -34,5 +34,17 @@
     "badge": "nouveau",
     "stock": 10,
     "createdAt": "2026-05-04T21:24:36.574Z"
+  },
+  {
+    "id": "1777930168821",
+    "name": "SAASSA",
+    "slug": "saassa",
+    "price": 8686,
+    "originalPrice": 65465,
+    "category": "maison",
+    "description": "GFDGDF",
+    "badge": "nouveau",
+    "stock": 10,
+    "createdAt": "2026-05-04T21:29:28.821Z"
   }
 ]
