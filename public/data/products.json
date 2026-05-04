@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "1777915087749",
+    "name": "JY",
+    "slug": "jy",
+    "price": 545,
+    "originalPrice": 4,
+    "category": "maison",
+    "description": "MK",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-04T17:18:07.749Z"
+  }
+]
