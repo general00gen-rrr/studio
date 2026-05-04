@@ -23,6 +23,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'LUXÉ — Boutique Premium',
   description: 'Sélection premium de produits pour votre quotidien. Livraison au Maroc, paiement à la livraison.',
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
