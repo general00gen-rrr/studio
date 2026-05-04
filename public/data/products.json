@@ -57,5 +57,17 @@
     "stock": 10,
     "id": "1777926673722",
     "createdAt": "2026-05-04T20:31:13.722Z"
+  },
+  {
+    "id": "1777927414783",
+    "name": "YUIUYI",
+    "slug": "yuiuyi",
+    "price": 789,
+    "originalPrice": 5465,
+    "category": "mode",
+    "description": "IUYGIY",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-04T20:43:34.783Z"
   }
 ]
