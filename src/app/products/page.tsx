@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { products, categories, formatPrice } from '@/lib/products'
+import { products, categories, formatPrice } from '@/lib/products-dynamic'
 import ProductCard from '@/components/ProductCard'
 import { Suspense } from 'react'
 

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { getFeatured, categories, getBest, formatPrice } from '@/lib/products'
+import { getFeatured, categories, getBest, formatPrice } from '@/lib/products-dynamic'
 import ProductCard from '@/components/ProductCard'
 import ScrollReveal from '@/components/ScrollReveal'
 
