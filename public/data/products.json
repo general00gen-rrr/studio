@@ -10,5 +10,17 @@
     "badge": "nouveau",
     "stock": 10,
     "createdAt": "2026-05-04T18:05:06.506Z"
+  },
+  {
+    "id": "1777918622070",
+    "name": "KO?OO",
+    "slug": "ko-oo",
+    "price": 9999,
+    "originalPrice": 6985,
+    "category": "maison",
+    "description": "9JUUU",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-04T18:17:02.070Z"
   }
 ]
