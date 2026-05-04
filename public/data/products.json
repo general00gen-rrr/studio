@@ -10,5 +10,17 @@
     "badge": "",
     "stock": 10,
     "createdAt": "2026-05-04T20:44:18.084Z"
+  },
+  {
+    "id": "1777927860979",
+    "name": "CFDSF",
+    "slug": "cfdsf",
+    "price": 45,
+    "originalPrice": 454,
+    "category": "mode",
+    "description": "LKJL",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-04T20:51:00.979Z"
   }
 ]
