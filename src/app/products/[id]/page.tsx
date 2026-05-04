@@ -351,7 +351,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
                 <div className="py-5">
                   {activeTab === 'details' ? (
                     <ul className="space-y-3">
-                      {product.features.map((f, i) => (
+                      {(product.features || []).map((f: string, i: number) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-lux-gray">
                           <div className="w-4 h-4 rounded-full border border-gold/40 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <div className="w-1.5 h-1.5 rounded-full bg-gold" />
