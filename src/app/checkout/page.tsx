@@ -9,6 +9,7 @@ export default function CheckoutPage() {
   const { items, total, clearCart, removeItem } = useCart()
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ fullName: '', phone: '', city: '' })
   const [errors, setErrors] = useState<Record<string,string>>({})
 
@@ -16,10 +17,10 @@ export default function CheckoutPage() {
   const orderTotal = total() + shipping
 
   useEffect(() => {
-    if (items.length === 0) {
+    if (items.length === 0 && !submitted) {
       router.push('/products')
     }
-  }, [items.length, router])
+  }, [items.length, router, submitted])
 
   const validate = () => {
     const e: Record<string,string> = {}
@@ -34,12 +35,13 @@ export default function CheckoutPage() {
     e.preventDefault()
     if (!validate()) return
     setLoading(true)
+    setSubmitted(true)
     await new Promise(r => setTimeout(r, 1500))
     clearCart()
     router.push('/confirmation?name=' + encodeURIComponent(form.fullName.split(' ')[0]))
   }
 
-  if (items.length === 0) return null
+  if (items.length === 0 && !submitted) return null
 
   return (
     <div className="pt-[88px] min-h-screen">
