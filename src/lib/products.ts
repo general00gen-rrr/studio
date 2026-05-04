@@ -25,12 +25,12 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  { id: "maison", name: "Maison", description: "Décorez avec élégance", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80", count: 6 },
-  { id: "mode", name: "Mode", description: "Exprimez votre style", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", count: 5 },
-  { id: "beaute", name: "Beauté", description: "Révélez votre beauté", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80", count: 3 },
-  { id: "tech", name: "Tech", description: "Innovation au quotidien", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", count: 3 },
-  { id: "cuisine", name: "Cuisine", description: "Art culinaire premium", image: "https://images.unsplash.com/photo-1556910103-1c02745adc4b?w=600&q=80", count: 3 },
-  { id: "sport", name: "Sport", description: "Performance & style", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80", count: 2 },
+  { id: "maison", name: "Maison", description: "Décorez avec élégance", image: "https://i.ibb.co/nspqc12t/MAISON-1-1.webp", count: 6 },
+  { id: "mode", name: "Mode", description: "Exprimez votre style", image: "https://i.ibb.co/Mxm5xQjZ/MODE-1-1.webp", count: 5 },
+  { id: "beaute", name: "Beauté", description: "Révélez votre beauté", image: "https://i.ibb.co/ds6tVSF0/BEAUT-1-1.webp", count: 3 },
+  { id: "tech", name: "Tech", description: "Innovation au quotidien", image: "https://i.ibb.co/dsDVr4yC/TECH-1.webp", count: 3 },
+  { id: "cuisine", name: "Cuisine", description: "Art culinaire premium", image: "https://i.ibb.co/BHbbYr85/CUISINE-1-1.webp", count: 3 },
+  { id: "sport", name: "Sport", description: "Performance & style", image: "https://i.ibb.co/chfcZSJL/SPORT-1-1.webp", count: 2 },
 ]
 
 export const products: Product[] = [

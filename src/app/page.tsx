@@ -14,11 +14,20 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative h-screen min-h-[700px] max-h-[960px] flex items-end overflow-hidden bg-lux-dark">
         <div className="absolute inset-0">
+          {/* Desktop image */}
           <Image
-            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1800&q=85"
+            src="https://i.ibb.co/zVkJLwLV/Cinematic-dark-luxury-flat-lay-202605040102-1.webp"
             alt="Hero"
             fill
-            className="object-cover object-right opacity-75"
+            className="object-cover object-center opacity-90 hidden md:block"
+            priority
+          />
+          {/* Mobile image */}
+          <Image
+            src="https://i.ibb.co/Cpt8J41t/Vertical-cinematic-dark-luxury-product-202605040115-1.webp"
+            alt="Hero"
+            fill
+            className="object-cover object-center opacity-90 block md:hidden"
             priority
           />
         </div>
@@ -153,7 +162,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-2 gap-4">
           <ScrollReveal direction="left">
             <div className="relative overflow-hidden bg-lux-dark flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
-              <Image src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Maison" fill className="object-cover opacity-45 group-hover:scale-105 transition-transform duration-700" />
+              <Image src="https://i.ibb.co/gb3DS9ZB/Art-de-vivre-la-maison-1.webp" alt="Maison" fill className="object-cover opacity-45 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="relative z-10">
                 <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Nouvelle collection</span>
@@ -167,7 +176,7 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal direction="right">
             <div className="relative overflow-hidden bg-cream flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
-              <Image src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Mode" fill className="object-cover opacity-65 group-hover:scale-105 transition-transform duration-700" />
+              <Image src="https://i.ibb.co/vCtJDJ8p/Mode-Accessoires-1.webp" alt="Mode" fill className="object-cover opacity-65 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               <div className="relative z-10">
                 <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Style intemporel</span>
