@@ -46,5 +46,17 @@
     "badge": "nouveau",
     "stock": 10,
     "createdAt": "2026-05-04T21:29:28.821Z"
+  },
+  {
+    "id": "1777930496402",
+    "name": "SFSF",
+    "slug": "sfsf",
+    "price": 787,
+    "originalPrice": 798,
+    "category": "maison",
+    "description": "GDFHGFH",
+    "badge": "nouveau",
+    "stock": 10,
+    "createdAt": "2026-05-04T21:34:56.403Z"
   }
 ]
