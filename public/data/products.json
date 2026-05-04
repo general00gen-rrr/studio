@@ -22,5 +22,17 @@
     "badge": "",
     "stock": 10,
     "createdAt": "2026-05-04T17:20:09.432Z"
+  },
+  {
+    "id": "1777916883833",
+    "name": "HFGHFG",
+    "slug": "hfghfg",
+    "price": 755,
+    "originalPrice": 12000,
+    "category": "maison",
+    "description": "GJHGJ",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-04T17:48:03.833Z"
   }
 ]
