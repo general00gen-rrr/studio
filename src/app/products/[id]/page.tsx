@@ -31,18 +31,22 @@ function CategoryPage({ cat }: { cat: string }) {
   if (!selectedCat) notFound()
   return (
     <div className="pt-[88px] min-h-screen">
-      <div className="bg-cream border-b border-lux-border py-10">
-        <div className="container-lux">
+      <div className="relative border-b border-lux-border py-16 overflow-hidden">
+        {selectedCat.image && (
+          <img src={selectedCat.image} alt={selectedCat.name} className="absolute inset-0 w-full h-full object-cover" />
+        )}
+        <div className="absolute inset-0" style={{background: 'linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 100%)'}} />
+        <div className="container-lux relative z-10">
           <ScrollReveal direction="up">
-            <div className="flex items-center gap-2 mb-3 text-[11px] tracking-[0.25em] uppercase text-lux-gray">
+            <div className="flex items-center gap-2 mb-3 text-[11px] tracking-[0.25em] uppercase" style={{color:'rgba(255,255,255,0.6)'}}>
               <Link href="/products" className="hover:text-gold transition-colors">Boutique</Link>
               <span>/</span>
-              <span className="text-gold">{selectedCat.name}</span>
+              <span style={{color:'rgba(212,175,55,0.9)'}}>{selectedCat.name}</span>
             </div>
-            <p className="section-label">{selectedCat.description}</p>
-            <h1 className="section-title">{selectedCat.name}</h1>
+            <p className="section-label" style={{color:'rgba(212,175,55,0.9)'}}>{selectedCat.description}</p>
+            <h1 className="section-title" style={{color:'white'}}>{selectedCat.name}</h1>
             <div className="gold-divider" />
-            <p className="text-lux-gray text-sm mt-1">{filtered.length} produit{filtered.length > 1 ? 's' : ''}</p>
+            <p className="text-sm mt-1" style={{color:'rgba(255,255,255,0.7)'}}>{filtered.length} produit{filtered.length > 1 ? 's' : ''}</p>
           </ScrollReveal>
         </div>
       </div>

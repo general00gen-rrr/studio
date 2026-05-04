@@ -37,12 +37,16 @@ function ProductsContent() {
   return (
     <div className="pt-[88px] min-h-screen">
       {/* Hero bar */}
-      <div className="bg-cream border-b border-lux-border py-10">
-        <div className="container-lux">
-          <p className="section-label">{selectedCat ? selectedCat.description : 'Toute la boutique'}</p>
-          <h1 className="section-title">{selectedCat ? selectedCat.name : 'Nos Produits'}</h1>
+      <div className="relative border-b border-lux-border py-16 overflow-hidden">
+        {selectedCat?.image && (
+          <img src={selectedCat.image} alt={selectedCat.name} className="absolute inset-0 w-full h-full object-cover" />
+        )}
+        <div className="absolute inset-0" style={{background: selectedCat?.image ? 'linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 100%)' : 'transparent', backgroundColor: selectedCat?.image ? undefined : 'var(--cream)'}} />
+        <div className="container-lux relative z-10">
+          <p className="section-label" style={{color: selectedCat?.image ? 'rgba(212,175,55,0.9)' : undefined}}>{selectedCat ? selectedCat.description : 'Toute la boutique'}</p>
+          <h1 className="section-title" style={{color: selectedCat?.image ? 'white' : undefined}}>{selectedCat ? selectedCat.name : 'Nos Produits'}</h1>
           <div className="gold-divider" />
-          <p className="text-lux-gray text-sm mt-1">{filtered.length} produit{filtered.length > 1 ? 's' : ''}</p>
+          <p className="text-sm mt-1" style={{color: selectedCat?.image ? 'rgba(255,255,255,0.7)' : 'var(--lux-gray)'}}>{filtered.length} produit{filtered.length > 1 ? 's' : ''}</p>
         </div>
       </div>
 
