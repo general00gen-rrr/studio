@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getById, products, categories, formatPrice } from '@/lib/products-dynamic'
+import { categories, formatPrice } from '@/lib/products-dynamic'
 import { useCart } from '@/lib/cartStore'
 import ProductCard from '@/components/ProductCard'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -20,7 +20,7 @@ function CategoryPage({ cat }: { cat: string }) {
   const [sort, setSort] = useState('default')
   const [search, setSearch] = useState('')
   const selectedCat = categories.find(c => c.id === cat)
-  let filtered = [...products].filter(p => p.category === cat)
+  let filtered = [...allProducts].filter(p => p.category === cat)
   if (search) filtered = filtered.filter(p =>
     p.name.toLowerCase().includes(search.toLowerCase()) ||
     p.description.toLowerCase().includes(search.toLowerCase())
@@ -178,8 +178,8 @@ function ImageSlider({ images, name, badge }: { images: string[], name: string, 
 }
 
 function ProductDetailPage({ id }: { id: string }) {
-  const product = getById(id)
-  if (!product) notFound()
+  const product = allProducts.find((p:any) => p.id === id || p.slug === id)
+  if (allProducts.length > 0 && !product) notFound()
   const { addItem } = useCart()
   const [added, setAdded] = useState(false)
   const [qty, setQty] = useState(1)
@@ -443,6 +443,8 @@ function ProductDetailPage({ id }: { id: string }) {
 
 export default function ProductOrCategoryPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
+  const [allProducts, setAllProducts] = useState<any[]>([])
+  useEffect(() => { fetch('/api/products').then(r=>r.json()).then(setAllProducts) }, [])
   const isCat = categories.some(c => c.id === id)
   return isCat ? <CategoryPage cat={id} /> : <ProductDetailPage id={id} />
 }
