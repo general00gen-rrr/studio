@@ -22,5 +22,17 @@
     "badge": "",
     "stock": 10,
     "createdAt": "2026-05-04T20:51:00.979Z"
+  },
+  {
+    "id": "1777929876574",
+    "name": "JHGJG",
+    "slug": "jhgjg",
+    "price": 878,
+    "originalPrice": 8878,
+    "category": "maison",
+    "description": "VBNVB",
+    "badge": "nouveau",
+    "stock": 10,
+    "createdAt": "2026-05-04T21:24:36.574Z"
   }
 ]
