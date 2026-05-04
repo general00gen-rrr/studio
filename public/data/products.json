@@ -1,5 +1,19 @@
 [
   {
+    "id": "1",
+    "name": "Lampe Arc Dorée",
+    "slug": "lampe-arc-doree",
+    "price": 890,
+    "category": "maison",
+    "description": "Lampe sur pied en métal doré, design contemporain",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    "badge": "nouveau",
+    "rating": 4.8,
+    "reviews": 24,
+    "stock": 15,
+    "createdAt": "2026-01-01"
+  },
+  {
     "id": "2",
     "name": "Miroir Ovale Arche",
     "slug": "miroir-ovale-arche",
@@ -279,5 +293,17 @@
     "reviews": 58,
     "stock": 40,
     "createdAt": "2026-01-01"
+  },
+  {
+    "id": "1777911406736",
+    "name": "GFDG",
+    "slug": "gfdg",
+    "price": 54,
+    "originalPrice": 545,
+    "category": "mode",
+    "description": "JHGJ",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-04T16:16:46.736Z"
   }
 ]
