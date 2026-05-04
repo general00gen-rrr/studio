@@ -178,6 +178,8 @@ function ImageSlider({ images, name, badge }: { images: string[], name: string, 
 }
 
 function ProductDetailPage({ id }: { id: string }) {
+  const [allProducts, setAllProducts] = useState<any[]>([])
+  useEffect(() => { fetch('/api/products').then(r=>r.json()).then(setAllProducts) }, [])
   const product = allProducts.find((p:any) => p.id === id || p.slug === id)
   if (allProducts.length > 0 && !product) notFound()
   const { addItem } = useCart()
