@@ -1,17 +1,5 @@
 [
   {
-    "id": "1777925389055",
-    "name": "ERZER",
-    "slug": "erzer",
-    "price": 787,
-    "originalPrice": 4154,
-    "category": "maison",
-    "description": "GDF",
-    "badge": "",
-    "stock": 10,
-    "createdAt": "2026-05-04T20:09:49.055Z"
-  },
-  {
     "id": "1777926529525",
     "name": "GFDGDF",
     "slug": "gfdgdf",
