@@ -22,5 +22,17 @@
     "badge": "nouveau",
     "stock": 10,
     "createdAt": "2026-05-04T18:17:02.070Z"
+  },
+  {
+    "id": "1777919946257",
+    "name": "GDFH",
+    "slug": "gdfh",
+    "price": 159,
+    "originalPrice": 29,
+    "category": "maison",
+    "description": "DSGD",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-04T18:39:06.257Z"
   }
 ]
