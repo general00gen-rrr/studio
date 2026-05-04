@@ -16,7 +16,7 @@ const SORT_OPTIONS = [
   { value: 'rating', label: 'Mieux notés' },
 ]
 
-function CategoryPage({ cat }: { cat: string }) {
+function CategoryPage({ cat, allProducts }: { cat: string, allProducts: any[] }) {
   const [sort, setSort] = useState('default')
   const [search, setSearch] = useState('')
   const selectedCat = categories.find(c => c.id === cat)
@@ -177,9 +177,7 @@ function ImageSlider({ images, name, badge }: { images: string[], name: string, 
   )
 }
 
-function ProductDetailPage({ id }: { id: string }) {
-  const [allProducts, setAllProducts] = useState<any[]>([])
-  useEffect(() => { fetch('/api/products').then(r=>r.json()).then(setAllProducts) }, [])
+function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[] }) {
   const product = allProducts.find((p:any) => p.id === id || p.slug === id)
   if (allProducts.length > 0 && !product) notFound()
   const { addItem } = useCart()
@@ -201,11 +199,10 @@ function ProductDetailPage({ id }: { id: string }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const images = product.images && product.images.length > 0
-    ? product.images
-    : [product.image]
+  if (!product) return <div style={{paddingTop:"120px",textAlign:"center"}}>Chargement...</div>
+  const images = product.images && product.images.length > 0 ? product.images : product.image ? [product.image] : ["/placeholder.jpg"]
 
-  const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4)
+  const related = allProducts.filter((p:any) => p.category === product.category && p.id !== product.id).slice(0, 4)
   const discount = product.originalPrice ? Math.round((1 - product.price / product.originalPrice) * 100) : null
 
   const handleAdd = () => {
@@ -447,6 +444,7 @@ export default function ProductOrCategoryPage({ params }: { params: Promise<{ id
   const { id } = use(params)
   const [allProducts, setAllProducts] = useState<any[]>([])
   useEffect(() => { fetch('/api/products').then(r=>r.json()).then(setAllProducts) }, [])
+  if (allProducts.length === 0) return <div style={{paddingTop:'120px',textAlign:'center',color:'#888'}}>Chargement...</div>
   const isCat = categories.some(c => c.id === id)
-  return isCat ? <CategoryPage cat={id} /> : <ProductDetailPage id={id} />
+  return isCat ? <CategoryPage cat={id} allProducts={allProducts} /> : <ProductDetailPage id={id} allProducts={allProducts} />
 }
