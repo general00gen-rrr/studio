@@ -15,7 +15,8 @@
       "Cadre métal doré",
       "Miroir anti-déformation",
       "Fixation incluse"
-    ]
+    ],
+    "slug": "miroir-ovale-arche"
   },
   {
     "id": "3",
@@ -34,7 +35,8 @@
       "60h de brûlage",
       "Parfum Oud & Rose",
       "Pot verre recyclé"
-    ]
+    ],
+    "slug": "bougie-oud-rose"
   },
   {
     "id": "4",
@@ -52,7 +54,8 @@
       "H. 25cm / D. 12cm",
       "Pièce unique",
       "Fond anti-rayures"
-    ]
+    ],
+    "slug": "vase-marbre-blanc"
   },
   {
     "id": "5",
@@ -70,7 +73,8 @@
       "Velours 100% polyester",
       "Garnissage duvet synt.",
       "Lavable 30°"
-    ]
+    ],
+    "slug": "coussin-velours-camel"
   },
   {
     "id": "6",
@@ -89,7 +93,8 @@
       "Laiton massif",
       "Ciselage main",
       "Artisanat marocain"
-    ]
+    ],
+    "slug": "plateau-laiton-cisele"
   },
   {
     "id": "7",
@@ -108,7 +113,8 @@
       "Doublure soie",
       "Boutonnage doré",
       "Tailles XS-XL"
-    ]
+    ],
+    "slug": "blazer-structure-ivoire"
   },
   {
     "id": "8",
@@ -127,7 +133,8 @@
       "Fermoir doré",
       "Doublure suède",
       "Bandoulière amovible"
-    ]
+    ],
+    "slug": "sac-cuir-camel"
   },
   {
     "id": "9",
@@ -145,7 +152,8 @@
       "Verre saphir",
       "Étanche 3ATM",
       "Boîte cadeau incluse"
-    ]
+    ],
+    "slug": "montre-classic-or"
   },
   {
     "id": "10",
@@ -163,7 +171,8 @@
       "Semelle +3cm",
       "Pointures 36-45",
       "Sac à chaussures inclus"
-    ]
+    ],
+    "slug": "sneakers-blanc-cuir"
   },
   {
     "id": "11",
@@ -181,7 +190,8 @@
       "Mi-longue",
       "Coupe fluide",
       "2 coloris"
-    ]
+    ],
+    "slug": "robe-lin-naturel"
   },
   {
     "id": "12",
@@ -200,7 +210,8 @@
       "Vaporisateur",
       "Notes orientales",
       "Coffret luxe"
-    ]
+    ],
+    "slug": "parfum-oud-intense"
   },
   {
     "id": "13",
@@ -219,7 +230,8 @@
       "Vitamine C 15%",
       "Or 24K",
       "Sans paraben"
-    ]
+    ],
+    "slug": "serum-vitamine-c-gold"
   },
   {
     "id": "14",
@@ -237,7 +249,8 @@
       "Argan bio certifié",
       "Made in Morocco",
       "Coffret cadeau"
-    ]
+    ],
+    "slug": "set-soin-argan-bio"
   },
   {
     "id": "15",
@@ -255,7 +268,8 @@
       "30h autonomie",
       "Hi-Res Audio",
       "Bluetooth 5.2"
-    ]
+    ],
+    "slug": "casque-audio-premium"
   },
   {
     "id": "16",
@@ -274,7 +288,8 @@
       "GPS intégré",
       "Étanche 5ATM",
       "14 jours autonomie"
-    ]
+    ],
+    "slug": "montre-connectee-sport"
   },
   {
     "id": "17",
@@ -292,7 +307,8 @@
       "IPX7",
       "20h autonomie",
       "Son 360°"
-    ]
+    ],
+    "slug": "enceinte-portable-luxe"
   },
   {
     "id": "18",
@@ -310,7 +326,8 @@
       "Bol 6.5L inox",
       "10 vitesses",
       "3 accessoires inclus"
-    ]
+    ],
+    "slug": "robot-patissier-pro"
   },
   {
     "id": "19",
@@ -329,7 +346,8 @@
       "Dureté 62 HRC",
       "Manche pakkawood",
       "Bloc bois inclus"
-    ]
+    ],
+    "slug": "set-couteaux-japonais"
   },
   {
     "id": "20",
@@ -347,7 +365,8 @@
       "Ciselé main",
       "Artisanat de Fès",
       "Coffret cadeau"
-    ]
+    ],
+    "slug": "service-the-marocain"
   },
   {
     "id": "21",
@@ -365,7 +384,8 @@
       "183 × 61 cm",
       "6mm épaisseur",
       "Sangle incluse"
-    ]
+    ],
+    "slug": "tapis-de-yoga-premium"
   },
   {
     "id": "22",
@@ -383,7 +403,8 @@
       "Inox 18/8",
       "24h froid / 12h chaud",
       "Sans BPA"
-    ]
+    ],
+    "slug": "bouteille-inox-luxe"
   },
   {
     "id": "1777990975907",
