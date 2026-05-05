@@ -288,7 +288,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
             {/* Qty + CTA */}
             <ScrollReveal direction="up" delay={120}>
               <div ref={ctaRef} className="mt-7 space-y-3">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 w-full">
                   <div className="flex items-center border border-lux-border h-12 flex-shrink-0">
                     <button onClick={() => setQty(q => Math.max(1, q - 1))} className="w-10 h-full flex items-center justify-center text-lux-gray hover:text-gold transition-colors text-lg">−</button>
                     <span className="w-10 h-full flex items-center justify-center text-sm font-medium border-x border-lux-border">{qty}</span>
@@ -296,7 +296,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
                   </div>
                   <button
                     onClick={handleAdd}
-                    className={`flex-1 h-12 text-[11px] tracking-[0.2em] uppercase font-medium transition-all duration-300 flex items-center justify-center gap-2 ${added ? 'bg-green-600 text-white' : 'bg-lux-dark text-white hover:bg-gold'}`}
+                    className={`flex-1 min-w-0 h-12 text-[11px] tracking-[0.2em] uppercase font-medium transition-all duration-300 flex items-center justify-center gap-2 ${added ? 'bg-green-600 text-white' : 'bg-lux-dark text-white hover:bg-gold'}`}
                   >
                     {added ? (
                       <><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/></svg>Ajouté</>
