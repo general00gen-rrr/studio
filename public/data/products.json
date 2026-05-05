@@ -415,5 +415,17 @@
     "badge": "",
     "stock": 10,
     "createdAt": "2026-05-05T14:02:18.079Z"
+  },
+  {
+    "id": "1777989855089",
+    "name": "DGFDG",
+    "slug": "dgfdg",
+    "price": 7878,
+    "originalPrice": 7878,
+    "category": "maison",
+    "description": "KJHKHJK",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-05T14:04:15.089Z"
   }
 ]
