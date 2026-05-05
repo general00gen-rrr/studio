@@ -250,7 +250,7 @@
     "category": "beaute",
     "description": "Sérum illuminateur vit.C & particules d'or 24K",
     "details": "Sérum anti-âge luxueux combinant vitamine C stabilisée et micro-particules d'or 24K. Illumine, rafferme et unifie le teint. Résultats visibles en 14 jours.",
-    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007049/DE00612-NEW-PACKSHOTS-ECOM-AS-SERUM-60ML-FACE-SVE_800x_futwkl.webp",
     "badge": "nouveau",
     "rating": 4.8,
     "reviews": 72,
@@ -261,7 +261,10 @@
       "Or 24K",
       "Sans paraben"
     ],
-    "slug": "serum-vitamine-c-gold"
+    "slug": "serum-vitamine-c-gold",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007049/DE00612-NEW-PACKSHOTS-ECOM-AS-SERUM-60ML-FACE-SVE_800x_futwkl.webp"
+    ]
   },
   {
     "id": "14",
