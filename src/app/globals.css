@@ -1,3 +1,8 @@
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,7 +73,7 @@ body {
   @apply inline-flex items-center gap-2 border border-lux-dark text-lux-dark px-7 py-3 text-[13px] tracking-[0.12em] uppercase font-medium transition-all hover:bg-lux-dark hover:text-white;
 }
 
-.container-lux { @apply max-w-[1320px] mx-auto px-6; }
+.container-lux { @apply max-w-[1320px] w-full mx-auto px-6; }
 
 .section-label { @apply text-[11px] tracking-[0.3em] uppercase text-gold font-medium mb-3; }
 .section-title { @apply font-serif text-[clamp(28px,4vw,48px)] font-normal text-lux-dark leading-[1.2]; }

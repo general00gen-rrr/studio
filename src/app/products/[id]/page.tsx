@@ -212,16 +212,16 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
   }
 
   return (
-    <div className="pt-[88px] min-h-screen bg-white">
+    <div className="pt-[88px] min-h-screen bg-white overflow-x-hidden">
 
       {/* Breadcrumb */}
       <div className="container-lux py-5 border-b border-lux-border">
-        <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-lux-gray/60">
+        <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-lux-gray/60 flex-wrap">
           <Link href="/products" className="hover:text-gold transition-colors">Boutique</Link>
           <span>—</span>
           <Link href={`/products/${product.category}`} className="hover:text-gold transition-colors capitalize">{product.category}</Link>
           <span>—</span>
-          <span className="text-lux-dark/70">{product.name}</span>
+          <span className="text-lux-dark/70 truncate max-w-[120px]">{product.name}</span>
         </div>
       </div>
 
