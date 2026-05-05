@@ -163,7 +163,7 @@
     "category": "mode",
     "description": "Montre élégante acier doré, cadran blanc nacre",
     "details": "Montre classique à mouvement suisse. Boîtier acier doré, cadran blanc nacré, bracelet cuir chocolat. Étanche 3ATM. Livrée avec boîte cadeau.",
-    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006866/16845P08MA_montre-herbelin-bracelet-cuir-boitier-pvd-plaque-or-jaune_michel_herbelin_egsodw.webp",
     "rating": 4.5,
     "reviews": 141,
     "stock": 9,
@@ -173,7 +173,10 @@
       "Étanche 3ATM",
       "Boîte cadeau incluse"
     ],
-    "slug": "montre-classic-or"
+    "slug": "montre-classic-or",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006866/16845P08MA_montre-herbelin-bracelet-cuir-boitier-pvd-plaque-or-jaune_michel_herbelin_egsodw.webp"
+    ]
   },
   {
     "id": "10",
