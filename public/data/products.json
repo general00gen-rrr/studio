@@ -97,7 +97,7 @@
     "category": "maison",
     "description": "Plateau décoratif en laiton, motifs arabesques",
     "details": "Plateau artisanal en laiton doré avec motifs arabesques ciselés à la main par des artisans marocains. Parfait pour servir le thé ou comme pièce décorative.",
-    "image": "https://images.unsplash.com/photo-1617104551722-3b2d51366400?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006684/Capture_d_%C3%A9cran_2026-05-05_194435_ujbk4s.png",
     "badge": "nouveau",
     "rating": 4.9,
     "reviews": 54,
@@ -108,7 +108,10 @@
       "Ciselage main",
       "Artisanat marocain"
     ],
-    "slug": "plateau-laiton-cisele"
+    "slug": "plateau-laiton-cisele",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006684/Capture_d_%C3%A9cran_2026-05-05_194435_ujbk4s.png"
+    ]
   },
   {
     "id": "7",
