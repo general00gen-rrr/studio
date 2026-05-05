@@ -6,7 +6,7 @@
     "category": "maison",
     "description": "Miroir mural arche, cadre doré mat 60x120cm",
     "details": "Ce miroir ovale en forme d'arche avec son cadre doré mat agrandit visuellement l'espace et apporte une touche luxueuse. Fixation murale incluse.",
-    "image": "https://images.unsplash.com/photo-1576020799627-aeac74d58064?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778005223/Nova_Arched_Backlit_Mirror_Inverse_Front_pou2hj.webp",
     "rating": 4.6,
     "reviews": 52,
     "stock": 8,
@@ -16,7 +16,10 @@
       "Miroir anti-déformation",
       "Fixation incluse"
     ],
-    "slug": "miroir-ovale-arche"
+    "slug": "miroir-ovale-arche",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778005223/Nova_Arched_Backlit_Mirror_Inverse_Front_pou2hj.webp"
+    ]
   },
   {
     "id": "3",
