@@ -384,5 +384,17 @@
       "24h froid / 12h chaud",
       "Sans BPA"
     ]
+  },
+  {
+    "id": "1777990975907",
+    "name": "HGJHG",
+    "slug": "hgjhg",
+    "price": 877,
+    "originalPrice": 87,
+    "category": "maison",
+    "description": "HFGJG",
+    "badge": "nouveau",
+    "stock": 10,
+    "createdAt": "2026-05-05T14:22:55.907Z"
   }
 ]
