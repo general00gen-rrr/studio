@@ -227,7 +227,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
 
       {/* MAIN LAYOUT */}
       <div className="container-lux py-10 lg:py-16">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start min-w-0">
 
           {/* LEFT — Gallery Slider */}
           <ScrollReveal direction="left">
@@ -235,7 +235,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
           </ScrollReveal>
 
           {/* RIGHT — Product info */}
-          <div className="md:sticky md:top-28">
+          <div className="md:sticky md:top-28 min-w-0 overflow-hidden">
 
             {/* Category + Title */}
             <ScrollReveal direction="up">
@@ -347,7 +347,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
                   {activeTab === 'details' ? (
                     <div className="space-y-4">
                       {product.description && (
-                        <p className="text-lux-gray text-sm leading-[1.8] font-light border-l-2 border-gold/30 pl-4" style={{whiteSpace:"pre-wrap",wordBreak:"break-word"}}>{product.description}</p>
+                        <p className="text-lux-gray text-sm leading-[1.8] font-light border-l-2 border-gold/30 pl-4" style={{whiteSpace:"pre-wrap",wordBreak:"break-all",overflowWrap:"anywhere"}}>{product.description}</p>
                       )}
                       <ul className="space-y-3 mt-4">
                       {(product.features || []).map((f: string, i: number) => (
