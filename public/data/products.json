@@ -397,5 +397,18 @@
     "stock": 10,
     "createdAt": "2026-05-05T14:22:55.907Z",
     "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1777993280/Capture_d_%C3%A9cran_2026-05-05_155025_zruktg.png"
+  },
+  {
+    "id": "1777993376173",
+    "name": "AAAA",
+    "slug": "aaaa",
+    "price": 892,
+    "originalPrice": 885,
+    "category": "maison",
+    "description": "YUGH",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1777993374/Capture_d_%C3%A9cran_2026-05-05_153713_tzzgix.png",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-05T15:02:56.173Z"
   }
 ]
