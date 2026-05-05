@@ -408,27 +408,5 @@
       "Sans BPA"
     ],
     "slug": "bouteille-inox-luxe"
-  },
-  {
-    "id": "1778003129950",
-    "name": "ADSAZDEF FEZFE",
-    "slug": "adsazdef-fezfe",
-    "price": 75,
-    "originalPrice": 577,
-    "category": "maison",
-    "description": "JHGJ",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778003114/photo_2026-05-05_17-46-29_ctnync.jpg",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778003114/photo_2026-05-05_17-46-29_ctnync.jpg",
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778003121/IMG_0839_dynrn5.png",
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778003122/photo_2026-05-05_17-46-29_z6affj.jpg",
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778003123/Capture_d_%C3%A9cran_2026-05-05_174608_xlqlqv.png",
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778003123/Capture_d_%C3%A9cran_2026-05-05_174145_a5s9ub.png"
-    ],
-    "badge": "promo",
-    "stock": 10,
-    "createdAt": "2026-05-05T17:45:29.950Z",
-    "rating": 4.8,
-    "reviews": 147
   }
 ]
