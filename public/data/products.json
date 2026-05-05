@@ -1,24 +1,5 @@
 [
   {
-    "id": "1",
-    "name": "Lampe Arc Dorée",
-    "price": 890,
-    "category": "maison",
-    "description": "Lampe sur pied en métal doré, design contemporain",
-    "details": "Cette élégante lampe arc en métal doré apporte une lumière douce et une touche de sophistication. Son abat-jour en lin crème crée une ambiance chaleureuse et raffinée.",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-    "badge": "nouveau",
-    "rating": 4.8,
-    "reviews": 24,
-    "stock": 15,
-    "features": [
-      "Hauteur 180cm",
-      "Ampoule E27 incluse",
-      "Câble tissu",
-      "Interrupteur au pied"
-    ]
-  },
-  {
     "id": "2",
     "name": "Miroir Ovale Arche",
     "price": 1200,
