@@ -51,7 +51,7 @@
     "category": "maison",
     "description": "Vase sculpture en marbre naturel veiné",
     "details": "Vase sculptural en marbre blanc veiné. Chaque pièce est unique grâce aux nuances naturelles du marbre. Idéal pour fleurs fraîches ou comme objet déco.",
-    "image": "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006543/Nordal_AW2022_PRODUCT_SOEVIND_41871_95ec3994-bd3a-4875-80c0-857cd713d212_y8jqbd.webp",
     "rating": 4.6,
     "reviews": 79,
     "stock": 12,
@@ -61,7 +61,11 @@
       "Pièce unique",
       "Fond anti-rayures"
     ],
-    "slug": "vase-marbre-blanc"
+    "slug": "vase-marbre-blanc",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006543/Nordal_AW2022_PRODUCT_SOEVIND_41871_95ec3994-bd3a-4875-80c0-857cd713d212_y8jqbd.webp"
+    ],
+    "badge": "promo"
   },
   {
     "id": "5",
