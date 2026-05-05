@@ -207,7 +207,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
               {best.slice(0,3).map((p, i) => (
                 <ScrollReveal key={p.id} direction="up" delay={i * 120}>
-                  <Link href={`/products/${p.id}`} className="group block">
+                  <Link href={`/products/${p.slug || p.id}`} className="group block">
                     <div className="relative overflow-hidden bg-white/5" style={{aspectRatio:'1/1'}}>
                       <Image src={p.image} alt={p.name} fill className="object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" sizes="33vw" />
                       <span className="absolute top-3 left-3 bg-gold text-white text-[9px] tracking-[0.25em] uppercase px-2.5 py-1">Best-seller</span>
