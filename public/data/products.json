@@ -298,7 +298,7 @@
     "category": "tech",
     "description": "Casque sans fil ANC, 30h d'autonomie",
     "details": "Casque haute-fidélité avec réduction de bruit active hybride. Drivers 40mm, son Hi-Res. 30h d'autonomie, charge rapide 15min = 3h. Coussinets mémoire de forme.",
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007197/Guess_casque_audio_premium_sans_fil_headphones_Bluetooth_53_Studio_Quality_Sound_Cuir_monogramme_Noir_Guess_Premium-Audio-Kopfhorer_drahtlos_Headphones_Bluetooth_53_Studio_Quality_Sound_Leder_Monogramm_Schwarz_u0jodp.jpg",
     "rating": 4.5,
     "reviews": 37,
     "stock": 14,
@@ -308,7 +308,10 @@
       "Hi-Res Audio",
       "Bluetooth 5.2"
     ],
-    "slug": "casque-audio-premium"
+    "slug": "casque-audio-premium",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007197/Guess_casque_audio_premium_sans_fil_headphones_Bluetooth_53_Studio_Quality_Sound_Cuir_monogramme_Noir_Guess_Premium-Audio-Kopfhorer_drahtlos_Headphones_Bluetooth_53_Studio_Quality_Sound_Leder_Monogramm_Schwarz_u0jodp.jpg"
+    ]
   },
   {
     "id": "16",
