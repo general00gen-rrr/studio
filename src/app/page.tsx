@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { getFeatured, categories, getBest, formatPrice } from '@/lib/products-dynamic'
+import { getFeaturedAsync, getBestAsync, categories, formatPrice } from '@/lib/products-dynamic'
 import ProductCard from '@/components/ProductCard'
 import ScrollReveal from '@/components/ScrollReveal'
 
-export default function HomePage() {
-  const featured = getFeatured()
-  const best = getBest()
+export default async function HomePage() {
+  const featured = await getFeaturedAsync()
+  const best = await getBestAsync()
 
   return (
     <div className="pt-0">
