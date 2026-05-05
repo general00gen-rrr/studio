@@ -1,24 +1,5 @@
 [
   {
-    "id": "3",
-    "name": "Bougie Oud & Rose",
-    "price": 280,
-    "category": "maison",
-    "description": "Bougie artisanale cire soja, 60h de brûlage",
-    "details": "Bougie artisanale en cire de soja 100% naturelle. Son mélange d'oud oriental et de rose marocaine crée une atmosphère envoûtante. Contenant en verre recyclé.",
-    "image": "https://images.unsplash.com/photo-1602607165068-3afc1b67e521?w=600&q=80",
-    "badge": "bestseller",
-    "rating": 4.7,
-    "reviews": 89,
-    "stock": 45,
-    "features": [
-      "Cire de soja naturelle",
-      "60h de brûlage",
-      "Parfum Oud & Rose",
-      "Pot verre recyclé"
-    ]
-  },
-  {
     "id": "4",
     "name": "Vase Marbre Blanc",
     "price": 450,
