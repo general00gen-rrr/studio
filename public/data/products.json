@@ -208,17 +208,20 @@
     "category": "mode",
     "description": "Robe mi-longue lin 100% naturel, coupe fluide",
     "details": "Robe en lin naturel 100% biologique, coupe droite légèrement évasée. Confort absolu pour toutes les saisons. Disponible en ivoire et sable.",
-    "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006989/Capture_d_%C3%A9cran_2026-05-05_194938_diutjq.png",
     "rating": 4.9,
     "reviews": 97,
-    "stock": 18,
+    "stock": 185,
     "features": [
       "Lin 100% bio",
       "Mi-longue",
       "Coupe fluide",
       "2 coloris"
     ],
-    "slug": "robe-lin-naturel"
+    "slug": "robe-lin-naturel",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006989/Capture_d_%C3%A9cran_2026-05-05_194938_diutjq.png"
+    ]
   },
   {
     "id": "12",
