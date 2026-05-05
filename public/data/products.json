@@ -413,6 +413,13 @@
     "stock": 10,
     "createdAt": "2026-05-05T15:02:56.173Z",
     "rating": 4.6,
-    "reviews": 145
+    "reviews": 145,
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1777993374/Capture_d_%C3%A9cran_2026-05-05_153713_tzzgix.png",
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1777995198/Capture_d_%C3%A9cran_2026-05-05_162334_obpzfa.png",
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1777995198/Capture_d_%C3%A9cran_2026-05-05_162301_mcw4by.png",
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1777995200/Capture_d_%C3%A9cran_2026-05-05_162214_otjb2r.png",
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1777995201/Capture_d_%C3%A9cran_2026-05-05_161856_btp5je.png"
+    ]
   }
 ]
