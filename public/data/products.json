@@ -276,7 +276,7 @@
     "category": "beaute",
     "description": "Coffret 5 soins huile d'argan pure du Maroc",
     "details": "Coffret premium 5 produits à l'huile d'argan bio certifiée du Maroc: huile visage, crème jour, crème nuit, sérum et masque hebdomadaire.",
-    "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007149/pack-coffret-cadeaux-huiles-d-argan-et-savon-noir-bio-et-artisanaux_dpl2fj.jpg",
     "rating": 4.7,
     "reviews": 130,
     "stock": 12,
@@ -286,7 +286,10 @@
       "Made in Morocco",
       "Coffret cadeau"
     ],
-    "slug": "set-soin-argan-bio"
+    "slug": "set-soin-argan-bio",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007149/pack-coffret-cadeaux-huiles-d-argan-et-savon-noir-bio-et-artisanaux_dpl2fj.jpg"
+    ]
   },
   {
     "id": "15",
