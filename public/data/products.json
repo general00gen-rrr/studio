@@ -230,7 +230,7 @@
     "category": "beaute",
     "description": "Eau de parfum 100ml, oud, ambre & rose",
     "details": "Fragrance orientale envoûtante. Tête: bergamote & safran. Cœur: rose marocaine & oud. Fond: ambre & musc blanc. Sillage intense, 12h+.",
-    "image": "https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007101/gucci-intense-oud-pour-homme-prix-maroc-scaled_gm7x3t.jpg",
     "badge": "bestseller",
     "rating": 4.7,
     "reviews": 63,
@@ -241,7 +241,10 @@
       "Notes orientales",
       "Coffret luxe"
     ],
-    "slug": "parfum-oud-intense"
+    "slug": "parfum-oud-intense",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007101/gucci-intense-oud-pour-homme-prix-maroc-scaled_gm7x3t.jpg"
+    ]
   },
   {
     "id": "13",
