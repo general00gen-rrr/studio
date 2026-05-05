@@ -423,7 +423,7 @@
     "category": "sport",
     "description": "Tapis yoga TPE 6mm, antidérapant, 183×61cm",
     "details": "Tapis de yoga professionnel en TPE écologique, épaisseur 6mm. Surface antidérapante bilatérale, alignement imprimé. Léger 1.2kg, sangle incluse.",
-    "image": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007403/tapis-de-yoga-antiderapant-femme-salle-sport-domicile_rjqn05.webp",
     "rating": 4.9,
     "reviews": 46,
     "stock": 25,
@@ -433,7 +433,10 @@
       "6mm épaisseur",
       "Sangle incluse"
     ],
-    "slug": "tapis-de-yoga-premium"
+    "slug": "tapis-de-yoga-premium",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007403/tapis-de-yoga-antiderapant-femme-salle-sport-domicile_rjqn05.webp"
+    ]
   },
   {
     "id": "22",
