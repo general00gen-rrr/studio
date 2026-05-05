@@ -120,18 +120,21 @@
     "category": "mode",
     "description": "Blazer ajusté crêpe de laine, coupe française",
     "details": "Blazer ivoire à la coupe française impeccable, taillé dans un crêpe de laine premium. Silhouette structurée et finitions soignées pour toutes les occasions.",
-    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006771/Capture_d_%C3%A9cran_2026-05-05_194557_dxuean.png",
     "badge": "nouveau",
     "rating": 4.5,
     "reviews": 137,
-    "stock": 10,
+    "stock": 195,
     "features": [
       "Crêpe de laine 70%",
       "Doublure soie",
       "Boutonnage doré",
       "Tailles XS-XL"
     ],
-    "slug": "blazer-structure-ivoire"
+    "slug": "blazer-structure-ivoire",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006771/Capture_d_%C3%A9cran_2026-05-05_194557_dxuean.png"
+    ]
   },
   {
     "id": "8",
