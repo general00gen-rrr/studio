@@ -74,7 +74,7 @@
     "category": "maison",
     "description": "Coussin décoratif velours premium 50×50cm",
     "details": "Coussin en velours camel haute qualité. Garnissage en duvet synthétique ultra-doux, fermeture invisible par zip. Déhoussable et lavable.",
-    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006623/Capture_d_%C3%A9cran_2026-05-05_194331_zkiw6f.png",
     "rating": 4.8,
     "reviews": 114,
     "stock": 30,
@@ -84,7 +84,11 @@
       "Garnissage duvet synt.",
       "Lavable 30°"
     ],
-    "slug": "coussin-velours-camel"
+    "slug": "coussin-velours-camel",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006623/Capture_d_%C3%A9cran_2026-05-05_194331_zkiw6f.png"
+    ],
+    "badge": "nouveau"
   },
   {
     "id": "6",
