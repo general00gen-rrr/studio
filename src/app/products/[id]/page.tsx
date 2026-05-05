@@ -283,12 +283,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
               </p>
             </ScrollReveal>
 
-            {/* Description */}
-            <ScrollReveal direction="up" delay={100}>
-              <p className="text-lux-gray text-sm leading-[1.8] font-light mt-5 border-l-2 border-gold/30 pl-4">
-                {product.description}
-              </p>
-            </ScrollReveal>
+
 
             {/* Qty + CTA */}
             <ScrollReveal direction="up" delay={120}>
