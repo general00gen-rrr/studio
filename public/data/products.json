@@ -410,21 +410,6 @@
     "slug": "bouteille-inox-luxe"
   },
   {
-    "id": "1777990975907",
-    "name": "HGJHG",
-    "slug": "hgjhg",
-    "price": 877,
-    "originalPrice": 87,
-    "category": "maison",
-    "description": "HFGJG",
-    "badge": "nouveau",
-    "stock": 10,
-    "createdAt": "2026-05-05T14:22:55.907Z",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1777993280/Capture_d_%C3%A9cran_2026-05-05_155025_zruktg.png",
-    "rating": 4.7,
-    "reviews": 146
-  },
-  {
     "id": "1777993376173",
     "name": "AAAA",
     "slug": "aaaa",
