@@ -13,6 +13,7 @@ export interface Product {
   reviews: number
   stock: number
   features: string[]
+  slug?: string
 }
 
 export interface Category {
