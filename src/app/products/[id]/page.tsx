@@ -347,7 +347,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
                   {activeTab === 'details' ? (
                     <div className="space-y-4">
                       {product.description && (
-                        <p className="text-lux-gray text-sm leading-[1.8] font-light border-l-2 border-gold/30 pl-4">{product.description}</p>
+                        <p className="text-lux-gray text-sm leading-[1.8] font-light border-l-2 border-gold/30 pl-4" style={{whiteSpace:"pre-line"}}>{product.description}</p>
                       )}
                       <ul className="space-y-3 mt-4">
                       {(product.features || []).map((f: string, i: number) => (
