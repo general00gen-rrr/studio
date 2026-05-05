@@ -403,5 +403,17 @@
       "24h froid / 12h chaud",
       "Sans BPA"
     ]
+  },
+  {
+    "id": "1777989738079",
+    "name": "RRYRT",
+    "slug": "rryrt",
+    "price": 578,
+    "originalPrice": 978,
+    "category": "maison",
+    "description": "KJHK",
+    "badge": "",
+    "stock": 10,
+    "createdAt": "2026-05-05T14:02:18.079Z"
   }
 ]
