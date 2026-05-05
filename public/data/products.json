@@ -410,25 +410,6 @@
     "slug": "bouteille-inox-luxe"
   },
   {
-    "id": "1777996709521",
-    "name": "BBBB",
-    "slug": "bbbb",
-    "price": 788,
-    "originalPrice": 475,
-    "category": "mode",
-    "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1777996683/Capture_d_%C3%A9cran_2026-05-05_165750_gmylym.png",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1777996683/Capture_d_%C3%A9cran_2026-05-05_165750_gmylym.png",
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1777996694/Capture_d_%C3%A9cran_2026-05-05_165050_kokxoc.png"
-    ],
-    "badge": "nouveau",
-    "stock": 150,
-    "createdAt": "2026-05-05T15:58:29.521Z",
-    "rating": 4.5,
-    "reviews": 37
-  },
-  {
     "id": "1778003129950",
     "name": "ADSAZDEF FEZFE",
     "slug": "adsazdef-fezfe",
