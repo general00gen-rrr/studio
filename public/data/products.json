@@ -359,7 +359,7 @@
     "category": "cuisine",
     "description": "Robot 6.5L, 1200W, 10 vitesses + minuteur",
     "details": "Robot pâtissier professionnel 1200W, bol 6.5L inox. 10 vitesses + turbo. Livré avec fouet ballon, crochet pétrisseur et feuille. Tête basculante.",
-    "image": "https://images.unsplash.com/photo-1556910103-1c02745adc4b?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007291/batteur-melangeur-planetaire-professionnel-40-l-max-40-patisserie-chr_mos0nx.jpg",
     "rating": 4.5,
     "reviews": 100,
     "stock": 7,
@@ -369,7 +369,10 @@
       "10 vitesses",
       "3 accessoires inclus"
     ],
-    "slug": "robot-patissier-pro"
+    "slug": "robot-patissier-pro",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007291/batteur-melangeur-planetaire-professionnel-40-l-max-40-patisserie-chr_mos0nx.jpg"
+    ]
   },
   {
     "id": "19",
