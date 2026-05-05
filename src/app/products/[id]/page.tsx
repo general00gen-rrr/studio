@@ -350,7 +350,11 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
                 </div>
                 <div className="py-5">
                   {activeTab === 'details' ? (
-                    <ul className="space-y-3">
+                    <div className="space-y-4">
+                      {product.description && (
+                        <p className="text-lux-gray text-sm leading-[1.8] font-light border-l-2 border-gold/30 pl-4">{product.description}</p>
+                      )}
+                      <ul className="space-y-3 mt-4">
                       {(product.features || []).map((f: string, i: number) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-lux-gray">
                           <div className="w-4 h-4 rounded-full border border-gold/40 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -360,6 +364,7 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
                         </li>
                       ))}
                     </ul>
+                    </div>
                   ) : (
                     <div className="space-y-2.5 text-sm text-lux-gray leading-relaxed">
                       <p>✓ Livraison gratuite dès 500 DH partout au Maroc en 24–48h.</p>
