@@ -374,28 +374,19 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
           </div>
         </div>
       </div>
-
-
-
             {/* Avis clients */}
             <ScrollReveal direction="up" delay={140}>
               <div className="mt-10 border-t border-lux-border pt-8">
                 <h3 className="text-xs tracking-[0.2em] uppercase text-lux-dark font-medium mb-6">Avis clients</h3>
-                <div className="space-y-5">
+                <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide" style={{scrollSnapType:'x mandatory'}}>
                   {[
-                    { name: "Salma R.", date: "Il y a 2 jours", rating: 5, text: "Produit de très haute qualité, exactement comme sur les photos. Livraison rapide et emballage soigné. Je recommande vivement !" },
-                    { name: "Karim M.", date: "Il y a 1 semaine", rating: 5, text: "Excellente expérience d'achat. Le produit dépasse mes attentes, très bon rapport qualité-prix. Je commanderai à nouveau." },
-                    { name: "Nadia B.", date: "Il y a 2 semaines", rating: 4, text: "Très satisfaite de mon achat. Bonne qualité et livraison dans les délais. Je recommande cette boutique." }
+                    { name: "Salma R.", rating: 5, text: "Produit d'une qualité exceptionnelle. Exactement comme sur les photos, livraison rapide et emballage soigné.", date: "IL Y A 2 JOURS" },
+                    { name: "Karim M.", rating: 5, text: "Dépasse toutes mes attentes. Très bon rapport qualité-prix, je commanderai à nouveau sans hésiter.", date: "IL Y A 1 SEMAINE" },
+                    { name: "Nadia B.", rating: 4, text: "Très satisfaite de mon achat. Bonne qualité et livraison dans les délais. Je recommande cette boutique.", date: "IL Y A 2 SEMAINES" }
                   ].map((r, i) => (
-                    <div key={i} className="border border-lux-border rounded-sm p-5">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xs font-medium">{r.name[0]}</div>
-                          <div>
-                            <p className="text-sm font-medium text-lux-dark">{r.name}</p>
-                            <p className="text-[11px] text-lux-gray">{r.date}</p>
-                          </div>
-                        </div>
+                    <div key={i} className="flex-shrink-0 bg-white border border-lux-border rounded-sm p-5" style={{width:'260px',scrollSnapAlign:'start'}}>
+                      <div className="flex items-center justify-between mb-3">
+                        <p className="text-sm font-medium text-lux-dark">{r.name}</p>
                         <div className="flex gap-0.5">
                           {[...Array(5)].map((_, j) => (
                             <svg key={j} className={`w-3 h-3 ${j < r.rating ? 'text-gold' : 'text-lux-border'}`} fill="currentColor" viewBox="0 0 20 20">
@@ -404,7 +395,8 @@ function ProductDetailPage({ id, allProducts }: { id: string, allProducts: any[]
                           ))}
                         </div>
                       </div>
-                      <p className="text-sm text-lux-gray leading-relaxed">{r.text}</p>
+                      <p className="text-sm text-lux-gray leading-relaxed italic">"{r.text}"</p>
+                      <p className="text-[10px] tracking-[0.15em] text-lux-gray/60 mt-4">{r.date}</p>
                     </div>
                   ))}
                 </div>
