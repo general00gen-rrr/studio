@@ -185,17 +185,21 @@
     "category": "mode",
     "description": "Baskets cuir blanc premium, semelle plateforme",
     "details": "Sneakers en cuir blanc véritable avec semelle plateforme légèrement surélevée. Confort exceptionnel, style minimaliste et intemporel.",
-    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006927/Capture_d_%C3%A9cran_2026-05-05_194838_wxbplo.png",
     "rating": 4.9,
     "reviews": 108,
-    "stock": 20,
+    "stock": 208,
     "features": [
       "Cuir véritable",
       "Semelle +3cm",
       "Pointures 36-45",
       "Sac à chaussures inclus"
     ],
-    "slug": "sneakers-blanc-cuir"
+    "slug": "sneakers-blanc-cuir",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006927/Capture_d_%C3%A9cran_2026-05-05_194838_wxbplo.png"
+    ],
+    "badge": "bestseller"
   },
   {
     "id": "11",
