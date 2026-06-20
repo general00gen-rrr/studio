@@ -456,23 +456,5 @@
       "Sans BPA"
     ],
     "slug": "bouteille-inox-luxe"
-  },
-  {
-    "id": "1778533963216",
-    "name": "aaaaaaaa",
-    "slug": "aaaaaaaa",
-    "price": 77,
-    "originalPrice": 77,
-    "category": "mode",
-    "description": "uiuhi",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778533957/Capture_d_%C3%A9cran_2026-05-11_164702_lyhyox.png",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778533957/Capture_d_%C3%A9cran_2026-05-11_164702_lyhyox.png"
-    ],
-    "badge": "nouveau",
-    "stock": 10,
-    "createdAt": "2026-05-11T21:12:43.216Z",
-    "rating": 4.5,
-    "reviews": 99
   }
 ]
