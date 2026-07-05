@@ -44,8 +44,8 @@ export default function Navbar() {
   const router = useRouter()
   const pathname = usePathname()
 
-  const isHome = pathname === '/' || (typeof window !== 'undefined' && window.location.pathname === '/')
-  const transparent = mounted ? (isHome && !scrolled) : isHome
+  const isHome = pathname === '/'
+  const transparent = isHome && !scrolled
 
   useEffect(() => {
     setMounted(true)
@@ -57,14 +57,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header 
-        suppressHydrationWarning
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${transparent ? 'bg-transparent' : 'bg-white shadow-sm'}`}
-      >
-        <div 
-          suppressHydrationWarning
-          className={`text-white text-center py-2 text-xs tracking-widest uppercase transition-all duration-300 ${transparent ? 'bg-black/30 backdrop-blur-sm' : 'bg-lux-dark'}`}
-        >
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${transparent ? 'bg-transparent' : 'bg-white shadow-sm'}`}>
+        <div className={`text-white text-center py-2 text-xs tracking-widest uppercase transition-all duration-300 ${transparent ? 'bg-black/30 backdrop-blur-sm' : 'bg-lux-dark'}`}>
           🚚 Livraison gratuite au Maroc dès 500 DH — Paiement à la livraison
         </div>
         <nav className="container-lux flex items-center justify-between h-16">
