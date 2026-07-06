@@ -456,5 +456,24 @@
       "Sans BPA"
     ],
     "slug": "bouteille-inox-luxe"
+  },
+  {
+    "id": "1783356141138",
+    "name": "test",
+    "slug": "test",
+    "price": 788,
+    "originalPrice": 1555,
+    "category": "maison",
+    "description": "test",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1783356119/Capture_d_%C3%A9cran_2026-07-05_041809_c54nfj.png",
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1783356119/Capture_d_%C3%A9cran_2026-07-05_041809_c54nfj.png",
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1783356120/Capture_d_%C3%A9cran_2026-07-05_034638_lmqpna.png"
+    ],
+    "badge": "nouveau",
+    "stock": 105,
+    "createdAt": "2026-07-06T16:42:21.138Z",
+    "rating": 4.8,
+    "reviews": 91
   }
 ]
