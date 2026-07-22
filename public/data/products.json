@@ -122,7 +122,7 @@
     "category": "tech",
     "description": "مقياس رقمي دقيق لفحص نسبة الأملاح والشوائب الذائبة في الماء",
     "details": "جهاز لا غنى عنه لكل منزل للتأكد من كفاءة الفلتر وصلاحية المياه للشرب. يقيس مستوى الشوائب والأملاح الذائبة (PPM) في ثوان معدودة.",
-    "image": "https://images.unsplash.com/photo-1617104551722-3b2d51366400?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754684/fda73006-959a-4126-8dc4-92ee047f54f1-850.83612040134x1000-7265kphpfvfDsizid1RLUoxgHqeV6EBeeBXOK6IJ_qtnqbp.webp",
     "badge": "promo",
     "rating": 4.9,
     "reviews": 95,
@@ -132,6 +132,9 @@
       "شاشة LCD واضحة",
       "إيقاف تلقائي لحفظ البطارية",
       "حافظة جلدية مدمجة"
+    ],
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754684/fda73006-959a-4126-8dc4-92ee047f54f1-850.83612040134x1000-7265kphpfvfDsizid1RLUoxgHqeV6EBeeBXOK6IJ_qtnqbp.webp"
     ]
   }
 ]
