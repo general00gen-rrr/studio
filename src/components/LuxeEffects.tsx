@@ -6,24 +6,23 @@ export default function LuxeEffects() {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Cursor doré personnalisé
     const cursor = document.createElement('div')
     const cursorDot = document.createElement('div')
 
-    cursor.id = 'luxe-cursor'
-    cursorDot.id = 'luxe-cursor-dot'
+    cursor.id = 'aqua-cursor'
+    cursorDot.id = 'aqua-cursor-dot'
 
     Object.assign(cursor.style, {
       position: 'fixed', width: '36px', height: '36px',
-      border: '1px solid rgba(200,169,110,0.6)',
+      border: '1.5px solid rgba(2, 132, 199, 0.5)',
       borderRadius: '50%', pointerEvents: 'none', zIndex: '9999',
       transition: 'transform 0.15s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease',
       transform: 'translate(-50%,-50%)', top: 0, left: 0, opacity: 0,
     })
 
     Object.assign(cursorDot.style, {
-      position: 'fixed', width: '4px', height: '4px',
-      background: 'rgba(200,169,110,0.9)',
+      position: 'fixed', width: '6px', height: '6px',
+      background: 'rgba(6, 182, 212, 0.9)',
       borderRadius: '50%', pointerEvents: 'none', zIndex: '9999',
       transition: 'transform 0.05s ease', transform: 'translate(-50%,-50%)',
       top: 0, left: 0,
@@ -53,9 +52,9 @@ export default function LuxeEffects() {
     raf()
 
     const onEnter = () => {
-      cursor.style.width = '56px'
-      cursor.style.height = '56px'
-      cursor.style.background = 'rgba(200,169,110,0.08)'
+      cursor.style.width = '52px'
+      cursor.style.height = '52px'
+      cursor.style.background = 'rgba(6, 182, 212, 0.1)'
     }
     const onLeave = () => {
       cursor.style.width = '36px'
@@ -69,13 +68,6 @@ export default function LuxeEffects() {
     })
 
     document.addEventListener('mousemove', move)
-
-    // Page entrance animation
-    document.body.style.opacity = '0'
-    document.body.style.transition = 'opacity 0.5s ease'
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => { document.body.style.opacity = '1' })
-    })
 
     return () => {
       document.removeEventListener('mousemove', move)

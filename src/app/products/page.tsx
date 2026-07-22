@@ -6,15 +6,26 @@ import ProductCard from '@/components/ProductCard'
 import { Suspense } from 'react'
 
 const SORT_OPTIONS = [
-  { value: 'default', label: 'Recommandés' },
-  { value: 'price-asc', label: 'Prix croissant' },
-  { value: 'price-desc', label: 'Prix décroissant' },
-  { value: 'rating', label: 'Mieux notés' },
+  { value: 'default', label: 'الموصى بها' },
+  { value: 'price-asc', label: 'السعر: من الأقل للأعلى' },
+  { value: 'price-desc', label: 'السعر: من الأعلى للأقل' },
+  { value: 'rating', label: 'الأعلى تقييماً' },
 ]
 
 function ProductsContent() {
   const [products, setProducts] = useState<any[]>([])
-  useEffect(() => { fetch('/api/products').then(r=>r.json()).then(setProducts) }, [])
+  
+  useEffect(() => { 
+    fetch('/api/products')
+      .then(r => r.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          setProducts(data)
+        }
+      })
+      .catch(() => {})
+  }, [])
+
   const searchParams = useSearchParams()
   const [cat, setCat] = useState(searchParams.get('cat') || '')
   const [badge, setBadge] = useState(searchParams.get('badge') || '')
@@ -32,56 +43,85 @@ function ProductsContent() {
   if (search) filtered = filtered.filter(p => p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase()))
   if (sort === 'price-asc') filtered.sort((a,b) => a.price - b.price)
   else if (sort === 'price-desc') filtered.sort((a,b) => b.price - a.price)
-  else if (sort === 'rating') filtered.sort((a,b) => b.rating - a.rating)
+  else if (sort === 'rating') filtered.sort((a,b) => (b.rating || 0) - (a.rating || 0))
 
   const selectedCat = categories.find(c => c.id === cat)
 
   return (
-    <div className="pt-[88px] min-h-screen">
-      {/* Hero bar */}
-      <div className="relative border-b border-lux-border py-16 overflow-hidden">
+    <div className="pt-[88px] min-h-screen bg-white">
+      {/* Hero Header */}
+      <div className="relative border-b border-slate-100 py-12 md:py-16 overflow-hidden bg-gradient-to-r from-sky-900 via-sky-800 to-slate-900 text-white">
         {selectedCat?.image && (
-          <img src={selectedCat.image} alt={selectedCat.name} className="absolute inset-0 w-full h-full object-cover" />
+          <img src={selectedCat.image} alt={selectedCat.name} className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
         )}
-        <div className="absolute inset-0" style={{background: selectedCat?.image ? 'linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 100%)' : 'transparent', backgroundColor: selectedCat?.image ? undefined : 'var(--cream)'}} />
         <div className="container-lux relative z-10">
-          <p className="section-label" style={{color: selectedCat?.image ? 'rgba(212,175,55,0.9)' : undefined}}>{selectedCat ? selectedCat.description : 'Toute la boutique'}</p>
-          <h1 className="section-title" style={{color: selectedCat?.image ? 'white' : undefined}}>{selectedCat ? selectedCat.name : 'Nos Produits'}</h1>
-          <div className="gold-divider" />
-          <p className="text-sm mt-1" style={{color: selectedCat?.image ? 'rgba(255,255,255,0.7)' : 'var(--lux-gray)'}}>{filtered.length} produit{filtered.length > 1 ? 's' : ''}</p>
+          <p className="text-cyan-300 font-bold text-xs uppercase tracking-wider mb-2">
+            {selectedCat ? selectedCat.description : 'متجر أجهزة ومصفيات المياه'}
+          </p>
+          <h1 className="font-display font-bold text-3xl md:text-5xl text-white">
+            {selectedCat ? selectedCat.name : 'جميع الأنظمة والأجهزة'}
+          </h1>
+          <div className="w-12 h-1 bg-cyan-400 rounded-full my-4" />
+          <p className="text-sky-100 text-sm font-medium">
+            عرض {filtered.length} منتج
+          </p>
         </div>
       </div>
 
       <div className="container-lux py-8">
-        {/* Filters bar */}
-        <div className="flex flex-wrap gap-3 items-center justify-between mb-8 pb-6 border-b border-lux-border">
-          <div className="flex flex-wrap gap-2">
-            <button onClick={() => { setCat(''); setBadge('') }} className={`px-4 py-2 text-xs tracking-widest uppercase border transition-colors ${!cat && !badge ? 'bg-lux-dark text-white border-lux-dark' : 'border-lux-border text-lux-gray hover:border-gold hover:text-gold'}`}>
-              Tout
+        {/* Filters and Search Bar */}
+        <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-8 pb-6 border-b border-slate-100">
+          {/* Categories Horizontal Pills */}
+          <div className="flex flex-wrap gap-2 w-full md:w-auto">
+            <button 
+              onClick={() => { setCat(''); setBadge('') }} 
+              className={`px-4 py-2 text-xs font-bold rounded-xl transition-all ${!cat && !badge ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-sky-50 hover:text-sky-600'}`}
+            >
+              الكل
             </button>
             {categories.map(c => (
-              <button key={c.id} onClick={() => { setCat(c.id); setBadge('') }} className={`px-4 py-2 text-xs tracking-widest uppercase border transition-colors ${cat === c.id ? 'bg-lux-dark text-white border-lux-dark' : 'border-lux-border text-lux-gray hover:border-gold hover:text-gold'}`}>
+              <button 
+                key={c.id} 
+                onClick={() => { setCat(c.id); setBadge('') }} 
+                className={`px-4 py-2 text-xs font-bold rounded-xl transition-all ${cat === c.id ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-sky-50 hover:text-sky-600'}`}
+              >
                 {c.name}
               </button>
             ))}
           </div>
-          <div className="flex gap-3 items-center">
-            <input type="text" placeholder="Rechercher..." value={search} onChange={e => setSearch(e.target.value)} className="input-lux w-40 md:w-56 py-2 text-sm" />
-            <select value={sort} onChange={e => setSort(e.target.value)} className="input-lux w-auto py-2 text-sm cursor-pointer">
+
+          {/* Search & Sort Controls */}
+          <div className="flex gap-2 items-center w-full md:w-auto">
+            <input 
+              type="text" 
+              placeholder="بحث عن جهاز أو فلتر..." 
+              value={search} 
+              onChange={e => setSearch(e.target.value)} 
+              className="input-lux flex-1 md:w-60 py-2 text-xs rounded-xl" 
+            />
+            <select 
+              value={sort} 
+              onChange={e => setSort(e.target.value)} 
+              className="input-lux w-auto py-2 text-xs font-bold rounded-xl cursor-pointer"
+            >
               {SORT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
           </div>
         </div>
 
-        {/* Grid */}
+        {/* Product Grid */}
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {filtered.map(p => <ProductCard key={p.id} product={p} />)}
           </div>
         ) : (
-          <div className="text-center py-24">
-            <p className="font-serif text-2xl text-lux-gray">Aucun produit trouvé</p>
-            <button onClick={() => { setCat(''); setBadge(''); setSearch('') }} className="btn-outline mt-6"><span>Effacer les filtres</span></button>
+          <div className="text-center py-24 bg-sky-50/50 rounded-3xl border border-sky-100 my-6">
+            <div className="text-5xl mb-4">💧</div>
+            <p className="font-display font-bold text-xl text-slate-800">لم نتمكن من العثور على أي منتج يطابق بحثك</p>
+            <p className="text-slate-500 text-xs mt-1">جرب البحث بكلمات أخرى أو اختر قسماً مختلفاً</p>
+            <button onClick={() => { setCat(''); setBadge(''); setSearch('') }} className="btn-aqua mt-6 text-xs">
+              <span>إعادة ضبط الفلاتر</span>
+            </button>
           </div>
         )}
       </div>
@@ -90,5 +130,13 @@ function ProductsContent() {
 }
 
 export default function ProductsPage() {
-  return <Suspense fallback={<div className="pt-[88px] flex items-center justify-center min-h-screen"><div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin"/></div>}><ProductsContent /></Suspense>
+  return (
+    <Suspense fallback={
+      <div className="pt-[88px] flex items-center justify-center min-h-screen">
+        <div className="w-10 h-10 border-4 border-sky-600 border-t-transparent rounded-full animate-spin" />
+      </div>
+    }>
+      <ProductsContent />
+    </Suspense>
+  )
 }

@@ -3,41 +3,51 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <div className="pt-[88px] min-h-screen bg-white">
-      <div className="bg-cream border-b border-lux-border py-14">
+      <div className="bg-sky-50 border-b border-sky-100 py-12 md:py-16">
         <div className="container-lux">
-          <div className="flex items-center gap-2 mb-4 text-[11px] tracking-[0.25em] uppercase text-lux-gray">
-            <Link href="/" className="hover:text-gold transition-colors">Accueil</Link>
+          <div className="flex items-center gap-2 mb-3 text-xs font-bold text-sky-600">
+            <Link href="/" className="hover:underline">الرئيسية</Link>
             <span>/</span>
-            <span className="text-gold">Livraison & délais</span>
+            <span className="text-slate-500">الشحن والتوصيل</span>
           </div>
-          <h1 className="font-serif font-normal text-4xl text-lux-dark">Livraison & délais</h1>
-          <div className="gold-divider mt-4" />
-          <p className="text-lux-gray text-sm mt-3">Livraison rapide partout au Maroc</p>
+          <h1 className="font-display font-bold text-3xl md:text-5xl text-slate-900">الشحن والتوصيل بالمغرب</h1>
+          <div className="w-12 h-1 bg-sky-500 rounded-full mt-4" />
+          <p className="text-slate-600 text-sm mt-3">توصيل آمن وسريع لجميع المدن والأقاليم</p>
         </div>
       </div>
-      <div className="container-lux py-16 max-w-3xl">
+      <div className="container-lux py-12 max-w-4xl space-y-8">
         
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Délais de livraison</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Vos commandes sont livrées en 24 à 48h ouvrables partout au Maroc. Les grandes villes (Casablanca, Rabat, Marrakech, Fès, Tanger) bénéficient généralement d'une livraison le lendemain.</p>
+        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+          <h2 className="font-display font-bold text-lg text-slate-900 mb-2">مدة التوصيل</h2>
+          <p className="text-slate-600 text-sm leading-relaxed">تُسلّم جميع الطلبيات في غضون 24 إلى 48 ساعة عمل. يتميز التوصيل للسكّان في المدن الكبرى (الدار البيضاء، الرباط، مراكش، فاس، طنجة، أغادير) بالسرعة الفائقة خلال 24 ساعة.</p>
         </div>
         
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Livraison gratuite</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">La livraison est offerte pour toute commande à partir de 500 DH. En dessous de ce montant, des frais de livraison peuvent s'appliquer selon votre région.</p>
+        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+          <h2 className="font-display font-bold text-lg text-slate-900 mb-2">التوصيل المجاني</h2>
+          <p className="text-slate-600 text-sm leading-relaxed">تستفيد من التوصيل المجاني الشامل عند الشراء بمبلغ 500 درهم أو أكثر. نغطي التكلفة بالكامل لضمان أفضل تجربة تسوق.</p>
         </div>
         
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Suivi de commande</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Une fois votre commande expédiée, vous recevrez un SMS avec les informations de suivi. Vous pouvez également nous contacter sur WhatsApp pour connaître le statut de votre livraison.</p>
+        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+          <h2 className="font-display font-bold text-lg text-slate-900 mb-2">تغليف محكم وآمن للأجهزة</h2>
+          <p className="text-slate-600 text-sm leading-relaxed">تغلف جميع أجهزة وتجهيزات أكوا كلين بصناديق حماية مخصصة تمنع أي كسر أو تلف أثناء النقل، لتصلك الشحنة بحالة ممتازة وجاهزة للاستخدام.</p>
         </div>
-        
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Zones de livraison</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Nous livrons dans toutes les villes du Maroc : Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kenitra, Tétouan et bien d'autres.</p>
-        </div>
-        <div className="grid grid-cols-3 gap-4 mt-10">
-          <div className="text-center p-5 bg-cream border border-lux-border"><p className="text-2xl mb-2">🚚</p><p className="text-xs font-medium text-lux-dark tracking-wide">24–48h</p><p className="text-xs text-lux-gray mt-1">Délai standard</p></div><div className="text-center p-5 bg-cream border border-lux-border"><p className="text-2xl mb-2">📦</p><p className="text-xs font-medium text-lux-dark tracking-wide">Suivi SMS</p><p className="text-xs text-lux-gray mt-1">En temps réel</p></div><div className="text-center p-5 bg-cream border border-lux-border"><p className="text-2xl mb-2">🎁</p><p className="text-xs font-medium text-lux-dark tracking-wide">Emballage</p><p className="text-xs text-lux-gray mt-1">Soigné et sécurisé</p></div>
+
+        <div className="grid grid-cols-3 gap-4 pt-4 text-center">
+          <div className="p-5 bg-sky-50 rounded-2xl border border-sky-100">
+            <p className="text-3xl mb-2">🚚</p>
+            <p className="font-bold text-slate-800 text-sm">24–48h</p>
+            <p className="text-slate-500 text-xs mt-1">توصيل سريع</p>
+          </div>
+          <div className="p-5 bg-sky-50 rounded-2xl border border-sky-100">
+            <p className="text-3xl mb-2">📦</p>
+            <p className="font-bold text-slate-800 text-sm">تغليف آمن</p>
+            <p className="text-slate-500 text-xs mt-1">حماية للأجهزة</p>
+          </div>
+          <div className="p-5 bg-sky-50 rounded-2xl border border-sky-100">
+            <p className="text-3xl mb-2">🇲🇦</p>
+            <p className="font-bold text-slate-800 text-sm">كافة المدن</p>
+            <p className="text-slate-500 text-xs mt-1">تغطية شاملة</p>
+          </div>
         </div>
       </div>
     </div>

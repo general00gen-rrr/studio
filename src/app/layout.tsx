@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Tajawal, Cairo } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -7,22 +7,21 @@ import LuxeEffects from '@/components/LuxeEffects'
 import PageTransition from '@/components/PageTransition'
 import WhatsAppButton from '@/components/WhatsAppButton'
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400','500','600','700'],
-  style: ['normal','italic'],
+const tajawal = Tajawal({
+  subsets: ['arabic'],
+  variable: '--font-tajawal',
+  weight: ['300', '400', '500', '700', '800'],
 })
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['300','400','500','600'],
+const cairo = Cairo({
+  subsets: ['arabic'],
+  variable: '--font-cairo',
+  weight: ['400', '600', '700', '800'],
 })
 
 export const metadata: Metadata = {
-  title: 'LUXÉ — Boutique Premium',
-  description: 'Sélection premium de produits pour votre quotidien. Livraison au Maroc, paiement à la livraison.',
+  title: 'أكوا كلين — أنظمة تصفية وتقنية المياه بالمغرب | AquaClean',
+  description: 'أكوا كلين - نظافة، جودة، وثقة. أحدث أنظمة تصفية المياه، معالجة بالاسموز العكسي. توصيل مجاني لكل مدن المغرب والدفع عند الاستلام.',
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     shortcut: '/favicon.svg',
@@ -31,8 +30,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
-      <body>
+    <html lang="ar" dir="rtl" className={`${tajawal.variable} ${cairo.variable}`}>
+      <body className="bg-white text-slate-900 font-sans antialiased">
         <LuxeEffects />
         <Navbar />
         <main>

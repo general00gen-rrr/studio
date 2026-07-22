@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -17,44 +18,29 @@ const config: Config = {
     },
     extend: {
       colors: {
-        gold: { DEFAULT: '#C8A96E', light: '#D9BF8A', dark: '#A88A4E' },
-        cream: '#F9F7F4',
-        'lux-dark': '#1A1A1A',
-        'lux-gray': '#6B6B6B',
-        'lux-border': '#E8E4DF',
+        aqua: {
+          50: '#F0F9FF',
+          100: '#E0F2FE',
+          200: '#BAE6FD',
+          300: '#7DD3FC',
+          400: '#38BDF8',
+          500: '#06B6D4',
+          600: '#0284C7',
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C4A6E',
+          dark: '#0F172A',
+        },
+        gold: { DEFAULT: '#0284C7', light: '#38BDF8', dark: '#0369A1' },
+        cream: '#F8FAFC',
+        'lux-dark': '#0F172A',
+        'lux-gray': '#64748B',
+        'lux-border': '#E2E8F0',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -62,32 +48,19 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-tajawal)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-cairo)', 'sans-serif'],
+        serif: ['var(--font-cairo)', 'sans-serif'],
       },
       keyframes: {
-        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
+        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(50%)' } },
         fadeUp: { from: { opacity: '0', transform: 'translateY(24px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
         fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
-        scaleIn: { from: { opacity: '0', transform: 'scale(0.96)' }, to: { opacity: '1', transform: 'scale(1)' } },
-        slideRight: { from: { transform: 'translateX(-100%)' }, to: { transform: 'translateX(0)' } },
       },
       animation: {
         marquee: 'marquee 35s linear infinite',
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
         'fade-up': 'fadeUp 0.6s ease-out forwards',
         'fade-in': 'fadeIn 0.5s ease-out forwards',
-        'scale-in': 'scaleIn 0.4s ease-out forwards',
-        'slide-right': 'slideRight 0.3s ease-out forwards',
       },
     },
   },

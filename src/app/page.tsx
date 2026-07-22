@@ -11,116 +11,138 @@ export default async function HomePage() {
   return (
     <div className="pt-0">
 
-      {/* HERO */}
-      <section className="relative h-screen min-h-[700px] max-h-[960px] flex items-end overflow-hidden bg-lux-dark">
-        <div className="absolute inset-0">
-          {/* Desktop image */}
+      {/* HERO SECTION */}
+      <section className="relative min-h-[680px] md:min-h-[760px] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-sky-950 to-slate-900 py-20 text-white">
+        <div className="absolute inset-0 z-0">
           <Image
-            src="https://i.ibb.co/zVkJLwLV/Cinematic-dark-luxury-flat-lay-202605040102-1.webp"
-            alt="Hero"
+            src="https://images.unsplash.com/photo-1548839140-29a749e1cf4e?q=80&w=2000&auto=format&fit=crop"
+            alt="AquaClean Water Purification"
             fill
-            className="object-cover object-center opacity-90 hidden md:block"
+            className="object-cover object-center opacity-25 mix-blend-overlay"
             priority
           />
-          {/* Mobile image */}
-          <Image
-            src="https://i.ibb.co/Cpt8J41t/Vertical-cinematic-dark-luxury-product-202605040115-1.webp"
-            alt="Hero"
-            fill
-            className="object-cover object-center opacity-90 block md:hidden"
-            priority
-          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-sky-950/80 to-transparent" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#0d0d0d]/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/60 via-transparent to-transparent" />
 
-        <div className="relative z-10 w-full container-lux pb-20 md:pb-28">
-          <div className="max-w-[520px]">
-            <div className="flex items-center gap-3 mb-6 animate-fade-in delay-100">
-              <div className="w-8 h-[1px] bg-gold" />
-              <span className="text-gold text-[11px] tracking-[0.35em] uppercase font-medium">Collection 2026</span>
+        <div className="relative z-10 w-full container-lux">
+          <div className="max-w-[640px]">
+            {/* Tagline Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/30 backdrop-blur-md mb-6 animate-fade-in delay-100">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="text-cyan-300 text-xs font-semibold tracking-wide">أكوا كلين • نظافة . جودة . ثقة</span>
             </div>
-            <h1 className="animate-fade-up delay-200">
-              <span className="block font-sans font-light text-[clamp(44px,6.5vw,82px)] text-white leading-[0.95] tracking-[-0.02em]">
-                L'Art
+
+            <h1 className="animate-fade-up delay-200 font-display font-bold leading-tight">
+              <span className="block text-3xl md:text-5xl text-white">
+                مياه نقية وصحية...
               </span>
-              <span className="block font-serif italic text-[clamp(48px,7vw,90px)] text-gold leading-[0.95] tracking-[-0.01em] mt-1">
-                du Quotidien
+              <span className="block text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-l from-cyan-400 to-sky-200 mt-2">
+                لكل عائلة مغربية
               </span>
             </h1>
-            <div className="w-10 h-[1px] bg-gold/50 my-7 animate-fade-in delay-300" />
-            <p className="text-white/60 text-[15px] leading-[1.7] font-light animate-fade-up delay-300 max-w-[360px]">
-              Une sélection raffinée de produits premium pour sublimer votre quotidien.
-              Livraison partout au Maroc.
+
+            <div className="w-16 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 rounded-full my-6 animate-fade-in delay-300" />
+
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-light animate-fade-up delay-300 max-w-[540px]">
+              احمِ عائلتك اليوم بأحدث أنظمة تصفية وتنقية المياه المنزلية (الأسموز العكسي RO). مياه عذبة، صحية، وخالية تماماً من الكلس والشوائب مباشرة من صنبورك.
             </p>
-            <div className="flex flex-wrap items-center gap-5 mt-10 animate-fade-up delay-400">
-              <Link href="/products" className="group inline-flex items-center gap-3 bg-gold text-white px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium transition-all duration-300 hover:bg-white hover:text-lux-dark">
-                <span>Découvrir</span>
-                <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+
+            <div className="flex flex-wrap items-center gap-4 mt-8 animate-fade-up delay-400">
+              <Link href="/products" className="group inline-flex items-center gap-3 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white px-8 py-4 text-sm font-bold rounded-xl shadow-lg shadow-sky-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
+                <span>تصفح الأجهزة والأنظمة</span>
+                <svg className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </Link>
-              <Link href="/products?badge=nouveau" className="inline-flex items-center gap-2 text-white/60 text-[11px] tracking-[0.2em] uppercase font-medium hover:text-gold transition-colors duration-300 border-b border-white/20 hover:border-gold pb-0.5">
-                Nouveautés
+              <Link href="/products?badge=nouveau" className="inline-flex items-center gap-2 text-sky-200 hover:text-white text-sm font-medium px-5 py-4 rounded-xl border border-white/10 hover:border-sky-400/50 bg-white/5 backdrop-blur-sm transition-all duration-300">
+                أحدث الفلاتر والقطع
               </Link>
             </div>
-            <div className="flex items-center gap-6 mt-12 animate-fade-in delay-500">
-              {['Paiement livraison', 'Livraison 24–48h', 'Retour gratuit'].map((item, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-gold/60" />
-                  <span className="text-white/35 text-[10px] tracking-widest uppercase">{item}</span>
-                </div>
-              ))}
+
+            {/* Trust Points */}
+            <div className="grid grid-cols-3 gap-3 mt-10 pt-8 border-t border-white/10 animate-fade-in delay-500">
+              <div className="flex items-center gap-2">
+                <span className="text-cyan-400 text-lg">✓</span>
+                <span className="text-slate-300 text-xs md:text-sm font-medium">الدفع عند الاستلام</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-cyan-400 text-lg">✓</span>
+                <span className="text-slate-300 text-xs md:text-sm font-medium">توصيل 24–48h بالمغرب</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-cyan-400 text-lg">✓</span>
+                <span className="text-slate-300 text-xs md:text-sm font-medium">ضمان وضمان الصيانة</span>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="absolute bottom-8 right-8 md:flex flex-col items-center gap-3 hidden">
-          <span className="text-white/20 text-[10px] tracking-[0.4em] uppercase" style={{writingMode:'vertical-rl'}}>Défiler</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-white/20 to-transparent" />
-        </div>
       </section>
 
-      {/* MARQUEE */}
-      <section className="bg-lux-dark border-y border-gold/15 py-[13px] overflow-hidden">
+      {/* MARQUEE BANNER */}
+      <section className="bg-sky-600 text-white py-3 overflow-hidden shadow-inner">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="flex shrink-0 gap-10 px-5 text-gold/50 text-[10px] tracking-[0.35em] uppercase font-medium">
-              <span>Livraison Rapide 24–48h</span>
-              <span className="text-gold/20">◆</span>
-              <span>Paiement à la Livraison</span>
-              <span className="text-gold/20">◆</span>
-              <span>Retour Gratuit 30 Jours</span>
-              <span className="text-gold/20">◆</span>
-              <span>Produits Premium Sélectionnés</span>
-              <span className="text-gold/20">◆</span>
+            <div key={i} className="flex shrink-0 gap-10 px-5 text-xs font-semibold tracking-wide">
+              <span>💧 مياه نقية وصحية 100%</span>
+              <span className="opacity-40">●</span>
+              <span>�� توصيل مجاني لجميع مدن المغرب</span>
+              <span className="opacity-40">●</span>
+              <span>🛡️ ضمان شامل وقطع غيار أصلية</span>
+              <span className="opacity-40">●</span>
+              <span>💵 الدفع عند الاستلام بعد المعاينة</span>
+              <span className="opacity-40">●</span>
             </div>
           ))}
         </div>
       </section>
 
+      {/* VALUE PILLARS */}
+      <section className="py-12 bg-sky-50 border-b border-sky-100">
+        <div className="container-lux">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
+              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">💧</div>
+              <h4 className="font-bold text-slate-800 text-sm md:text-base">تنقية المياه</h4>
+              <p className="text-slate-500 text-xs mt-1">تصفية شاملة من الكلس والشوائب</p>
+            </div>
+            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
+              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">⚙️</div>
+              <h4 className="font-bold text-slate-800 text-sm md:text-base">أنظمة أسموز</h4>
+              <p className="text-slate-500 text-xs mt-1">تقنيات خماسية وسباعية المراحل</p>
+            </div>
+            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
+              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">🥛</div>
+              <h4 className="font-bold text-slate-800 text-sm md:text-base">مياه نقية وصحية</h4>
+              <p className="text-slate-500 text-xs mt-1">طعم عذب مع محاذاة المعادن</p>
+            </div>
+            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
+              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">🛡️</div>
+              <h4 className="font-bold text-slate-800 text-sm md:text-base">جودة مضمونة</h4>
+              <p className="text-slate-500 text-xs mt-1">خدمة بعد البيع وصيانة مستمرة</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CATEGORIES */}
-      <section className="py-24 container-lux">
+      <section className="py-20 container-lux">
         <ScrollReveal direction="up">
-          <div className="flex items-end justify-between mb-14">
+          <div className="flex items-end justify-between mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-6 h-[1px] bg-gold" />
-                <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Explorer</span>
-              </div>
-              <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-lux-dark tracking-[-0.02em]">Nos Univers</h2>
+              <span className="text-sky-600 font-bold text-xs tracking-wider uppercase block mb-1">أكوا كلين</span>
+              <h2 className="font-display font-bold text-2xl md:text-4xl text-slate-900">اقسام الأنظمة والمنتجات</h2>
             </div>
           </div>
         </ScrollReveal>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {categories.map((cat, i) => (
             <ScrollReveal key={cat.id} direction="up" delay={i * 100}>
-              <Link href={`/products?cat=${cat.id}`} className="group relative overflow-hidden bg-cream block" style={{aspectRatio:'4/3'}}>
-                <Image src={cat.image} alt={cat.name} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" sizes="33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-sans font-medium text-white text-base tracking-wide">{cat.name}</h3>
-                  <div className="flex items-center gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-gold text-[10px] tracking-[0.25em] uppercase">Voir la collection</span>
-                    <svg className="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <Link href={`/products?cat=${cat.id}`} className="group relative overflow-hidden rounded-2xl bg-slate-100 block shadow-sm border border-slate-100" style={{aspectRatio:'4/3'}}>
+                <Image src={cat.image} alt={cat.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="font-bold text-white text-base md:text-lg">{cat.name}</h3>
+                  <div className="flex items-center gap-1.5 mt-2 text-cyan-300 text-xs font-semibold">
+                    <span>استكشف المنتجات</span>
+                    <svg className="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                   </div>
                 </div>
               </Link>
@@ -129,25 +151,22 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED */}
-      <section className="py-24 bg-[#F9F7F4]">
+      {/* FEATURED PRODUCTS */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200/60">
         <div className="container-lux">
           <ScrollReveal direction="up">
-            <div className="flex items-end justify-between mb-14">
+            <div className="flex items-end justify-between mb-12">
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-6 h-[1px] bg-gold" />
-                  <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Notre sélection</span>
-                </div>
-                <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-lux-dark tracking-[-0.02em]">Produits Vedettes</h2>
+                <span className="text-sky-600 font-bold text-xs tracking-wider uppercase block mb-1">اختيار الخبراء</span>
+                <h2 className="font-display font-bold text-2xl md:text-4xl text-slate-900">الأجهزة والأدوات الموصى بها</h2>
               </div>
-              <Link href="/products" className="hidden md:flex items-center gap-2 text-lux-gray text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group">
-                <span>Voir tout</span>
-                <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <Link href="/products" className="hidden md:flex items-center gap-2 text-sky-600 hover:text-sky-700 font-bold text-sm group">
+                <span>عرض الكل</span>
+                <svg className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </Link>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {featured.map((p, i) => (
               <ScrollReveal key={p.id} direction="up" delay={i * 80}>
                 <ProductCard product={p} />
@@ -157,65 +176,29 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* PROMO */}
-      <section className="py-24 container-lux">
-        <div className="grid md:grid-cols-2 gap-4">
-          <ScrollReveal direction="left">
-            <div className="relative overflow-hidden bg-lux-dark flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
-              <Image src="https://i.ibb.co/gb3DS9ZB/Art-de-vivre-la-maison-1.webp" alt="Maison" fill className="object-cover opacity-45 group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="relative z-10">
-                <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Nouvelle collection</span>
-                <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Art de vivre<br/><em className="font-serif">à la maison</em></h3>
-                <Link href="/products/maison" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
-                  <span>Découvrir</span>
-                  <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal direction="right">
-            <div className="relative overflow-hidden bg-cream flex items-end p-8 group" style={{aspectRatio:'4/3'}}>
-              <Image src="https://i.ibb.co/vCtJDJ8p/Mode-Accessoires-1.webp" alt="Mode" fill className="object-cover opacity-65 group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-              <div className="relative z-10">
-                <span className="text-gold text-[10px] tracking-[0.3em] uppercase">Style intemporel</span>
-                <h3 className="font-sans font-light text-white text-[28px] leading-tight tracking-[-0.01em] mt-2">Mode &<br/><em className="font-serif">Accessoires</em></h3>
-                <Link href="/products/mode" className="inline-flex items-center gap-2 mt-5 text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-gold transition-colors group/link">
-                  <span>Explorer</span>
-                  <svg className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* BEST SELLERS */}
       {best.length > 0 && (
-        <section className="py-24 bg-lux-dark">
+        <section className="py-20 bg-slate-900 text-white">
           <div className="container-lux">
             <ScrollReveal direction="up">
-              <div className="mb-14">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-6 h-[1px] bg-gold" />
-                  <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Les plus populaires</span>
-                </div>
-                <h2 className="font-sans font-light text-[clamp(28px,3.5vw,42px)] text-white tracking-[-0.02em]">Best-Sellers</h2>
+              <div className="mb-12 text-center max-w-xl mx-auto">
+                <span className="text-cyan-400 font-bold text-xs tracking-wider uppercase block mb-2">الأعلى طلباً</span>
+                <h2 className="font-display font-bold text-2xl md:text-4xl">أجهزة الفلترة الأكثر مبيعاً</h2>
+                <p className="text-slate-400 text-sm mt-2">حلول جربها واعتمدها مئات العملاء في كافة أرجاء المغرب</p>
               </div>
             </ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {best.slice(0,3).map((p, i) => (
                 <ScrollReveal key={p.id} direction="up" delay={i * 120}>
-                  <Link href={`/products/${p.slug || p.id}`} className="group block">
-                    <div className="relative overflow-hidden bg-white/5" style={{aspectRatio:'1/1'}}>
-                      <Image src={p.image} alt={p.name} fill className="object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" sizes="33vw" />
-                      <span className="absolute top-3 left-3 bg-gold text-white text-[9px] tracking-[0.25em] uppercase px-2.5 py-1">Best-seller</span>
+                  <Link href={`/products/${p.slug || p.id}`} className="group block bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700/60 hover:border-sky-500 transition-all">
+                    <div className="relative overflow-hidden bg-slate-800" style={{aspectRatio:'1/1'}}>
+                      <Image src={p.image} alt={p.name} fill className="object-cover group-hover:scale-105 transition-all duration-500" sizes="33vw" />
+                      <span className="absolute top-3 right-3 bg-sky-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow">الأكثر مبيعاً</span>
                     </div>
-                    <div className="pt-4">
-                      <p className="text-white/30 text-[10px] tracking-[0.3em] uppercase">{p.category}</p>
-                      <h3 className="text-white text-sm font-medium mt-1.5 group-hover:text-gold transition-colors">{p.name}</h3>
-                      <p className="font-serif text-gold mt-1 text-base">{formatPrice(p.price)}</p>
+                    <div className="p-5">
+                      <p className="text-slate-400 text-xs font-medium">{p.category}</p>
+                      <h3 className="text-white text-base font-bold mt-1 group-hover:text-cyan-300 transition-colors">{p.name}</h3>
+                      <p className="font-display font-bold text-sky-400 mt-2 text-lg">{formatPrice(p.price)}</p>
                     </div>
                   </Link>
                 </ScrollReveal>
@@ -226,22 +209,19 @@ export default async function HomePage() {
       )}
 
       {/* NEWSLETTER */}
-      <section className="py-24 bg-[#F9F7F4]">
+      <section className="py-20 bg-sky-50">
         <div className="container-lux">
           <ScrollReveal direction="up">
-            <div className="max-w-md mx-auto text-center">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-6 h-[1px] bg-gold" />
-                <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-medium">Restez informé</span>
-                <div className="w-6 h-[1px] bg-gold" />
+            <div className="max-w-xl mx-auto text-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-sky-100">
+              <span className="text-sky-600 font-bold text-xs uppercase tracking-wider block mb-2">استشارات ونصائح مجانية</span>
+              <h2 className="font-display font-bold text-2xl md:text-3xl text-slate-900">تواصل معنا لمعرفة الجهاز الأنسب لمنزلك</h2>
+              <p className="text-slate-600 text-sm mt-3 mb-8">أدخل بريدك الإلكتروني ليصلك دليل اختيار أنظمة الفلترة المناسبة لماء منطقتك</p>
+              <div className="flex gap-2">
+                <input type="email" placeholder="أدخل بريدك الإلكتروني" className="input-lux flex-1 text-sm rounded-xl" />
+                <button className="bg-sky-600 hover:bg-sky-700 text-white font-bold px-6 py-3.5 text-sm rounded-xl transition-all shrink-0">
+                  <span>اشترك الآن</span>
+                </button>
               </div>
-              <h2 className="font-sans font-light text-[clamp(26px,3vw,38px)] text-lux-dark tracking-[-0.02em]">Abonnez-vous</h2>
-              <p className="text-lux-gray text-sm font-light mt-4 mb-8 leading-relaxed">Recevez nos nouveautés, offres exclusives et inspirations dans votre boîte mail.</p>
-              <div className="flex gap-0">
-                <input type="email" placeholder="Votre adresse email" className="input-lux flex-1 text-sm" />
-                <button className="btn-gold shrink-0 px-6 text-[11px]"><span>S'inscrire</span></button>
-              </div>
-              <p className="text-lux-gray/60 text-[11px] mt-3 tracking-wide">Pas de spam. Désabonnement à tout moment.</p>
             </div>
           </ScrollReveal>
         </div>

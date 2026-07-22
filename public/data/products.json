@@ -1,460 +1,88 @@
 [
   {
-    "id": "2",
-    "name": "Miroir Ovale Arche",
-    "price": 1200,
+    "id": "1",
+    "name": "نظام الأسموز العكسي RO سباعي المراحل",
+    "price": 1850,
+    "originalPrice": 2200,
     "category": "maison",
-    "description": "Miroir mural arche, cadre doré mat 60x120cm",
-    "details": "Ce miroir ovale en forme d'arche avec son cadre doré mat agrandit visuellement l'espace et apporte une touche luxueuse. Fixation murale incluse.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778005223/Nova_Arched_Backlit_Mirror_Inverse_Front_pou2hj.webp",
-    "rating": 4.6,
-    "reviews": 52,
-    "stock": 8,
-    "features": [
-      "60 x 120 cm",
-      "Cadre métal doré",
-      "Miroir anti-déformation",
-      "Fixation incluse"
-    ],
-    "slug": "miroir-ovale-arche",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778005223/Nova_Arched_Backlit_Mirror_Inverse_Front_pou2hj.webp"
-    ]
+    "description": "محطة تنقية منزلية فائقة مع مرحلة إضافة المعادن الصحية وخزان 12 لتر",
+    "details": "يوفر هذا النظام مياه شرب نقيّة ونظيفة 100% معززة بالمعادن الأساسية (الكالسيوم والمغنيسيوم). يزيل الكلس، الأملاح الثقيلة، البكتيريا، والرواسب من مياه الصنبور بشكل كامل.",
+    "image": "https://images.unsplash.com/photo-1548839140-29a749e1cf4e?w=600&q=80",
+    "badge": "bestseller",
+    "rating": 4.9,
+    "reviews": 128,
+    "stock": 25,
+    "features": ["تصفية سباعية المراحل", "خزان ضغط 12 لتر", "مضخة تعزيز الضغط", "صنبور كروم فاخر"]
+  },
+  {
+    "id": "2",
+    "name": "مصفاة مياه المطبخ خماسية المراحل",
+    "price": 1250,
+    "originalPrice": 1500,
+    "category": "maison",
+    "description": "نظام تصفية مدمج يعمل بدون كهرباء لماء عذب ومثالي للطهي والشرب",
+    "details": "نظام تنقية مثالي للمطابخ الحديثة يتميز بتركيب سهل أسفل المجلى مع قدرة تصفية عالية لجميع الشوائب والكلور والروائح الكريهة.",
+    "image": "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=600&q=80",
+    "badge": "nouveau",
+    "rating": 4.8,
+    "reviews": 64,
+    "stock": 30,
+    "features": ["5 مراحل تصفية", "بدون الحاجة للكهرباء", "تركيب سهل أسفل المجلى", "شمعات عالية الجودة"]
   },
   {
     "id": "3",
-    "name": "Bougie Oud & Rose",
-    "price": 280,
-    "category": "maison",
-    "description": "Bougie artisanale cire soja, 60h de brûlage",
-    "details": "Bougie artisanale en cire de soja 100% naturelle. Son mélange d'oud oriental et de rose marocaine crée une atmosphère envoûtante. Contenant en verre recyclé.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006465/Capture_d_%C3%A9cran_2026-05-05_194054_wthmfo.png",
-    "badge": "nouveau",
-    "rating": 4.7,
-    "reviews": 88,
-    "stock": 45,
-    "features": [
-      "Cire de soja naturelle",
-      "60h de brûlage",
-      "Parfum Oud & Rose",
-      "Pot verre recyclé"
-    ],
-    "slug": "bougie-oud-rose",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006465/Capture_d_%C3%A9cran_2026-05-05_194054_wthmfo.png"
-    ]
+    "name": "طقم شمعات الفلتر السنوي (4 شمعات)",
+    "price": 290,
+    "originalPrice": 350,
+    "category": "beaute",
+    "description": "مجموعة الشمعات الأساسية للاستبدال الدوري (PP, GAC, CTO, Post Carbon)",
+    "details": "مجموعة الغيارات الدورية الشاملة لضمان بقاء المياه عذبة ونقية. تشمل شمعة القطن للترسبات، وشمعتي الكربون للكلور والروائح، وشمعة تحسين الطعم.",
+    "image": "https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?w=600&q=80",
+    "badge": "bestseller",
+    "rating": 4.9,
+    "reviews": 210,
+    "stock": 80,
+    "features": ["شمعة شوائب PP 5 micron", "شمعة كربون نشط GAC", "شمعة كربون صلب CTO", "شمعة فلتر تحسين الطعم"]
   },
   {
     "id": "4",
-    "name": "Vase Marbre Blanc",
-    "price": 450,
-    "category": "maison",
-    "description": "Vase sculpture en marbre naturel veiné",
-    "details": "Vase sculptural en marbre blanc veiné. Chaque pièce est unique grâce aux nuances naturelles du marbre. Idéal pour fleurs fraîches ou comme objet déco.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006543/Nordal_AW2022_PRODUCT_SOEVIND_41871_95ec3994-bd3a-4875-80c0-857cd713d212_y8jqbd.webp",
-    "rating": 4.6,
-    "reviews": 79,
-    "stock": 12,
-    "features": [
-      "Marbre naturel",
-      "H. 25cm / D. 12cm",
-      "Pièce unique",
-      "Fond anti-rayures"
-    ],
-    "slug": "vase-marbre-blanc",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006543/Nordal_AW2022_PRODUCT_SOEVIND_41871_95ec3994-bd3a-4875-80c0-857cd713d212_y8jqbd.webp"
-    ],
-    "badge": "promo"
+    "name": "شمعة الممبرين الأمريكية RO Membrane 75GPD",
+    "price": 320,
+    "category": "beaute",
+    "description": "الغشاء الخلوي الأساسي لفصل الأملاح والكلس بدقة 0.0001 ميكرون",
+    "details": "القلب النابض لجهاز الأسموز العكسي. تقوم هذه الشمعة بتقنية الممبرين عالية الدقة بفصل الأملاح المعادن الثقيلة والترسبات الدقيقة جداً.",
+    "image": "https://images.unsplash.com/photo-1585832770485-e68a5fcfad52?w=600&q=80",
+    "rating": 4.8,
+    "reviews": 85,
+    "stock": 40,
+    "features": ["دقة فصل 0.0001 ميكرون", "إنتاجية 75 جالون يومياً", "تقنية أصلية عالية التحمل", "عمر افتراضي 24 شهر"]
   },
   {
     "id": "5",
-    "name": "Coussin Velours Camel",
-    "price": 180,
-    "category": "maison",
-    "description": "Coussin décoratif velours premium 50×50cm",
-    "details": "Coussin en velours camel haute qualité. Garnissage en duvet synthétique ultra-doux, fermeture invisible par zip. Déhoussable et lavable.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006623/Capture_d_%C3%A9cran_2026-05-05_194331_zkiw6f.png",
-    "rating": 4.8,
-    "reviews": 114,
-    "stock": 30,
-    "features": [
-      "50 x 50 cm",
-      "Velours 100% polyester",
-      "Garnissage duvet synt.",
-      "Lavable 30°"
-    ],
-    "slug": "coussin-velours-camel",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006623/Capture_d_%C3%A9cran_2026-05-05_194331_zkiw6f.png"
-    ],
-    "badge": "nouveau"
+    "name": "صنبور الفولاذ المقاوم للصدأ (Stainless Steel Faucet)",
+    "price": 220,
+    "category": "tech",
+    "description": "صنبور فاخر مخصص للمياه المفلترة مقاوم للصدأ بتصميم أنيق",
+    "details": "صنبور فاخر مصنع من الفولاذ المقاوم للصدأ 304 الخالي من الرصاص، صمم خصيصاً ليتناسب مع كافة أجهزة ومصفيات المياه المنزلية.",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80",
+    "rating": 4.7,
+    "reviews": 42,
+    "stock": 35,
+    "features": ["ستانلس ستيل 304", "خالي تماماً من الرصاص", "دوران 360 درجة", "تركيب سريع"]
   },
   {
     "id": "6",
-    "name": "Plateau Laiton Ciselé",
-    "price": 320,
-    "category": "maison",
-    "description": "Plateau décoratif en laiton, motifs arabesques",
-    "details": "Plateau artisanal en laiton doré avec motifs arabesques ciselés à la main par des artisans marocains. Parfait pour servir le thé ou comme pièce décorative.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006684/Capture_d_%C3%A9cran_2026-05-05_194435_ujbk4s.png",
-    "badge": "nouveau",
-    "rating": 4.9,
-    "reviews": 54,
-    "stock": 20,
-    "features": [
-      "Diam. 40cm",
-      "Laiton massif",
-      "Ciselage main",
-      "Artisanat marocain"
-    ],
-    "slug": "plateau-laiton-cisele",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006684/Capture_d_%C3%A9cran_2026-05-05_194435_ujbk4s.png"
-    ]
-  },
-  {
-    "id": "7",
-    "name": "Blazer Structuré Ivoire",
-    "price": 1100,
-    "category": "mode",
-    "description": "Blazer ajusté crêpe de laine, coupe française",
-    "details": "Blazer ivoire à la coupe française impeccable, taillé dans un crêpe de laine premium. Silhouette structurée et finitions soignées pour toutes les occasions.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006771/Capture_d_%C3%A9cran_2026-05-05_194557_dxuean.png",
-    "badge": "nouveau",
-    "rating": 4.5,
-    "reviews": 137,
-    "stock": 195,
-    "features": [
-      "Crêpe de laine 70%",
-      "Doublure soie",
-      "Boutonnage doré",
-      "Tailles XS-XL"
-    ],
-    "slug": "blazer-structure-ivoire",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006771/Capture_d_%C3%A9cran_2026-05-05_194557_dxuean.png"
-    ]
-  },
-  {
-    "id": "8",
-    "name": "Sac Cuir Camel",
-    "price": 1800,
-    "category": "mode",
-    "description": "Sac à main cuir véritable, fermoir doré",
-    "details": "Sac artisanal en cuir pleine fleur camel. Structure souple, finitions en métal doré, poche zippée intérieure. Élégance intemporelle pour chaque tenue.",
-    "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
-    "badge": "bestseller",
-    "rating": 4.6,
-    "reviews": 87,
-    "stock": 6,
-    "features": [
-      "Cuir pleine fleur",
-      "Fermoir doré",
-      "Doublure suède",
-      "Bandoulière amovible"
-    ],
-    "slug": "sac-cuir-camel"
-  },
-  {
-    "id": "9",
-    "name": "Montre Classic Or",
-    "price": 2500,
-    "category": "mode",
-    "description": "Montre élégante acier doré, cadran blanc nacre",
-    "details": "Montre classique à mouvement suisse. Boîtier acier doré, cadran blanc nacré, bracelet cuir chocolat. Étanche 3ATM. Livrée avec boîte cadeau.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006866/16845P08MA_montre-herbelin-bracelet-cuir-boitier-pvd-plaque-or-jaune_michel_herbelin_egsodw.webp",
-    "rating": 4.5,
-    "reviews": 141,
-    "stock": 9,
-    "features": [
-      "Mouvement suisse",
-      "Verre saphir",
-      "Étanche 3ATM",
-      "Boîte cadeau incluse"
-    ],
-    "slug": "montre-classic-or",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006866/16845P08MA_montre-herbelin-bracelet-cuir-boitier-pvd-plaque-or-jaune_michel_herbelin_egsodw.webp"
-    ]
-  },
-  {
-    "id": "10",
-    "name": "Sneakers Blanc Cuir",
-    "price": 890,
-    "category": "mode",
-    "description": "Baskets cuir blanc premium, semelle plateforme",
-    "details": "Sneakers en cuir blanc véritable avec semelle plateforme légèrement surélevée. Confort exceptionnel, style minimaliste et intemporel.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006927/Capture_d_%C3%A9cran_2026-05-05_194838_wxbplo.png",
-    "rating": 4.9,
-    "reviews": 108,
-    "stock": 208,
-    "features": [
-      "Cuir véritable",
-      "Semelle +3cm",
-      "Pointures 36-45",
-      "Sac à chaussures inclus"
-    ],
-    "slug": "sneakers-blanc-cuir",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006927/Capture_d_%C3%A9cran_2026-05-05_194838_wxbplo.png"
-    ],
-    "badge": "bestseller"
-  },
-  {
-    "id": "11",
-    "name": "Robe Lin Naturel",
-    "price": 680,
-    "category": "mode",
-    "description": "Robe mi-longue lin 100% naturel, coupe fluide",
-    "details": "Robe en lin naturel 100% biologique, coupe droite légèrement évasée. Confort absolu pour toutes les saisons. Disponible en ivoire et sable.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006989/Capture_d_%C3%A9cran_2026-05-05_194938_diutjq.png",
-    "rating": 4.9,
-    "reviews": 97,
-    "stock": 185,
-    "features": [
-      "Lin 100% bio",
-      "Mi-longue",
-      "Coupe fluide",
-      "2 coloris"
-    ],
-    "slug": "robe-lin-naturel",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778006989/Capture_d_%C3%A9cran_2026-05-05_194938_diutjq.png"
-    ]
-  },
-  {
-    "id": "12",
-    "name": "Parfum Oud Intense",
-    "price": 650,
-    "category": "beaute",
-    "description": "Eau de parfum 100ml, oud, ambre & rose",
-    "details": "Fragrance orientale envoûtante. Tête: bergamote & safran. Cœur: rose marocaine & oud. Fond: ambre & musc blanc. Sillage intense, 12h+.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007101/gucci-intense-oud-pour-homme-prix-maroc-scaled_gm7x3t.jpg",
-    "badge": "bestseller",
-    "rating": 4.7,
-    "reviews": 63,
-    "stock": 25,
-    "features": [
-      "100ml EDP",
-      "Vaporisateur",
-      "Notes orientales",
-      "Coffret luxe"
-    ],
-    "slug": "parfum-oud-intense",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007101/gucci-intense-oud-pour-homme-prix-maroc-scaled_gm7x3t.jpg"
-    ]
-  },
-  {
-    "id": "13",
-    "name": "Sérum Vitamine C Gold",
-    "price": 380,
-    "category": "beaute",
-    "description": "Sérum illuminateur vit.C & particules d'or 24K",
-    "details": "Sérum anti-âge luxueux combinant vitamine C stabilisée et micro-particules d'or 24K. Illumine, rafferme et unifie le teint. Résultats visibles en 14 jours.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007049/DE00612-NEW-PACKSHOTS-ECOM-AS-SERUM-60ML-FACE-SVE_800x_futwkl.webp",
-    "badge": "nouveau",
-    "rating": 4.8,
-    "reviews": 72,
-    "stock": 35,
-    "features": [
-      "30ml",
-      "Vitamine C 15%",
-      "Or 24K",
-      "Sans paraben"
-    ],
-    "slug": "serum-vitamine-c-gold",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007049/DE00612-NEW-PACKSHOTS-ECOM-AS-SERUM-60ML-FACE-SVE_800x_futwkl.webp"
-    ]
-  },
-  {
-    "id": "14",
-    "name": "Set Soin Argan Bio",
-    "price": 920,
-    "category": "beaute",
-    "description": "Coffret 5 soins huile d'argan pure du Maroc",
-    "details": "Coffret premium 5 produits à l'huile d'argan bio certifiée du Maroc: huile visage, crème jour, crème nuit, sérum et masque hebdomadaire.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007149/pack-coffret-cadeaux-huiles-d-argan-et-savon-noir-bio-et-artisanaux_dpl2fj.jpg",
-    "rating": 4.7,
-    "reviews": 130,
-    "stock": 12,
-    "features": [
-      "5 produits",
-      "Argan bio certifié",
-      "Made in Morocco",
-      "Coffret cadeau"
-    ],
-    "slug": "set-soin-argan-bio",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007149/pack-coffret-cadeaux-huiles-d-argan-et-savon-noir-bio-et-artisanaux_dpl2fj.jpg"
-    ]
-  },
-  {
-    "id": "15",
-    "name": "Casque Audio Premium",
-    "price": 1200,
+    "name": "جهاز قياس جودة المياه ونسبة الأملاح TDS Meter",
+    "price": 150,
+    "originalPrice": 190,
     "category": "tech",
-    "description": "Casque sans fil ANC, 30h d'autonomie",
-    "details": "Casque haute-fidélité avec réduction de bruit active hybride. Drivers 40mm, son Hi-Res. 30h d'autonomie, charge rapide 15min = 3h. Coussinets mémoire de forme.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007197/Guess_casque_audio_premium_sans_fil_headphones_Bluetooth_53_Studio_Quality_Sound_Cuir_monogramme_Noir_Guess_Premium-Audio-Kopfhorer_drahtlos_Headphones_Bluetooth_53_Studio_Quality_Sound_Leder_Monogramm_Schwarz_u0jodp.jpg",
-    "rating": 4.5,
-    "reviews": 37,
-    "stock": 14,
-    "features": [
-      "ANC hybride",
-      "30h autonomie",
-      "Hi-Res Audio",
-      "Bluetooth 5.2"
-    ],
-    "slug": "casque-audio-premium",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007197/Guess_casque_audio_premium_sans_fil_headphones_Bluetooth_53_Studio_Quality_Sound_Cuir_monogramme_Noir_Guess_Premium-Audio-Kopfhorer_drahtlos_Headphones_Bluetooth_53_Studio_Quality_Sound_Leder_Monogramm_Schwarz_u0jodp.jpg"
-    ]
-  },
-  {
-    "id": "16",
-    "name": "Montre Connectée Sport",
-    "price": 1800,
-    "category": "tech",
-    "description": "Smartwatch GPS, suivi santé avancé, AMOLED",
-    "details": "Montre connectée avec écran AMOLED 1.4\". GPS intégré, FC, SpO2, sommeil, stress. 50+ modes sport. Étanche 5ATM. Autonomie 14 jours.",
-    "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=80",
-    "badge": "nouveau",
-    "rating": 4.6,
-    "reviews": 37,
-    "stock": 11,
-    "features": [
-      "AMOLED 1.4\"",
-      "GPS intégré",
-      "Étanche 5ATM",
-      "14 jours autonomie"
-    ],
-    "slug": "montre-connectee-sport"
-  },
-  {
-    "id": "17",
-    "name": "Enceinte Portable Luxe",
-    "price": 650,
-    "category": "tech",
-    "description": "Enceinte Bluetooth 360°, finition aluminium",
-    "details": "Enceinte portable en aluminium brossé premium. Son omnidirectionnel 360°, basses profondes. Étanche IPX7, 20h d'autonomie, charge USB-C.",
-    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80",
+    "description": "مقياس رقمي دقيق لفحص نسبة الأملاح والشوائب الذائبة في الماء",
+    "details": "جهاز لا غنى عنه لكل منزل للتأكد من كفاءة الفلتر وصلاحية المياه للشرب. يقيس مستوى الشوائب والأملاح الذائبة (PPM) في ثوان معدودة.",
+    "image": "https://images.unsplash.com/photo-1617104551722-3b2d51366400?w=600&q=80",
+    "badge": "promo",
     "rating": 4.9,
-    "reviews": 28,
-    "stock": 20,
-    "features": [
-      "Aluminium brossé",
-      "IPX7",
-      "20h autonomie",
-      "Son 360°"
-    ],
-    "slug": "enceinte-portable-luxe"
-  },
-  {
-    "id": "18",
-    "name": "Robot Pâtissier Pro",
-    "price": 2800,
-    "category": "cuisine",
-    "description": "Robot 6.5L, 1200W, 10 vitesses + minuteur",
-    "details": "Robot pâtissier professionnel 1200W, bol 6.5L inox. 10 vitesses + turbo. Livré avec fouet ballon, crochet pétrisseur et feuille. Tête basculante.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007291/batteur-melangeur-planetaire-professionnel-40-l-max-40-patisserie-chr_mos0nx.jpg",
-    "rating": 4.5,
-    "reviews": 100,
-    "stock": 7,
-    "features": [
-      "1200W",
-      "Bol 6.5L inox",
-      "10 vitesses",
-      "3 accessoires inclus"
-    ],
-    "slug": "robot-patissier-pro",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007291/batteur-melangeur-planetaire-professionnel-40-l-max-40-patisserie-chr_mos0nx.jpg"
-    ]
-  },
-  {
-    "id": "19",
-    "name": "Set Couteaux Japonais",
-    "price": 780,
-    "category": "cuisine",
-    "description": "5 couteaux acier Damas 67 couches + bloc",
-    "details": "Set de 5 couteaux en acier Damas japonais 67 couches (chef, à pain, désosseur, santoku, économe). Manches pakkawood ergonomiques. Bloc bois inclus.",
-    "image": "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&q=80",
-    "badge": "bestseller",
-    "rating": 4.9,
-    "reviews": 127,
-    "stock": 15,
-    "features": [
-      "Acier Damas 67C",
-      "Dureté 62 HRC",
-      "Manche pakkawood",
-      "Bloc bois inclus"
-    ],
-    "slug": "set-couteaux-japonais"
-  },
-  {
-    "id": "20",
-    "name": "Service Thé Marocain",
-    "price": 450,
-    "category": "cuisine",
-    "description": "Service 8 pièces métal argenté ciselé main",
-    "details": "Service à thé marocain artisanal en métal argenté ciselé à la main par des artisans de Fès. Inclut: 1 théière, 6 verres, 1 plateau. Coffret cadeau.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007340/service-a-the-marocain-bleu-750_2000x_hkmoue.webp",
-    "rating": 4.6,
-    "reviews": 119,
-    "stock": 22,
-    "features": [
-      "8 pièces",
-      "Ciselé main",
-      "Artisanat de Fès",
-      "Coffret cadeau"
-    ],
-    "slug": "service-the-marocain",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007340/service-a-the-marocain-bleu-750_2000x_hkmoue.webp"
-    ]
-  },
-  {
-    "id": "21",
-    "name": "Tapis de Yoga Premium",
-    "price": 480,
-    "category": "sport",
-    "description": "Tapis yoga TPE 6mm, antidérapant, 183×61cm",
-    "details": "Tapis de yoga professionnel en TPE écologique, épaisseur 6mm. Surface antidérapante bilatérale, alignement imprimé. Léger 1.2kg, sangle incluse.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007403/tapis-de-yoga-antiderapant-femme-salle-sport-domicile_rjqn05.webp",
-    "rating": 4.9,
-    "reviews": 46,
-    "stock": 25,
-    "features": [
-      "TPE écologique",
-      "183 × 61 cm",
-      "6mm épaisseur",
-      "Sangle incluse"
-    ],
-    "slug": "tapis-de-yoga-premium",
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1778007403/tapis-de-yoga-antiderapant-femme-salle-sport-domicile_rjqn05.webp"
-    ]
-  },
-  {
-    "id": "22",
-    "name": "Bouteille Inox Luxe",
-    "price": 250,
-    "category": "sport",
-    "description": "Gourde isotherme 750ml, acier inox, 24h froid",
-    "details": "Bouteille isotherme en acier inoxydable 18/8 alimentaire. Double paroi sous vide: 24h froid / 12h chaud. Finition matte premium, sans BPA.",
-    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80",
-    "rating": 4.6,
-    "reviews": 110,
-    "stock": 40,
-    "features": [
-      "750ml",
-      "Inox 18/8",
-      "24h froid / 12h chaud",
-      "Sans BPA"
-    ],
-    "slug": "bouteille-inox-luxe"
+    "reviews": 95,
+    "stock": 50,
+    "features": ["قراءة فورية بدقة عالية", "شاشة LCD واضحة", "إيقاف تلقائي لحفظ البطارية", "حافظة جلدية مدمجة"]
   }
 ]

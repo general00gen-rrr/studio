@@ -3,68 +3,62 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <div className="pt-[88px] min-h-screen bg-white">
-      <div className="bg-cream border-b border-lux-border py-14">
+      <div className="bg-sky-50 border-b border-sky-100 py-12 md:py-16">
         <div className="container-lux">
-          <div className="flex items-center gap-2 mb-4 text-[11px] tracking-[0.25em] uppercase text-lux-gray">
-            <Link href="/" className="hover:text-gold transition-colors">Accueil</Link>
+          <div className="flex items-center gap-2 mb-3 text-xs font-bold text-sky-600">
+            <Link href="/" className="hover:underline">الرئيسية</Link>
             <span>/</span>
-            <span className="text-gold">FAQ</span>
+            <span className="text-slate-500">الأسئلة الشائعة</span>
           </div>
-          <h1 className="font-serif font-normal text-4xl text-lux-dark">FAQ</h1>
-          <div className="gold-divider mt-4" />
-          <p className="text-lux-gray text-sm mt-3">Retrouvez les réponses à vos questions fréquentes</p>
+          <h1 className="font-display font-bold text-3xl md:text-5xl text-slate-900">الأسئلة الشائعة</h1>
+          <div className="w-12 h-1 bg-sky-500 rounded-full mt-4" />
+          <p className="text-slate-600 text-sm mt-3">إجابات شاملة عن أنظمة أكوا كلين وجودة المياه</p>
         </div>
       </div>
-      <div className="container-lux py-16 max-w-3xl">
+      <div className="container-lux py-12 max-w-4xl space-y-6">
         
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>Comment passer une commande ?
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+            <span className="text-sky-600">س.</span> كيف أقوم بطلب جهاز تنقية أو فلتر مياه؟
           </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Ajoutez les produits à votre panier, remplissez vos informations de livraison et confirmez. Vous recevrez une confirmation sous 24h.</p>
+          <p className="text-slate-600 text-sm leading-relaxed pr-6">أضف المنتجات لسلة الشراء، ثم ادخل اسمك ورقم هاتفك وعنوانك. سيتصل بك فريقنا لتأكيد الموعد والتفاصيل قبل الشحن.</p>
         </div>
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>Quel est le délai de livraison ?
+
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+            <span className="text-sky-600">س.</span> كم تستغرق مدة التوصيل؟
           </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Entre 24 et 48h ouvrables selon votre ville. Les grandes villes sont livrées généralement le lendemain.</p>
+          <p className="text-slate-600 text-sm leading-relaxed pr-6">يستغرق التوصيل بين 24 و 48 ساعة عمل كحد أقصى لكافة مدن المملكة المغربية.</p>
         </div>
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>Puis-je modifier ou annuler ma commande ?
+
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+            <span className="text-sky-600">س.</span> هل الدفع متاح عند الاستلام والمعاينة؟
           </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Oui, contactez-nous rapidement via WhatsApp. Tant que la commande n'est pas expédiée, nous pouvons la modifier ou l'annuler.</p>
+          <p className="text-slate-600 text-sm leading-relaxed pr-6">نعم بالتأكيد! لا تدفع أي درهم حتى تصلك الشحنة وتفحص الجهاز بنفسك لتضمن سلامته وجودته.</p>
         </div>
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>Que faire si le produit reçu est défectueux ?
+
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+            <span className="text-sky-600">س.</span> متى يجب علي استبدال شمعات الفلتر؟
           </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Refusez la livraison ou contactez-nous dans les 48h avec des photos. Nous vous enverrons un remplacement sans frais.</p>
+          <p className="text-slate-600 text-sm leading-relaxed pr-6">ننصح باستبدال الشمعات الثلاث الأولى كل 6 أشهر، بينما تمتد شمعة الممبرين من 18 إلى 24 شهراً بحسب جودة مياه المنطقة.</p>
         </div>
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>La livraison est-elle vraiment gratuite ?
+
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+            <span className="text-sky-600">س.</span> هل التوصيل مجاني؟
           </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Oui, la livraison est offerte pour toute commande dès 500 DH partout au Maroc.</p>
+          <p className="text-slate-600 text-sm leading-relaxed pr-6">نعم، التوصيل مجاني تماماً لجميع الطلبات بقيمة 500 درهم أو أكثر في كافة مدن المغرب.</p>
         </div>
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>Comment suivre ma commande ?
+
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+            <span className="text-sky-600">س.</span> هل تتوافر قطع الغيار والشمعات بصفة دائمية؟
           </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Vous recevrez un SMS de suivi après expédition. Vous pouvez aussi nous contacter sur WhatsApp avec votre numéro de commande.</p>
+          <p className="text-slate-600 text-sm leading-relaxed pr-6">نعم، نوفر جميع الشمعات والمضخات والصنابير الأصلية بصفة مستمرة مع إمكانية إرسال التذكير بموعد الصيانة.</p>
         </div>
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>Puis-je retourner un produit ?
-          </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Oui, sous 30 jours si le produit est non utilisé et dans son emballage d'origine. Le remboursement est garanti.</p>
-        </div>
-        <div className="mb-8 pb-8 border-b border-lux-border last:border-0">
-          <h3 className="font-medium text-lux-dark text-sm tracking-wide mb-3 flex items-start gap-3">
-            <span className="text-gold font-serif text-lg leading-none">Q.</span>Quels sont vos horaires de service client ?
-          </h3>
-          <p className="text-lux-gray text-sm leading-[1.9] pl-6">Notre équipe est disponible du Lundi au Samedi de 9h à 18h via WhatsApp et email.</p>
-        </div>
+
       </div>
     </div>
   )

@@ -3,47 +3,26 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <div className="pt-[88px] min-h-screen bg-white">
-      <div className="bg-cream border-b border-lux-border py-14">
+      <div className="bg-sky-50 border-b border-sky-100 py-12 md:py-16">
         <div className="container-lux">
-          <div className="flex items-center gap-2 mb-4 text-[11px] tracking-[0.25em] uppercase text-lux-gray">
-            <Link href="/" className="hover:text-gold transition-colors">Accueil</Link>
+          <div className="flex items-center gap-2 mb-3 text-xs font-bold text-sky-600">
+            <Link href="/" className="hover:underline">الرئيسية</Link>
             <span>/</span>
-            <span className="text-gold">Retours & échanges</span>
+            <span className="text-slate-500">الضمان والإرجاع</span>
           </div>
-          <h1 className="font-serif font-normal text-4xl text-lux-dark">Retours & échanges</h1>
-          <div className="gold-divider mt-4" />
-          <p className="text-lux-gray text-sm mt-3">Retour gratuit sous 30 jours — remboursement garanti</p>
+          <h1 className="font-display font-bold text-3xl md:text-5xl text-slate-900">سياسة الضمان والإرجاع</h1>
+          <div className="w-12 h-1 bg-sky-500 rounded-full mt-4" />
+          <p className="text-slate-600 text-sm mt-3">ضمان حقيقي ورضا تام عن كافة منتجات أكوا كلين</p>
         </div>
       </div>
-      <div className="container-lux py-16 max-w-3xl">
-        
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Politique de retour</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Vous disposez de 30 jours à compter de la réception pour retourner un produit. Le produit doit être dans son état d'origine, non utilisé et dans son emballage d'origine.</p>
+      <div className="container-lux py-12 max-w-4xl space-y-6">
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2">الضمان الشامل</h3>
+          <p className="text-slate-600 text-sm leading-relaxed">تأتي جميع أنظمة الأسموز ومصفيات المياه مع ضمان ضد العيوب المصنعية وقطع التبديل الأصلية.</p>
         </div>
-        
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Comment effectuer un retour ?</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Contactez notre service client via WhatsApp au +212 770 469 416 en indiquant votre numéro de commande et la raison du retour. Notre équipe vous guidera pour la procédure de retour.</p>
-        </div>
-        
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Remboursement</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Une fois le retour validé et le produit reçu, le remboursement est effectué dans un délai de 3 à 5 jours ouvrables. Le remboursement se fait par virement ou cash selon votre préférence.</p>
-        </div>
-        
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Échange</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Si vous souhaitez échanger votre produit contre un autre article, contactez-nous. Nous traiterons votre échange en priorité sous 48h.</p>
-        </div>
-        
-        <div className="mb-10 pb-10 border-b border-lux-border last:border-0">
-          <h2 className="font-serif text-xl text-lux-dark mb-4">Produits non retournables</h2>
-          <p className="text-lux-gray text-sm leading-[1.9]">Les produits personnalisés, les articles d'hygiène ouverts et les produits endommagés par le client ne peuvent pas être retournés.</p>
-        </div>
-        <div className="mt-10 p-6 bg-cream border border-lux-border text-center">
-          <p className="text-lux-gray text-sm mb-3">Besoin d'initier un retour ?</p>
-          <a href="https://wa.me/212770469416" target="_blank" className="btn-primary inline-flex"><span>Nous contacter sur WhatsApp</span></a>
+        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <h3 className="font-bold text-slate-900 text-base mb-2">حق الاستبدال خلال 14 يوماً</h3>
+          <p className="text-slate-600 text-sm leading-relaxed">في حال وجود أي مشكلة بالمنتج أو عدم تطابقه مع التوصيف، يسعدنا استبداله لك مجاناً وبدون أي مصاريف إضافية.</p>
         </div>
       </div>
     </div>
