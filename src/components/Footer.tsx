@@ -6,12 +6,13 @@ export default function Footer() {
       <div className="container-lux grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div className="col-span-1">
-          <div className="flex items-center gap-2 mb-3">
-            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 4C20 4 8 18 8 26C8 32.6274 13.3726 38 20 38C26.6274 38 32 32.6274 32 26C32 18 20 4 20 4Z" fill="#06B6D4" />
-            </svg>
-            <span className="font-display font-bold text-2xl tracking-wide text-white">AquaClean</span>
-          </div>
+          <Link href="/" className="inline-block mb-4">
+            <img 
+              src="/logo-banner.png" 
+              alt="AquaClean Logo" 
+              className="h-12 md:h-14 w-auto object-contain bg-white p-1.5 rounded-2xl shadow-lg border border-white/20"
+            />
+          </Link>
           <p className="text-slate-400 text-xs leading-relaxed mt-2">
             أكوا كلين — العلامة الموثوقة لأجهزة ومصفيات المياه بالمغرب. مياه صحية ونقية لك ولعائلتك.
           </p>
@@ -39,7 +40,7 @@ export default function Footer() {
           <h4 className="text-xs font-bold uppercase text-cyan-400 mb-4">معلومات التواصل</h4>
           <ul className="space-y-3 text-xs text-slate-400">
             <li className="flex items-center gap-2">
-              <span className="text-cyan-400">📱</span>
+              <span className="text-cyan-400">��</span>
               <span dir="ltr">+212 6 00 00 00 00</span>
             </li>
             <li className="flex items-center gap-2">

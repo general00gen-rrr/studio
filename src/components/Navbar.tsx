@@ -13,22 +13,13 @@ const links = [
 ]
 
 function AquaCleanLogo({ transparent }: { transparent: boolean }) {
-  const color = transparent ? '#ffffff' : '#0284C7'
   return (
-    <div className="flex items-center gap-2">
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 4C20 4 8 18 8 26C8 32.6274 13.3726 38 20 38C26.6274 38 32 32.6274 32 26C32 18 20 4 20 4Z" fill="#06B6D4" />
-        <path d="M20 10C20 10 12 20 12 26C12 30.4183 15.5817 34 20 34C24.4183 34 28 30.4183 28 26C28 20 20 10 20 10Z" fill="#0284C7" />
-        <path d="M17 22L20 18L23 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-      <div className="flex flex-col">
-        <span className="font-display font-extrabold text-lg leading-none tracking-tight" style={{ color }}>
-          AquaClean
-        </span>
-        <span className="text-[9px] font-bold tracking-widest text-cyan-500 mt-0.5">
-          أكوا كلين
-        </span>
-      </div>
+    <div className="flex items-center">
+      <img 
+        src="/logo-banner.png" 
+        alt="AquaClean Logo" 
+        className={`h-9 md:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105 ${transparent ? 'brightness-0 invert drop-shadow' : ''}`}
+      />
     </div>
   )
 }
