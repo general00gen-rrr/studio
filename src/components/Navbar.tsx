@@ -12,18 +12,6 @@ const links = [
   { href: '/contact', label: 'اتصل بنا' },
 ]
 
-function AquaCleanLogo({ transparent }: { transparent: boolean }) {
-  return (
-    <div className="flex items-center">
-      <img 
-        src="/header-logo.png" 
-        alt="AquaClean Logo" 
-        className={`h-9 md:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105 ${transparent ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]' : ''}`}
-      />
-    </div>
-  )
-}
-
 export default function Navbar() {
   const { count, items, removeItem, total, isOpen, toggleCart } = useCart()
   const [scrolled, setScrolled] = useState(false)
@@ -32,63 +20,124 @@ export default function Navbar() {
   const router = useRouter()
   const pathname = usePathname()
 
-  const isHome = pathname === '/' || (typeof window !== 'undefined' && window.location.pathname === '/')
-  const transparent = mounted ? (isHome && !scrolled) : isHome
+  // تحقق حاسم ومباشر للمسار لمنع أي تعارض في الألوان
+  const isHome = pathname === '/'
+  const transparent = isHome && !scrolled
 
   useEffect(() => {
     setMounted(true)
     const handler = () => setScrolled(window.scrollY > 20)
     handler()
-    window.addEventListener('scroll', handler)
+    window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
   return (
     <>
       <header 
-        suppressHydrationWarning
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${transparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-sm'}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          transparent 
+            ? 'bg-transparent text-white' 
+            : 'bg-white/95 backdrop-blur-md shadow-sm text-slate-800 border-b border-slate-100'
+        }`}
       >
+        {/* Top Announcement Bar */}
         <div 
-          suppressHydrationWarning
-          className={`text-white text-center py-2 text-xs font-semibold tracking-wide transition-all duration-300 ${transparent ? 'bg-slate-900/60 backdrop-blur-md' : 'bg-sky-700'}`}
+          className={`text-white text-center py-2 text-xs font-semibold tracking-wide transition-colors duration-300 ${
+            transparent ? 'bg-slate-900/60 backdrop-blur-md' : 'bg-sky-600'
+          }`}
         >
           🚚 توصيل مجاني لجميع المدن المغربية عند الشراء بـ 500 درهم — الدفع عند الاستلام
         </div>
+
+        {/* Navigation Bar */}
         <nav className="container-lux flex items-center justify-between h-16">
-          <Link href="/" className="transition-opacity duration-300 hover:opacity-90">
-            <AquaCleanLogo transparent={transparent} />
+          
+          {/* Logo */}
+          <Link href="/" className="transition-opacity duration-300 hover:opacity-90 flex items-center">
+            <img 
+              src="/header-logo.png" 
+              alt="AquaClean Logo" 
+              className={`h-9 md:h-11 w-auto object-contain transition-all duration-300 ${
+                transparent ? 'brightness-0 invert drop-shadow' : ''
+              }`}
+            />
           </Link>
+
+          {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-7">
             {links.map(l => (
-              <Link key={l.href} href={l.href} className={`text-xs md:text-sm font-bold transition-colors duration-300 hover:text-cyan-500 ${transparent ? 'text-white/90' : 'text-slate-700'}`}>
+              <Link 
+                key={l.href} 
+                href={l.href} 
+                className={`text-xs md:text-sm font-bold transition-colors duration-200 hover:text-cyan-500 ${
+                  transparent ? 'text-white' : 'text-slate-800'
+                }`}
+              >
                 {l.label}
               </Link>
             ))}
           </div>
+
+          {/* Action Icons */}
           <div className="flex items-center gap-4">
-            <button onClick={() => router.push('/products')} className={`hover:text-cyan-500 transition-colors hidden md:block ${transparent ? 'text-white/90' : 'text-slate-700'}`}>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <button 
+              onClick={() => router.push('/products')} 
+              className={`transition-colors hidden md:block ${
+                transparent ? 'text-white hover:text-cyan-300' : 'text-slate-800 hover:text-sky-600'
+              }`}
+              aria-label="بحث"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
             </button>
-            <button onClick={toggleCart} className={`relative hover:text-cyan-500 transition-colors ${transparent ? 'text-white/90' : 'text-slate-700'}`}>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+
+            <button 
+              onClick={toggleCart} 
+              className={`relative transition-colors ${
+                transparent ? 'text-white hover:text-cyan-300' : 'text-slate-800 hover:text-sky-600'
+              }`}
+              aria-label="سلة التسوق"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
               {mounted && count() > 0 && (
                 <span className="absolute -top-1.5 -right-2 bg-cyan-500 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-md">
                   {count()}
                 </span>
               )}
             </button>
-            <button className={`md:hidden transition-colors ${transparent ? 'text-white/90' : 'text-slate-700'}`} onClick={() => setMenuOpen(!menuOpen)}>
+
+            <button 
+              className={`md:hidden transition-colors ${
+                transparent ? 'text-white' : 'text-slate-800'
+              }`} 
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="القائمة"
+            >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {menuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>}
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>
+                )}
               </svg>
             </button>
           </div>
         </nav>
+
+        {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-slate-100 animate-fade-in shadow-xl">
+          <div className="md:hidden bg-white text-slate-800 border-t border-slate-100 animate-fade-in shadow-xl">
             {links.map(l => (
-              <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="block px-6 py-3.5 text-sm font-bold text-slate-700 hover:bg-sky-50 hover:text-sky-600 border-b border-slate-100">
+              <Link 
+                key={l.href} 
+                href={l.href} 
+                onClick={() => setMenuOpen(false)} 
+                className="block px-6 py-3.5 text-sm font-bold text-slate-800 hover:bg-sky-50 hover:text-sky-600 border-b border-slate-100"
+              >
                 {l.label}
               </Link>
             ))}
@@ -96,12 +145,13 @@ export default function Navbar() {
         )}
       </header>
 
+      {/* Cart Drawer */}
       {isOpen && (
         <div className="fixed inset-0 z-[100]" onClick={toggleCart}>
           <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" />
         </div>
       )}
-      <div className={`fixed top-0 left-0 h-full w-full max-w-md bg-white z-[101] shadow-2xl transform transition-transform duration-300 ease-out flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed top-0 left-0 h-full w-full max-w-md bg-white text-slate-900 z-[101] shadow-2xl transform transition-transform duration-300 ease-out flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex items-center justify-between p-5 border-b border-slate-100">
           <h2 className="font-display font-bold text-lg text-slate-900">سلة الشراء <span className="text-slate-500 text-xs font-sans">({mounted ? count() : 0} منتجات)</span></h2>
           <button onClick={toggleCart} className="text-slate-400 hover:text-slate-600 p-1">
