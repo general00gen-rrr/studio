@@ -15,11 +15,11 @@ export default async function HomePage() {
       <section className="relative min-h-[680px] md:min-h-[760px] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-sky-950 to-slate-900 py-20 text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1548839140-29a749e1cf4e?q=80&w=2000&auto=format&fit=crop"
+            src="https://i.ibb.co/hRG56rnd/Crystal-clear-water-splash-wave-202607221823-1.jpg"
             alt="AquaClean Water Purification"
             fill
             className="object-cover object-center opacity-25 mix-blend-overlay"
-            priority
+            unoptimized={true} priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-sky-950/80 to-transparent" />
         </div>
