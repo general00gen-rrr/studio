@@ -105,7 +105,7 @@ export default async function HomePage() {
               <ScrollReveal direction="left">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white p-3 md:p-5 transition-transform duration-500 hover:scale-[1.01]">
                   <Image 
-                    src="https://i.ibb.co/3ykXqXz/aquaclean-official-banner.png" 
+                    src="/logo-banner.png" 
                     alt="AquaClean Official Brand" 
                     width={1000} 
                     height={650} 
