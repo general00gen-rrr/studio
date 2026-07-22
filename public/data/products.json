@@ -57,7 +57,7 @@
     "category": "beaute",
     "description": "مجموعة الشمعات الأساسية للاستبدال الدوري (PP, GAC, CTO, Post Carbon)",
     "details": "مجموعة الغيارات الدورية الشاملة لضمان بقاء المياه عذبة ونقية. تشمل شمعة القطن للترسبات، وشمعتي الكربون للكلور والروائح، وشمعة تحسين الطعم.",
-    "image": "https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754551/61vrd95_t9L._AC_UL495_SR435_495__aey3xi.jpg",
     "badge": "bestseller",
     "rating": 4.9,
     "reviews": 210,
@@ -67,6 +67,9 @@
       "شمعة كربون نشط GAC",
       "شمعة كربون صلب CTO",
       "شمعة فلتر تحسين الطعم"
+    ],
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754551/61vrd95_t9L._AC_UL495_SR435_495__aey3xi.jpg"
     ]
   },
   {
