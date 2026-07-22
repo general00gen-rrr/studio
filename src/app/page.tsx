@@ -18,8 +18,9 @@ export default async function HomePage() {
             src="https://i.ibb.co/hRG56rnd/Crystal-clear-water-splash-wave-202607221823-1.jpg"
             alt="AquaClean Water Purification"
             fill
-            className="object-cover object-center opacity-25 mix-blend-overlay"
-            unoptimized={true} priority
+            unoptimized={true}
+            className="object-cover object-center opacity-40 mix-blend-overlay"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-sky-950/80 to-transparent" />
         </div>
@@ -94,35 +95,90 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* VALUE PILLARS */}
-      <section className="py-12 bg-sky-50 border-b border-sky-100">
+      {/* BRAND SHOWCASE SECTION (قسم الشعار الرسمي والأجهزة) */}
+      <section className="py-20 bg-gradient-to-b from-sky-50/60 to-white border-b border-sky-100">
         <div className="container-lux">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
-              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">💧</div>
-              <h4 className="font-bold text-slate-800 text-sm md:text-base">تنقية المياه</h4>
-              <p className="text-slate-500 text-xs mt-1">تصفية شاملة من الكلس والشوائب</p>
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            
+            {/* Image Banner Container */}
+            <div className="lg:col-span-7">
+              <ScrollReveal direction="left">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white p-3 md:p-5 transition-transform duration-500 hover:scale-[1.01]">
+                  <Image 
+                    src="https://i.ibb.co/3ykXqXz/aquaclean-official-banner.png" 
+                    alt="AquaClean Official Brand" 
+                    width={1000} 
+                    height={650} 
+                    unoptimized={true}
+                    className="w-full h-auto rounded-2xl object-cover"
+                  />
+                  <div className="absolute top-6 right-6 bg-sky-600/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-md">
+                    ★ علامة تجارية معتمدة بالمغرب
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
-            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
-              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">⚙️</div>
-              <h4 className="font-bold text-slate-800 text-sm md:text-base">أنظمة أسموز</h4>
-              <p className="text-slate-500 text-xs mt-1">تقنيات خماسية وسباعية المراحل</p>
+
+            {/* Brand Content */}
+            <div className="lg:col-span-5">
+              <ScrollReveal direction="right">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-bold mb-4">
+                  <span>لماذا تختار أكوا كلين؟</span>
+                </div>
+                <h2 className="font-display font-extrabold text-2xl md:text-4xl text-slate-900 leading-tight">
+                  نظافة • جودة • ثقة <br />
+                  <span className="text-sky-600">لصحة عائلتك يومياً</span>
+                </h2>
+                <p className="text-slate-600 text-sm leading-relaxed mt-4">
+                  تعتبر شركة أكوا كلين (AquaClean) الخيار الأول للآلاف من الأسر المغربية. نقدم لك تقنيات التصفية الحديثة بالأسموز العكسي التي تضمن التخلص التام من الكلس، الأملاح الثقيلة والترسبات.
+                </p>
+
+                {/* 4 Value Badges */}
+                <div className="grid grid-cols-2 gap-4 mt-8">
+                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
+                    <span className="text-2xl">💧</span>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs">تنقية المياه</h4>
+                      <p className="text-slate-500 text-[10px]">تصفية 100%</p>
+                    </div>
+                  </div>
+                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
+                    <span className="text-2xl">⚙️</span>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs">أنظمة أسموز</h4>
+                      <p className="text-slate-500 text-[10px]">تقنية خماسية وسباعية</p>
+                    </div>
+                  </div>
+                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
+                    <span className="text-2xl">🥛</span>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs">مياه نقية وصحية</h4>
+                      <p className="text-slate-500 text-[10px]">معززة بالمعادن</p>
+                    </div>
+                  </div>
+                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
+                    <span className="text-2xl">🛡️</span>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs">جودة مضمونة</h4>
+                      <p className="text-slate-500 text-[10px]">ضمان وصيانة مستمرة</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <Link href="/products" className="btn-aqua inline-flex items-center gap-2">
+                    <span>اكتشف جميع الأجهزة</span>
+                    <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </Link>
+                </div>
+              </ScrollReveal>
             </div>
-            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
-              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">🥛</div>
-              <h4 className="font-bold text-slate-800 text-sm md:text-base">مياه نقية وصحية</h4>
-              <p className="text-slate-500 text-xs mt-1">طعم عذب مع محاذاة المعادن</p>
-            </div>
-            <div className="p-5 rounded-2xl bg-white shadow-sm border border-sky-100 flex flex-col items-center">
-              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-3">🛡️</div>
-              <h4 className="font-bold text-slate-800 text-sm md:text-base">جودة مضمونة</h4>
-              <p className="text-slate-500 text-xs mt-1">خدمة بعد البيع وصيانة مستمرة</p>
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* CATEGORIES SECTION (تنسيق احترافي ومتوازن) */}
+      {/* CATEGORIES SECTION */}
       <section className="py-24 container-lux">
         <ScrollReveal direction="up">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -141,7 +197,6 @@ export default async function HomePage() {
           </div>
         </ScrollReveal>
 
-        {/* 4 Equal Columns Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, i) => (
             <ScrollReveal key={cat.id} direction="up" delay={i * 100}>
@@ -149,7 +204,6 @@ export default async function HomePage() {
                 href={`/products?cat=${cat.id}`} 
                 className="group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-sky-400/50 transition-all duration-500 block aspect-[4/3] sm:aspect-[3/4]"
               >
-                {/* Image */}
                 <Image 
                   src={cat.image} 
                   alt={cat.name} 
@@ -157,17 +211,13 @@ export default async function HomePage() {
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 opacity-90 group-hover:opacity-100" 
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" 
                 />
-
-                {/* Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90 group-hover:opacity-85 transition-opacity" />
                 <div className="absolute inset-0 bg-sky-950/20 group-hover:bg-transparent transition-colors" />
 
-                {/* Top Glassmorphism Count Badge */}
                 <span className="absolute top-4 right-4 px-3 py-1 text-[11px] font-bold text-sky-200 bg-slate-950/60 backdrop-blur-md rounded-full border border-white/10 shadow-sm">
                   {cat.count ? `${cat.count} منتجات` : 'أكوا كلين'}
                 </span>
 
-                {/* Bottom Content Area */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
                   <h3 className="font-display font-extrabold text-white text-lg md:text-xl leading-snug group-hover:text-cyan-300 transition-colors">
                     {cat.name}
