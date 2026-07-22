@@ -26,10 +26,10 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  { id: "maison", name: "أنظمة الأسموز العكسي", description: "تقنية RO خماسية وسباعية المراحل", image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4e?w=800&q=80", count: 6 },
-  { id: "mode", name: "فلاتر ومصفيات المياه", description: "مصفيات المطابخ والصنابير المباشرة", image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&q=80", count: 5 },
-  { id: "beaute", name: "شمعات وقطع الغيار", description: "طقم الشمعات الدورية والكربون النشط", image: "https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?w=800&q=80", count: 5 },
-  { id: "tech", name: "مضخات وإكسسوارات", description: "صنابير ستانلس ستيل ومقاييس الأملاح", image: "https://images.unsplash.com/photo-1585832770485-e68a5fcfad52?w=800&q=80", count: 4 },
+  { id: "maison", name: "أنظمة الأسموز العكسي", description: "تقنية RO خماسية وسباعية المراحل", image: "https://i.ibb.co/ymjtD4Mk/Water-purification-system-with-f-202607221750-1.jpg", count: 6 },
+  { id: "mode", name: "فلاتر ومصفيات المياه", description: "مصفيات المطابخ والصنابير المباشرة", image: "https://i.ibb.co/GvDngSpQ/Water-filter-pouring-water-glass-202607221756-1.jpg", count: 5 },
+  { id: "beaute", name: "شمعات وقطع الغيار", description: "طقم الشمعات الدورية والكربون النشط", image: "https://i.ibb.co/MxLp4hG3/Water-filter-cartridges-on-white-202607221758-1.jpg", count: 5 },
+  { id: "tech", name: "مضخات وإكسسوارات", description: "صنابير ستانلس ستيل ومقاييس الأملاح", image: "https://i.ibb.co/h1KwxTMZ/Booster-pump-and-faucet-tap-202607221802-1.jpg", count: 4 },
 ]
 
 export const products: Product[] = [
