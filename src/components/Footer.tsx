@@ -41,7 +41,7 @@ export default function Footer() {
           <ul className="space-y-3 text-xs text-slate-400">
             <li className="flex items-center gap-2">
               <span className="text-cyan-400">📱</span>
-              <span dir="ltr">+212 6 00 00 00 00</span>
+              <span dir="ltr">+212 610-388422</span>
             </li>
             <li className="flex items-center gap-2">
               <span className="text-cyan-400">✉️</span>
