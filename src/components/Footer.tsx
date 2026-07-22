@@ -7,25 +7,11 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-1">
           <Link href="/" className="inline-block mb-4">
-            <div className="flex items-center gap-2.5">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 3C20 4 6 19 6 27C6 33.6274 12.268 38 20 38C27.732 38 34 33.6274 34 27C34 19 20 4 20 3Z" fill="url(#footer-drop-grad)" />
-                <path d="M20 10L27 17H13L20 10Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <defs>
-                  <linearGradient id="footer-drop-grad" x1="6" y1="3" x2="34" y2="38" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#06B6D4" />
-                    <stop offset="1" stopColor="#0284C7" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1">
-                  <span className="font-display font-extrabold text-2xl tracking-tight text-white">AquaClean</span>
-                  <span className="text-emerald-400 text-sm font-bold">🍃</span>
-                </div>
-                <span className="text-xs font-bold text-cyan-400 mt-0.5">أكوا كلين • نظافة . جودة . ثقة</span>
-              </div>
-            </div>
+            <img 
+              src="/header-logo.png" 
+              alt="AquaClean Logo" 
+              className="h-10 md:h-12 w-auto object-contain brightness-0 invert drop-shadow"
+            />
           </Link>
           <p className="text-slate-400 text-xs leading-relaxed mt-2">
             أكوا كلين — العلامة الموثوقة لأجهزة ومصفيات المياه بالمغرب. مياه صحية ونقية لك ولعائلتك.

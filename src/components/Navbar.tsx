@@ -13,36 +13,13 @@ const links = [
 ]
 
 function AquaCleanLogo({ transparent }: { transparent: boolean }) {
-  const textColor = transparent ? '#FFFFFF' : '#0F172A'
-  const subTextColor = transparent ? '#7DD3FC' : '#0284C7'
   return (
-    <div className="flex items-center gap-2.5 group">
-      {/* Water Drop Icon */}
-      <div className="relative shrink-0">
-        <svg width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 3C20 4 6 19 6 27C6 33.6274 12.268 38 20 38C27.732 38 34 33.6274 34 27C34 19 20 4 20 3Z" fill="url(#drop-grad)" />
-          <path d="M20 10L27 17H13L20 10Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <defs>
-            <linearGradient id="drop-grad" x1="6" y1="3" x2="34" y2="38" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#06B6D4" />
-              <stop offset="1" stopColor="#0284C7" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* Brand Text */}
-      <div className="flex flex-col text-right">
-        <div className="flex items-center gap-1">
-          <span className="font-display font-extrabold text-xl md:text-2xl tracking-tight leading-none" style={{ color: textColor }}>
-            AquaClean
-          </span>
-          <span className="text-emerald-500 text-sm leading-none font-bold">🍃</span>
-        </div>
-        <span className="text-[10px] md:text-[11px] font-bold tracking-wider leading-tight mt-0.5" style={{ color: subTextColor }}>
-          أكوا كلين • نظافة . جودة . ثقة
-        </span>
-      </div>
+    <div className="flex items-center">
+      <img 
+        src="/header-logo.png" 
+        alt="AquaClean Logo" 
+        className={`h-9 md:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105 ${transparent ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]' : ''}`}
+      />
     </div>
   )
 }
