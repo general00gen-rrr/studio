@@ -9,7 +9,7 @@ export default async function HomePage() {
   const best = await getBestAsync()
 
   return (
-    <div className="pt-0">
+    <div className="pt-0 bg-white">
 
       {/* HERO SECTION */}
       <section className="relative min-h-[680px] md:min-h-[760px] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-sky-950 to-slate-900 py-20 text-white">
@@ -83,7 +83,7 @@ export default async function HomePage() {
             <div key={i} className="flex shrink-0 gap-10 px-5 text-xs font-semibold tracking-wide">
               <span>💧 مياه نقية وصحية 100%</span>
               <span className="opacity-40">●</span>
-              <span>�� توصيل مجاني لجميع مدن المغرب</span>
+              <span>🚚 توصيل مجاني لجميع مدن المغرب</span>
               <span className="opacity-40">●</span>
               <span>🛡️ ضمان شامل وقطع غيار أصلية</span>
               <span className="opacity-40">●</span>
@@ -122,27 +122,66 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CATEGORIES */}
-      <section className="py-20 container-lux">
+      {/* CATEGORIES SECTION (تنسيق احترافي ومتوازن) */}
+      <section className="py-24 container-lux">
         <ScrollReveal direction="up">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <span className="text-sky-600 font-bold text-xs tracking-wider uppercase block mb-1">أكوا كلين</span>
-              <h2 className="font-display font-bold text-2xl md:text-4xl text-slate-900">اقسام الأنظمة والمنتجات</h2>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-50 border border-sky-100 text-sky-600 text-xs font-bold mb-3">
+                <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
+                <span>أكوا كلين • حلول تصفية المياه</span>
+              </div>
+              <h2 className="font-display font-extrabold text-3xl md:text-5xl text-slate-900 tracking-tight">
+                أقسام الأنظمة والمنتجات
+              </h2>
             </div>
+            <p className="text-slate-500 text-sm max-w-md">
+              اختر الفئة المناسبة لاحتياجات منزلك لتصفح أحدث أجهزة ومصفيات المياه وقطع الغيار
+            </p>
           </div>
         </ScrollReveal>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+
+        {/* 4 Equal Columns Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, i) => (
             <ScrollReveal key={cat.id} direction="up" delay={i * 100}>
-              <Link href={`/products?cat=${cat.id}`} className="group relative overflow-hidden rounded-2xl bg-slate-100 block shadow-sm border border-slate-100" style={{aspectRatio:'4/3'}}>
-                <Image src={cat.image} alt={cat.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="font-bold text-white text-base md:text-lg">{cat.name}</h3>
-                  <div className="flex items-center gap-1.5 mt-2 text-cyan-300 text-xs font-semibold">
+              <Link 
+                href={`/products?cat=${cat.id}`} 
+                className="group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-sky-400/50 transition-all duration-500 block aspect-[4/3] sm:aspect-[3/4]"
+              >
+                {/* Image */}
+                <Image 
+                  src={cat.image} 
+                  alt={cat.name} 
+                  fill 
+                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 opacity-90 group-hover:opacity-100" 
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" 
+                />
+
+                {/* Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90 group-hover:opacity-85 transition-opacity" />
+                <div className="absolute inset-0 bg-sky-950/20 group-hover:bg-transparent transition-colors" />
+
+                {/* Top Glassmorphism Count Badge */}
+                <span className="absolute top-4 right-4 px-3 py-1 text-[11px] font-bold text-sky-200 bg-slate-950/60 backdrop-blur-md rounded-full border border-white/10 shadow-sm">
+                  {cat.count ? `${cat.count} منتجات` : 'أكوا كلين'}
+                </span>
+
+                {/* Bottom Content Area */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+                  <h3 className="font-display font-extrabold text-white text-lg md:text-xl leading-snug group-hover:text-cyan-300 transition-colors">
+                    {cat.name}
+                  </h3>
+                  {cat.description && (
+                    <p className="text-slate-300 text-xs mt-1.5 line-clamp-1 font-medium opacity-90">
+                      {cat.description}
+                    </p>
+                  )}
+                  <div className="flex items-center gap-2 mt-4 text-cyan-400 text-xs font-bold group-hover:text-white transition-colors">
                     <span>استكشف المنتجات</span>
-                    <svg className="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    <svg className="w-4 h-4 rotate-180 transform group-hover:-translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
                   </div>
                 </div>
               </Link>
