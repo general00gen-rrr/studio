@@ -5,24 +5,46 @@ export type { Product, Category }
 export { categories, formatPrice }
 export { staticProducts as products }
 
+const repo = process.env.GITHUB_REPO || 'general00gen-rrr/studio'
+const branch = process.env.GITHUB_BRANCH || 'main'
+const GITHUB_RAW = `https://raw.githubusercontent.com/${repo}/${branch}/public/data/products.json`
+
+async function fetchProducts(): Promise<Product[]> {
+  try {
+    const res = await fetch(GITHUB_RAW + '?t=' + Date.now(), {
+      cache: 'no-store'
+    })
+    if (!res.ok) return staticProducts
+    const data = await res.json()
+    return Array.isArray(data) && data.length > 0 ? data : staticProducts
+  } catch {
+    return staticProducts
+  }
+}
+
 export async function getFeaturedAsync(): Promise<Product[]> {
-  return staticProducts.slice(0, 8)
+  const products = await fetchProducts()
+  return products.slice(0, 8)
 }
 
 export async function getBestAsync(): Promise<Product[]> {
-  return staticProducts.filter((p: Product) => p.badge === 'bestseller')
+  const products = await fetchProducts()
+  return products.filter((p: Product) => p.badge === 'bestseller')
 }
 
 export async function getNewAsync(): Promise<Product[]> {
-  return staticProducts.filter((p: Product) => p.badge === 'nouveau')
+  const products = await fetchProducts()
+  return products.filter((p: Product) => p.badge === 'nouveau')
 }
 
 export async function getByCatAsync(cat: string): Promise<Product[]> {
-  return staticProducts.filter((p: Product) => p.category === cat)
+  const products = await fetchProducts()
+  return products.filter((p: Product) => p.category === cat)
 }
 
 export async function getByIdAsync(id: string): Promise<Product | undefined> {
-  return staticProducts.find((p: Product) => p.id === id || p.slug === id)
+  const products = await fetchProducts()
+  return products.find((p: Product) => p.id === id || p.slug === id)
 }
 
 export const getFeatured = () => staticProducts.slice(0, 8)
