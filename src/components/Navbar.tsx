@@ -47,7 +47,7 @@ export default function Navbar() {
             transparent ? 'bg-slate-900/60 backdrop-blur-md' : 'bg-sky-600'
           }`}
         >
-          🚚 توصيل مجاني لجميع المدن المغربية عند الشراء بـ 500 درهم — الدفع عند الاستلام
+          🚚 توصيل مجاني لجميع المدن — الدفع عند الاستلام
         </div>
 
         {/* Navigation Bar */}
