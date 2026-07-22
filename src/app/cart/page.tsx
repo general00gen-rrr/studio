@@ -8,49 +8,50 @@ export default function CartPage() {
   const { items, removeItem, updateQty, total, count } = useCart()
 
   if (items.length === 0) return (
-    <div className="pt-[88px] min-h-screen flex items-center justify-center">
-      <div className="text-center py-20">
-        <div className="text-7xl mb-6">🛒</div>
-        <h1 className="font-serif text-3xl mb-3">Votre panier est vide</h1>
-        <p className="text-lux-gray mb-8">Découvrez notre sélection premium</p>
-        <Link href="/products" className="btn-gold"><span>Continuer mes achats</span></Link>
+    <div className="pt-[88px] min-h-screen flex items-center justify-center bg-white" dir="rtl">
+      <div className="text-center py-20 px-4">
+        <div className="text-6xl mb-4">🛒</div>
+        <h1 className="font-display font-extrabold text-2xl md:text-3xl text-slate-900 mb-2">سلة الشراء فارغة حالياً</h1>
+        <p className="text-slate-500 text-xs mb-8">استكشف أحدث أجهزة ومصفيات المياه المنزلية من أكوا كلين</p>
+        <Link href="/products" className="btn-aqua text-xs py-3.5 rounded-xl"><span>تصفح الأجهزة والأنظمة</span></Link>
       </div>
     </div>
   )
 
   return (
-    <div className="pt-[88px] min-h-screen">
-      <div className="bg-cream border-b border-lux-border py-10">
+    <div className="pt-[88px] min-h-screen bg-slate-50" dir="rtl">
+      <div className="bg-sky-50 border-b border-sky-100 py-8">
         <div className="container-lux">
-          <h1 className="section-title">Mon Panier</h1>
-          <div className="gold-divider" />
-          <p className="text-lux-gray text-sm">{count()} article{count() > 1 ? 's' : ''}</p>
+          <h1 className="font-display font-extrabold text-2xl md:text-3xl text-slate-900">سلة التسوق</h1>
+          <div className="w-12 h-1 bg-sky-500 rounded-full mt-3" />
+          <p className="text-slate-500 text-xs mt-2 font-bold">تحتوي السلة على {count()} منتج</p>
         </div>
       </div>
 
-      <div className="container-lux py-12">
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Items */}
-          <div className="lg:col-span-2 space-y-4">
+      <div className="container-lux py-10">
+        <div className="grid lg:grid-cols-3 gap-8">
+          
+          {/* Items List */}
+          <div className="lg:col-span-2 space-y-3">
             {items.map(item => (
-              <div key={item.id} className="flex gap-5 p-5 bg-cream border border-lux-border hover:border-gold transition-colors">
-                <div className="relative w-24 h-24 shrink-0 overflow-hidden">
-                  <Image src={item.image} alt={item.name} fill className="object-cover" sizes="96px" />
+              <div key={item.id} className="flex gap-4 p-4 bg-white rounded-2xl border border-slate-200/80 shadow-sm items-center">
+                <div className="relative w-20 h-20 shrink-0 rounded-xl overflow-hidden border border-slate-100 bg-slate-50">
+                  <Image src={item.image} alt={item.name} fill unoptimized={true} className="object-cover" sizes="80px" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-medium">{item.name}</h3>
-                  <p className="text-gold font-serif font-medium mt-1">{formatPrice(item.price)}</p>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-sm text-slate-900 truncate">{item.name}</h3>
+                  <p className="text-sky-600 font-bold text-sm mt-1">{formatPrice(item.price)}</p>
                   <div className="flex items-center gap-4 mt-3">
-                    <div className="flex items-center border border-lux-border">
-                      <button onClick={() => updateQty(item.id, item.quantity - 1)} className="w-8 h-8 flex items-center justify-center text-lux-gray hover:text-gold">−</button>
-                      <span className="w-8 text-center text-sm">{item.quantity}</span>
-                      <button onClick={() => updateQty(item.id, item.quantity + 1)} className="w-8 h-8 flex items-center justify-center text-lux-gray hover:text-gold">+</button>
+                    <div className="flex items-center border border-slate-200 rounded-lg bg-slate-50">
+                      <button onClick={() => updateQty(item.id, item.quantity - 1)} className="w-7 h-7 flex items-center justify-center text-slate-500 hover:text-sky-600 font-bold">−</button>
+                      <span className="w-8 text-center text-xs font-bold text-slate-800">{item.quantity}</span>
+                      <button onClick={() => updateQty(item.id, item.quantity + 1)} className="w-7 h-7 flex items-center justify-center text-slate-500 hover:text-sky-600 font-bold">+</button>
                     </div>
-                    <button onClick={() => removeItem(item.id)} className="text-xs text-lux-gray hover:text-red-500 transition-colors">Supprimer</button>
+                    <button onClick={() => removeItem(item.id)} className="text-xs text-slate-400 hover:text-red-500 font-bold transition-colors">حذف</button>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-serif font-medium">{formatPrice(item.price * item.quantity)}</p>
+                <div className="text-left shrink-0">
+                  <p className="font-display font-extrabold text-base text-slate-900">{formatPrice(item.price * item.quantity)}</p>
                 </div>
               </div>
             ))}
@@ -58,33 +59,39 @@ export default function CartPage() {
 
           {/* Summary */}
           <div>
-            <div className="bg-cream border border-lux-border p-6 sticky top-24">
-              <h2 className="font-serif text-xl mb-4">Récapitulatif</h2>
-              <div className="space-y-3 mb-4 pb-4 border-b border-lux-border">
+            <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sticky top-24 shadow-sm">
+              <h2 className="font-display font-bold text-base text-slate-900 mb-4 pb-3 border-b border-slate-100">ملخص الطلب</h2>
+              <div className="space-y-2.5 mb-4 pb-4 border-b border-slate-100 text-xs font-bold text-slate-600">
                 {items.map(item => (
-                  <div key={item.id} className="flex justify-between text-sm">
-                    <span className="text-lux-gray truncate max-w-[160px]">{item.name} ×{item.quantity}</span>
-                    <span>{formatPrice(item.price * item.quantity)}</span>
+                  <div key={item.id} className="flex justify-between">
+                    <span className="truncate max-w-[160px] text-slate-700">{item.name} ×{item.quantity}</span>
+                    <span className="text-slate-900">{formatPrice(item.price * item.quantity)}</span>
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between text-sm mb-2">
-                <span className="text-lux-gray">Livraison</span>
-                <span className="text-green-600 font-medium">{total() >= 500 ? 'Gratuite' : '50 DH'}</span>
+              <div className="flex justify-between text-xs font-bold mb-2">
+                <span className="text-slate-600">الشحن والتوصيل</span>
+                <span className="text-emerald-600 font-extrabold">{total() >= 500 ? 'مجاني 🎉' : '50 د.م'}</span>
               </div>
-              {total() < 500 && <p className="text-xs text-lux-gray mb-3">Plus que {formatPrice(500 - total())} pour la livraison gratuite</p>}
-              <div className="flex justify-between font-medium text-lg pt-3 border-t border-lux-border mt-3">
-                <span>Total</span>
-                <span className="font-serif">{formatPrice(total() >= 500 ? total() : total() + 50)}</span>
+              {total() < 500 && (
+                <p className="text-[11px] text-sky-600 font-bold mb-3 bg-sky-50 p-2 rounded-lg border border-sky-100">
+                  أضف أجهزة بـ {formatPrice(500 - total())} أخرى للحصول على شحن مجاني!
+                </p>
+              )}
+              <div className="flex justify-between font-extrabold text-base pt-3 border-t border-slate-100 mt-3 text-slate-900">
+                <span>المجموع الكلي</span>
+                <span className="font-display text-sky-600 text-lg">{formatPrice(total() >= 500 ? total() : total() + 50)}</span>
               </div>
-              <div className="mt-5 p-3 bg-green-50 border border-green-200 text-xs text-green-700 flex items-center gap-2">
-                <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                Paiement à la livraison disponible
-              </div>
-              <Link href="/checkout" className="btn-gold w-full text-center justify-center mt-4"><span>Commander — Payer à la livraison</span></Link>
-              <Link href="/products" className="block text-center mt-3 text-xs text-lux-gray hover:text-gold transition-colors">← Continuer mes achats</Link>
+              
+              <Link href="/checkout" className="btn-aqua w-full text-center justify-center mt-5 text-sm py-3.5 rounded-xl shadow-lg shadow-sky-600/20">
+                <span>إتمام الطلب — الدفع عند الاستلام</span>
+              </Link>
+              <Link href="/products" className="block text-center mt-3 text-xs text-slate-500 hover:text-sky-600 font-bold transition-colors">
+                ← متابعة التسوق
+              </Link>
             </div>
           </div>
+
         </div>
       </div>
     </div>
