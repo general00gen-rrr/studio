@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "نظام الأسموز العكسي RO سباعي المراحل",
+    "name": "نظام الأسموز العكسي سباعي المراحل",
     "price": 1850,
     "originalPrice": 2200,
     "category": "maison",
@@ -21,7 +21,8 @@
     "images": [
       "https://res.cloudinary.com/deuudcsc5/image/upload/v1784748723/logo-banner_fbwiuz.jpg",
       "https://res.cloudinary.com/deuudcsc5/image/upload/v1784748824/logo-banner_mscre1.jpg"
-    ]
+    ],
+    "slug": ""
   },
   {
     "id": "2",
