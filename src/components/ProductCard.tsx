@@ -11,6 +11,13 @@ const BADGE_MAP: Record<string, { label: string; style: string }> = {
   promo: { label: 'تخفيض', style: 'bg-red-500 text-white' },
 }
 
+const CATEGORY_MAP: Record<string, string> = {
+  maison: 'أنظمة الأسموز العكسي',
+  mode: 'فلاتر ومصفيات المياه',
+  beaute: 'شمعات وقطع الغيار',
+  tech: 'مضخات وإكسسوارات',
+}
+
 export default function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart()
   const [added, setAdded] = useState(false)
@@ -23,6 +30,8 @@ export default function ProductCard({ product }: { product: Product }) {
     setTimeout(() => setAdded(false), 1800)
   }
 
+  const catName = CATEGORY_MAP[product.category] || product.category
+
   return (
     <Link href={`/products/${product.slug || product.id}`} className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300">
       <div className="relative overflow-hidden bg-slate-50 aspect-[4/3]">
@@ -30,13 +39,14 @@ export default function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           fill
+          unoptimized={true}
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 50vw, 25vw"
         />
         {/* Badge */}
-        {product.badge && (
-          <span className={`absolute top-3 right-3 text-[10px] font-bold px-2.5 py-1 rounded-full shadow ${BADGE_MAP[product.badge]?.style || 'bg-sky-600 text-white'}`}>
-            {BADGE_MAP[product.badge]?.label || product.badge}
+        {product.badge && BADGE_MAP[product.badge] && (
+          <span className={`absolute top-3 right-3 text-[10px] font-bold px-2.5 py-1 rounded-full shadow ${BADGE_MAP[product.badge].style}`}>
+            {BADGE_MAP[product.badge].label}
           </span>
         )}
         {/* Add to cart overlay */}
@@ -50,7 +60,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
       <div className="p-4">
-        <p className="text-[11px] font-bold text-sky-600 mb-1">{product.category}</p>
+        <p className="text-[11px] font-bold text-sky-600 mb-1">{catName}</p>
         <h3 className="font-bold text-sm text-slate-800 group-hover:text-sky-600 transition-colors leading-snug line-clamp-1">{product.name}</h3>
         <div className="flex items-center justify-between mt-3 pt-2 border-t border-slate-100">
           <span className="font-display font-bold text-base text-slate-900">{formatPrice(product.price)}</span>
