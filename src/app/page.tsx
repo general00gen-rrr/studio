@@ -95,24 +95,21 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* BRAND SHOWCASE SECTION (قسم الشعار الرسمي والأجهزة) */}
-      <section className="py-20 bg-gradient-to-b from-sky-50/60 to-white border-b border-sky-100">
+      {/* BRAND SHOWCASE SECTION */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-sky-50/80 via-white to-white border-b border-sky-100">
         <div className="container-lux">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 md:gap-12 items-center">
             
             {/* Image Banner Container */}
             <div className="lg:col-span-7">
               <ScrollReveal direction="left">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white p-3 md:p-5 transition-transform duration-500 hover:scale-[1.01]">
-                  <Image 
+                <div className="relative rounded-3xl overflow-hidden shadow-xl border-2 border-sky-100 bg-white p-2 md:p-4">
+                  <img 
                     src="/logo-banner.png" 
                     alt="AquaClean Official Brand" 
-                    width={1000} 
-                    height={650} 
-                    unoptimized={true}
-                    className="w-full h-auto rounded-2xl object-cover"
+                    className="w-full h-auto rounded-2xl object-contain max-h-[500px] mx-auto block"
                   />
-                  <div className="absolute top-6 right-6 bg-sky-600/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-md">
+                  <div className="absolute top-4 right-4 bg-sky-600/90 backdrop-blur-md text-white px-3.5 py-1 rounded-full text-[11px] font-bold shadow-md">
                     ★ علامة تجارية معتمدة بالمغرب
                   </div>
                 </div>
@@ -134,30 +131,30 @@ export default async function HomePage() {
                 </p>
 
                 {/* 4 Value Badges */}
-                <div className="grid grid-cols-2 gap-4 mt-8">
-                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
-                    <span className="text-2xl">💧</span>
+                <div className="grid grid-cols-2 gap-3.5 mt-6">
+                  <div className="p-3 bg-slate-50 rounded-2xl border border-sky-100 shadow-sm flex items-center gap-2.5">
+                    <span className="text-xl">💧</span>
                     <div>
                       <h4 className="font-bold text-slate-800 text-xs">تنقية المياه</h4>
                       <p className="text-slate-500 text-[10px]">تصفية 100%</p>
                     </div>
                   </div>
-                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
-                    <span className="text-2xl">⚙️</span>
+                  <div className="p-3 bg-slate-50 rounded-2xl border border-sky-100 shadow-sm flex items-center gap-2.5">
+                    <span className="text-xl">⚙️</span>
                     <div>
                       <h4 className="font-bold text-slate-800 text-xs">أنظمة أسموز</h4>
                       <p className="text-slate-500 text-[10px]">تقنية خماسية وسباعية</p>
                     </div>
                   </div>
-                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
-                    <span className="text-2xl">🥛</span>
+                  <div className="p-3 bg-slate-50 rounded-2xl border border-sky-100 shadow-sm flex items-center gap-2.5">
+                    <span className="text-xl">🥛</span>
                     <div>
                       <h4 className="font-bold text-slate-800 text-xs">مياه نقية وصحية</h4>
                       <p className="text-slate-500 text-[10px]">معززة بالمعادن</p>
                     </div>
                   </div>
-                  <div className="p-3.5 bg-white rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
-                    <span className="text-2xl">🛡️</span>
+                  <div className="p-3 bg-slate-50 rounded-2xl border border-sky-100 shadow-sm flex items-center gap-2.5">
+                    <span className="text-xl">🛡️</span>
                     <div>
                       <h4 className="font-bold text-slate-800 text-xs">جودة مضمونة</h4>
                       <p className="text-slate-500 text-[10px]">ضمان وصيانة مستمرة</p>
@@ -165,8 +162,8 @@ export default async function HomePage() {
                   </div>
                 </div>
 
-                <div className="mt-8">
-                  <Link href="/products" className="btn-aqua inline-flex items-center gap-2">
+                <div className="mt-6">
+                  <Link href="/products" className="btn-aqua inline-flex items-center gap-2 text-xs py-3">
                     <span>اكتشف جميع الأجهزة</span>
                     <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                   </Link>
