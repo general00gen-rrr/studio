@@ -31,7 +31,7 @@
     "category": "maison",
     "description": "نظام تصفية مدمج يعمل بدون كهرباء لماء عذب ومثالي للطهي والشرب",
     "details": "نظام تنقية مثالي للمطابخ الحديثة يتميز بتركيب سهل أسفل المجلى مع قدرة تصفية عالية لجميع الشوائب والكلور والروائح الكريهة.",
-    "image": "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=600&q=80",
+    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1784748838/Booster_pump_and_faucet_tap_202607221802_1_xuvrjo.jpg",
     "badge": "nouveau",
     "rating": 4.8,
     "reviews": 64,
@@ -41,6 +41,9 @@
       "بدون الحاجة للكهرباء",
       "تركيب سهل أسفل المجلى",
       "شمعات عالية الجودة"
+    ],
+    "images": [
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784748838/Booster_pump_and_faucet_tap_202607221802_1_xuvrjo.jpg"
     ]
   },
   {
