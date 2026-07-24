@@ -21,9 +21,9 @@ export default function Page() {
           <div className="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm text-center flex flex-col items-center">
             <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl mb-4">💬</div>
             <h3 className="font-display font-bold text-slate-900 text-lg mb-1">واتساب المباشر</h3>
-            <p className="text-sky-600 font-bold text-base mb-1" dir="ltr">+212 770 469 416</p>
+            <p className="text-sky-600 font-bold text-base mb-1" dir="ltr">+212 610 388 422</p>
             <p className="text-slate-500 text-xs mb-6">استجابة سريعة — الإثنين إلى السبت (9:00 - 18:00)</p>
-            <a href="https://wa.me/212770469416" target="_blank" rel="noreferrer" className="btn-aqua inline-flex w-full text-center justify-center">
+            <a href="https://wa.me/212610388422" target="_blank" rel="noreferrer" className="btn-aqua inline-flex w-full text-center justify-center">
               <span>تواصل عبر واتساب</span>
             </a>
           </div>
