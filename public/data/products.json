@@ -50,16 +50,16 @@
   {
     "id": "6",
     "name": "جهاز قياس جودة المياه ونسبة الأملاح TDS Meter",
-    "price": 150,
+    "price": 159,
     "originalPrice": 190,
     "category": "tech",
-    "description": "مقياس رقمي دقيق لفحص نسبة الأملاح والشوائب الذائبة في الماء",
+    "description": "قيس جهاز TDS كمية المواد الذائبة فقط، لكنه لا يستطيع اكتشاف:\n\nالبكتيريا والفيروسات.\nالطفيليات.\nالمبيدات الحشرية.\nالكلور الحر.\nالمعادن الثقيلة بشكل منفصل (مثل الرصاص والزئبق).\nالروائح أو الملوثات العضوية.\nمقياس رقمي دقيق لفحص نسبة الأملاح والشوائب الذائبة في الماء\n",
     "details": "جهاز لا غنى عنه لكل منزل للتأكد من كفاءة الفلتر وصلاحية المياه للشرب. يقيس مستوى الشوائب والأملاح الذائبة (PPM) في ثوان معدودة.",
     "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754684/fda73006-959a-4126-8dc4-92ee047f54f1-850.83612040134x1000-7265kphpfvfDsizid1RLUoxgHqeV6EBeeBXOK6IJ_qtnqbp.webp",
-    "badge": "promo",
+    "badge": "",
     "rating": 4.9,
     "reviews": 95,
-    "stock": 50,
+    "stock": 29,
     "features": [
       "قراءة فورية بدقة عالية",
       "شاشة LCD واضحة",
@@ -67,7 +67,8 @@
       "حافظة جلدية مدمجة"
     ],
     "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754684/fda73006-959a-4126-8dc4-92ee047f54f1-850.83612040134x1000-7265kphpfvfDsizid1RLUoxgHqeV6EBeeBXOK6IJ_qtnqbp.webp"
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754684/fda73006-959a-4126-8dc4-92ee047f54f1-850.83612040134x1000-7265kphpfvfDsizid1RLUoxgHqeV6EBeeBXOK6IJ_qtnqbp.webp",
+      "https://res.cloudinary.com/deuudcsc5/image/upload/v1785010698/ChatGPT_Image_25_juil._2026_21_17_47_erq24n.png"
     ]
   }
 ]
