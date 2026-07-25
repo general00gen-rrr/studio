@@ -27,29 +27,6 @@
     "slug": ""
   },
   {
-    "id": "3",
-    "name": "طقم شمعات الفلتر السنوي (4 شمعات)",
-    "price": 290,
-    "originalPrice": 350,
-    "category": "beaute",
-    "description": "مجموعة الشمعات الأساسية للاستبدال الدوري (PP, GAC, CTO, Post Carbon)",
-    "details": "مجموعة الغيارات الدورية الشاملة لضمان بقاء المياه عذبة ونقية. تشمل شمعة القطن للترسبات، وشمعتي الكربون للكلور والروائح، وشمعة تحسين الطعم.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754551/61vrd95_t9L._AC_UL495_SR435_495__aey3xi.jpg",
-    "badge": "bestseller",
-    "rating": 4.9,
-    "reviews": 210,
-    "stock": 80,
-    "features": [
-      "شمعة شوائب PP 5 micron",
-      "شمعة كربون نشط GAC",
-      "شمعة كربون صلب CTO",
-      "شمعة فلتر تحسين الطعم"
-    ],
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754551/61vrd95_t9L._AC_UL495_SR435_495__aey3xi.jpg"
-    ]
-  },
-  {
     "id": "4",
     "name": "شمعة الممبرين الأمريكية RO Membrane 75GPD",
     "price": 149,
