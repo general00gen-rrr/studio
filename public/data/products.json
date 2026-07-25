@@ -27,29 +27,6 @@
     "slug": ""
   },
   {
-    "id": "2",
-    "name": "مصفاة مياه المطبخ خماسية المراحل",
-    "price": 1250,
-    "originalPrice": 1500,
-    "category": "maison",
-    "description": "نظام تصفية مدمج يعمل بدون كهرباء لماء عذب ومثالي للطهي والشرب",
-    "details": "نظام تنقية مثالي للمطابخ الحديثة يتميز بتركيب سهل أسفل المجلى مع قدرة تصفية عالية لجميع الشوائب والكلور والروائح الكريهة.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754489/%D9%81%D9%84%D8%AA%D8%B1-%D9%85%D8%A7%D8%A1-%D9%85%D8%B7%D8%A8%D8%AE-5-%D9%85%D8%B1%D8%A7%D8%AD%D9%84-%D8%A7%D8%B1%D8%AA%D9%83-1_zxrpgc.jpg",
-    "badge": "nouveau",
-    "rating": 4.8,
-    "reviews": 64,
-    "stock": 30,
-    "features": [
-      "5 مراحل تصفية",
-      "بدون الحاجة للكهرباء",
-      "تركيب سهل أسفل المجلى",
-      "شمعات عالية الجودة"
-    ],
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754489/%D9%81%D9%84%D8%AA%D8%B1-%D9%85%D8%A7%D8%A1-%D9%85%D8%B7%D8%A8%D8%AE-5-%D9%85%D8%B1%D8%A7%D8%AD%D9%84-%D8%A7%D8%B1%D8%AA%D9%83-1_zxrpgc.jpg"
-    ]
-  },
-  {
     "id": "3",
     "name": "طقم شمعات الفلتر السنوي (4 شمعات)",
     "price": 290,
