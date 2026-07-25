@@ -71,27 +71,6 @@
     ]
   },
   {
-    "id": "5",
-    "name": "صنبور الفولاذ المقاوم للصدأ (Stainless Steel Faucet)",
-    "price": 220,
-    "category": "tech",
-    "description": "صنبور فاخر مخصص للمياه المفلترة مقاوم للصدأ بتصميم أنيق",
-    "details": "صنبور فاخر مصنع من الفولاذ المقاوم للصدأ 304 الخالي من الرصاص، صمم خصيصاً ليتناسب مع كافة أجهزة ومصفيات المياه المنزلية.",
-    "image": "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754629/rBVaqGHuXzaAIadgAA0PITcuMrg475_g9wgoh.webp",
-    "rating": 4.7,
-    "reviews": 42,
-    "stock": 35,
-    "features": [
-      "ستانلس ستيل 304",
-      "خالي تماماً من الرصاص",
-      "دوران 360 درجة",
-      "تركيب سريع"
-    ],
-    "images": [
-      "https://res.cloudinary.com/deuudcsc5/image/upload/v1784754629/rBVaqGHuXzaAIadgAA0PITcuMrg475_g9wgoh.webp"
-    ]
-  },
-  {
     "id": "6",
     "name": "جهاز قياس جودة المياه ونسبة الأملاح TDS Meter",
     "price": 150,
